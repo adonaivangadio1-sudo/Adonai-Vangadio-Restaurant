@@ -1,0 +1,112 @@
+/* =========================================================
+   THEME SYSTEM
+========================================================= */
+
+
+/* =========================================================
+   LIGHT
+========================================================= */
+
+:root,
+[data-theme="light"] {
+
+    --color-background: #f7f5f1;
+    --color-surface: #ffffff;
+    --color-surface-soft: #efede8;
+
+    --color-text: #252525;
+    --color-heading: #171717;
+    --color-text-muted: #73706b;
+
+    --color-border: rgba(20, 20, 20, 0.09);
+    --color-border-strong: rgba(20, 20, 20, 0.16);
+
+    --color-accent: #b51f2a;
+    --color-accent-dark: #8f1520;
+    --color-accent-soft: rgba(181, 31, 42, 0.09);
+
+    --color-dark: #151515;
+    --color-white: #ffffff;
+
+    --shadow-sm:
+        0 4px 20px rgba(0, 0, 0, 0.05);
+
+    --shadow-md:
+        0 12px 40px rgba(0, 0, 0, 0.09);
+
+    --shadow-lg:
+        0 25px 70px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================================================
+   DARK
+========================================================= */
+
+[data-theme="dark"] {
+
+    --color-background: #111111;
+    --color-surface: #191919;
+    --color-surface-soft: #202020;
+
+    --color-text: #ededed;
+    --color-heading: #ffffff;
+    --color-text-muted: #a4a4a4;
+
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-strong: rgba(255, 255, 255, 0.16);
+
+    --color-accent: #d8323d;
+    --color-accent-dark: #a91f2a;
+    --color-accent-soft: rgba(216, 50, 61, 0.13);
+
+    --color-dark: #0a0a0a;
+    --color-white: #ffffff;
+
+    --shadow-sm:
+        0 4px 20px rgba(0, 0, 0, 0.22);
+
+    --shadow-md:
+        0 12px 40px rgba(0, 0, 0, 0.30);
+
+    --shadow-lg:
+        0 25px 70px rgba(0, 0, 0, 0.42);
+}
+
+
+/* =========================================================
+   SYSTEM DARK MODE
+========================================================= */
+
+@media (prefers-color-scheme: dark) {
+
+    :root:not([data-theme="light"]) {
+
+        --color-background: #111111;
+        --color-surface: #191919;
+        --color-surface-soft: #202020;
+
+        --color-text: #ededed;
+        --color-heading: #ffffff;
+        --color-text-muted: #a4a4a4;
+
+        --color-border: rgba(255, 255, 255, 0.08);
+        --color-border-strong: rgba(255, 255, 255, 0.16);
+
+        --color-accent: #d8323d;
+        --color-accent-dark: #a91f2a;
+        --color-accent-soft: rgba(216, 50, 61, 0.13);
+
+        --color-dark: #0a0a0a;
+        --color-white: #ffffff;
+
+        --shadow-sm:
+            0 4px 20px rgba(0, 0, 0, 0.22);
+
+        --shadow-md:
+            0 12px 40px rgba(0, 0, 0, 0.30);
+
+        --shadow-lg:
+            0 25px 70px rgba(0, 0, 0, 0.42);
+    }
+}

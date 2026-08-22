@@ -1,0 +1,607 @@
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .desktop-navigation {
+        display: none;
+    }
+
+
+    .hero-section {
+
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        padding-top:
+            calc(var(--header-height) + 60px);
+
+        gap: 40px;
+    }
+
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+
+    .hero-content h1 {
+        font-size: clamp(
+            3.1rem,
+            10vw,
+            5.5rem
+        );
+    }
+
+
+    .hero-visual {
+        min-height: 500px;
+    }
+
+
+    .experience-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    .experience-content {
+        max-width: 700px;
+    }
+
+
+    .reservation-section {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    :root {
+        --header-height: 64px;
+        --bottom-height: 66px;
+    }
+
+
+    .header-inner {
+        width: calc(100% - 28px);
+    }
+
+
+    .brand-symbol {
+        width: 28px;
+        height: 28px;
+    }
+
+
+    .brand-name {
+        font-size: 0.9rem;
+    }
+
+
+    .theme-popover {
+        right: 14px;
+    }
+
+
+    .side-menu-header {
+        padding: 22px;
+    }
+
+
+    .side-menu-content {
+        padding: 24px 22px;
+    }
+
+
+    .side-menu-footer {
+        padding: 18px 22px;
+    }
+
+
+    .hero-section {
+
+        width: calc(100% - 28px);
+
+        padding-top:
+            calc(var(--header-height) + 48px);
+
+        padding-bottom: 55px;
+
+        gap: 20px;
+    }
+
+
+    .hero-content h1 {
+
+        margin-top: 13px;
+
+        font-size: clamp(
+            3rem,
+            15vw,
+            4.8rem
+        );
+    }
+
+
+    .hero-content > p {
+
+        margin-top: 20px;
+
+        font-size: 0.86rem;
+
+        line-height: 1.7;
+    }
+
+
+    .hero-actions {
+
+        margin-top: 25px;
+    }
+
+
+    .hero-actions .button {
+
+        flex: 1;
+
+        min-width: 140px;
+    }
+
+
+    .hero-meta {
+
+        margin-top: 20px;
+
+        font-size: 0.65rem;
+    }
+
+
+    .hero-visual {
+        min-height: 370px;
+    }
+
+
+    .hero-label {
+        right: 2%;
+        bottom: 7%;
+
+        padding: 11px 14px;
+    }
+
+
+    .hero-label strong {
+        font-size: 0.8rem;
+    }
+
+
+    .section {
+
+        width: calc(100% - 28px);
+
+        padding-block: 65px;
+    }
+
+
+    .section-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 2.3rem;
+    }
+
+
+    .horizontal-scroll {
+
+        margin-right: -14px;
+
+        padding-right: 14px;
+    }
+
+
+    .dish-card {
+
+        flex-basis: 235px;
+    }
+
+
+    .dish-image {
+        height: 205px;
+    }
+
+
+    .experience-section {
+
+        width: calc(100% - 28px);
+
+        padding-block: 65px;
+    }
+
+
+    .experience-image {
+
+        min-height: 380px;
+    }
+
+
+    .experience-content h2 {
+        font-size: 2.5rem;
+    }
+
+
+    .reservation-section {
+
+        width: calc(100% - 28px);
+
+        margin:
+            20px
+            auto
+            110px;
+
+        padding: 38px 24px;
+    }
+
+
+    .reservation-section h2 {
+        font-size: 2.4rem;
+    }
+
+
+    .bottom-navigation {
+
+        bottom: 10px;
+
+        width: calc(100% - 20px);
+
+        height: 64px;
+
+        border-radius: 18px;
+    }
+
+
+    .bottom-nav-item small {
+        font-size: 0.57rem;
+    }
+
+
+    .bottom-nav-item > span {
+        font-size: 0.92rem;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+/* =========================================================
+   AVR — NOVAS SECÇÕES RESPONSIVAS
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .fine-dining-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .popular-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .gallery-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        grid-template-rows:
+            240px 240px;
+
+    }
+
+
+    .gallery-large {
+
+        grid-row: span 2;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .fine-dining-section,
+    .popular-section,
+    .gallery-section {
+
+        width: 90%;
+
+        margin-top: 80px;
+
+        margin-bottom: 80px;
+
+    }
+
+
+    .fine-dining-image {
+
+        height: 360px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .popular-section .section-heading,
+    .gallery-section .section-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+
+    }
+
+
+    .popular-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .gallery-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        grid-template-rows:
+            200px 200px 200px;
+
+    }
+
+
+    .gallery-large {
+
+        grid-column: span 2;
+
+        grid-row: span 1;
+
+    }
+
+}
+/* =========================================================
+   AVR — CARDÁPIO RESPONSIVO
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .menu-dishes-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .menu-page-hero {
+
+        margin-top: 120px;
+
+    }
+
+
+    .menu-page-hero h1 {
+
+        font-size: 58px;
+
+    }
+
+
+    .menu-section {
+
+        width: 90%;
+
+    }
+
+
+    .menu-dishes-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .menu-dish-image {
+
+        height: 250px;
+
+    }
+
+
+    .menu-cta {
+
+        width: 90%;
+
+        padding:
+            60px 22px;
+
+        border-radius: 22px;
+
+    }
+
+}
+
+/* =========================================================
+   AVR — PEDIDOS + RESERVAS RESPONSIVO
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .order-layout,
+    .reservation-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .order-summary {
+
+        position: static;
+
+    }
+
+
+    .reservation-info {
+
+        order: -1;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .order-page-hero,
+    .reservation-page-hero {
+
+        margin-top: 120px;
+
+    }
+
+
+    .order-page-hero h1,
+    .reservation-page-hero h1 {
+
+        font-size: 54px;
+
+    }
+
+
+    .order-layout,
+    .reservation-layout {
+
+        width: 90%;
+
+    }
+
+
+    .order-item {
+
+        grid-template-columns:
+            75px
+            1fr;
+
+    }
+
+
+    .order-item-image {
+
+        width: 75px;
+
+        height: 75px;
+
+    }
+
+
+    .order-item > div:last-child {
+
+        grid-column: 2;
+
+    }
+
+
+    .reservation-form-card {
+
+        padding: 25px 20px;
+
+    }
+
+
+    .reservation-fields {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+    }
+
+
+    .guest-selector {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+
+    .reservation-info-image {
+
+        height: 210px;
+
+    }
+
+
+    .reservation-info-content {
+
+        padding: 28px 22px;
+
+    }
+
+}

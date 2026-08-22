@@ -1,0 +1,594 @@
+/* =========================================================
+   ADONAI VANGADI RESTAURANT
+   PRATOS — DETALHE INTELIGENTE
+========================================================= */
+
+:root {
+    --dish-radius: 24px;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.dish-breadcrumb {
+    width: min(1180px, calc(100% - 40px));
+    margin: 35px auto 20px;
+}
+
+.dish-breadcrumb a {
+    color: inherit;
+    text-decoration: none;
+    opacity: .7;
+    font-size: .9rem;
+    transition: opacity .25s ease;
+}
+
+.dish-breadcrumb a:hover {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   DETAIL
+========================================================= */
+
+.dish-detail {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(380px, .95fr);
+    gap: 70px;
+    align-items: center;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.dish-main-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--dish-radius);
+    background: #e9e9e9;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .14);
+}
+
+.dish-main-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, .25),
+        transparent 35%
+    );
+    pointer-events: none;
+}
+
+.dish-main-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .7s ease;
+}
+
+.dish-main-image:hover img {
+    transform: scale(1.035);
+}
+
+
+.dish-badge {
+    position: absolute;
+    z-index: 2;
+    top: 22px;
+    left: 22px;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.92);
+    color: #111;
+
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.dish-information {
+    min-width: 0;
+}
+
+.dish-category {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+
+    opacity: .65;
+}
+
+
+.dish-information h1 {
+    margin: 0 0 18px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(2.6rem, 5vw, 5rem);
+    line-height: .98;
+    letter-spacing: -.04em;
+}
+
+
+.dish-description {
+    max-width: 650px;
+
+    margin: 0 0 28px;
+
+    font-size: 1.02rem;
+    line-height: 1.8;
+
+    opacity: .72;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.dish-price-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 35px;
+    padding: 18px 0;
+
+    border-top: 1px solid rgba(127,127,127,.2);
+    border-bottom: 1px solid rgba(127,127,127,.2);
+}
+
+.dish-price-box span {
+    font-size: .82rem;
+    opacity: .6;
+}
+
+.dish-price-box strong {
+    font-size: 1.5rem;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.dish-section {
+    margin-bottom: 32px;
+}
+
+.dish-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 18px;
+}
+
+.dish-section-heading > span {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(127,127,127,.1);
+}
+
+.dish-section-heading div > span {
+    font-size: .68rem;
+    letter-spacing: .13em;
+    font-weight: 700;
+    opacity: .55;
+}
+
+.dish-section-heading h2 {
+    margin: 2px 0 0;
+
+    font-family: "Playfair Display", serif;
+    font-size: 1.35rem;
+}
+
+
+/* =========================================================
+   INGREDIENTS
+========================================================= */
+
+.ingredients-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.ingredient-tag {
+    padding: 9px 13px;
+
+    border: 1px solid rgba(127,127,127,.18);
+    border-radius: 999px;
+
+    font-size: .8rem;
+
+    background: rgba(127,127,127,.055);
+}
+
+
+/* =========================================================
+   PURCHASE
+========================================================= */
+
+.dish-purchase {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    align-items: end;
+
+    margin-top: 25px;
+}
+
+
+.quantity-area > span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+
+    opacity: .55;
+}
+
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+
+    height: 56px;
+
+    border: 1px solid rgba(127,127,127,.22);
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+
+.quantity-control button {
+    width: 50px;
+    height: 100%;
+
+    border: 0;
+
+    background: transparent;
+    color: inherit;
+
+    font-size: 1.4rem;
+
+    cursor: pointer;
+
+    transition: background .2s ease;
+}
+
+.quantity-control button:hover {
+    background: rgba(127,127,127,.1);
+}
+
+
+.quantity-control strong {
+    min-width: 38px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   ADD BUTTON
+========================================================= */
+
+.add-order-button {
+    min-height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding-inline: 20px;
+
+    border: 0;
+
+    cursor: pointer;
+}
+
+.add-order-button strong {
+    opacity: .8;
+}
+
+.add-order-button.added {
+    transform: scale(.985);
+}
+
+
+/* =========================================================
+   FEEDBACK
+========================================================= */
+
+.dish-feedback {
+    min-height: 24px;
+
+    margin-top: 14px;
+
+    font-size: .85rem;
+
+    opacity: 0;
+    transform: translateY(-5px);
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+}
+
+.dish-feedback.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.dish-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 20px;
+}
+
+.dish-actions .button {
+    text-decoration: none;
+}
+
+.dish-back-link {
+    color: inherit;
+    text-decoration: none;
+
+    font-size: .85rem;
+
+    opacity: .65;
+
+    transition: opacity .2s ease;
+}
+
+.dish-back-link:hover {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.dish-experience {
+    width: min(1180px, calc(100% - 40px));
+
+    margin: 110px auto 100px;
+
+    padding: 50px;
+
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 50px;
+    align-items: center;
+
+    border-radius: 28px;
+
+    background: rgba(127,127,127,.07);
+}
+
+
+.experience-content h2 {
+    margin: 8px 0 12px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+
+.experience-content p {
+    max-width: 650px;
+
+    margin: 0;
+
+    line-height: 1.8;
+
+    opacity: .65;
+}
+
+
+.experience-card {
+    min-height: 180px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(127,127,127,.09);
+
+    text-align: center;
+}
+
+.experience-card span {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.experience-card strong {
+    margin-top: 10px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   NOT FOUND
+========================================================= */
+
+.dish-not-found {
+    width: min(700px, calc(100% - 40px));
+
+    margin: 100px auto;
+
+    text-align: center;
+}
+
+.dish-not-found > div {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.dish-not-found h1 {
+    margin: 10px 0;
+
+    font-family: "Playfair Display", serif;
+}
+
+.dish-not-found p {
+    margin-bottom: 30px;
+    line-height: 1.7;
+    opacity: .65;
+}
+
+.dish-not-found .button {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .dish-detail {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .dish-main-image {
+        aspect-ratio: 1 / .82;
+    }
+
+    .dish-information h1 {
+        font-size: clamp(2.6rem, 11vw, 4rem);
+    }
+
+    .dish-experience {
+        grid-template-columns: 1fr;
+        padding: 35px 25px;
+        margin-top: 70px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .dish-breadcrumb,
+    .dish-detail,
+    .dish-experience {
+        width: min(100% - 28px, 1180px);
+    }
+
+    .dish-breadcrumb {
+        margin-top: 25px;
+    }
+
+    .dish-main-image {
+        border-radius: 19px;
+    }
+
+    .dish-information h1 {
+        margin-bottom: 14px;
+    }
+
+    .dish-description {
+        font-size: .94rem;
+        line-height: 1.7;
+    }
+
+    .dish-price-box {
+        margin-bottom: 27px;
+    }
+
+    .dish-purchase {
+        grid-template-columns: 1fr;
+    }
+
+    .quantity-control {
+        width: 100%;
+    }
+
+    .quantity-control button {
+        flex: 1;
+    }
+
+    .quantity-control strong {
+        flex: 1;
+    }
+
+    .add-order-button {
+        width: 100%;
+    }
+
+    .dish-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dish-actions .button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .dish-back-link {
+        text-align: center;
+    }
+
+}
