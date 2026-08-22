@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#a71930"
+    >
+
+    <title>
+        Caixa — AVR Admin
+    </title>
+
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin/caixa.css"
+    >
+
+</head>
+
+
+<body class="admin-page admin-cash-page">
+
+
+<div class="admin-app">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="admin-header">
+
+        <div class="admin-header-left">
+
+            <a
+                href="index.html"
+                class="admin-brand"
+                aria-label="Voltar ao dashboard"
+            >
+
+                <span class="admin-brand-main">
+                    AVR
+                </span>
+
+                <span class="admin-brand-divider">
+                    /
+                </span>
+
+                <span class="admin-brand-section">
+                    ADMIN
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="admin-header-center">
+
+            <div class="admin-restaurant-status">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    Restaurante aberto
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-header-right">
+
+
+            <!-- =================================================
+                 APARÊNCIA
+            ================================================== -->
+
+            <div class="admin-theme-wrapper caixa-theme-wrapper">
+
+                <button
+                    type="button"
+                    class="admin-header-button caixa-theme-button"
+                    id="adminThemeButton"
+                    aria-label="Alterar aparência"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    title="Alterar aparência"
+                >
+                    ◐
+                </button>
+
+
+                <div
+                    class="admin-theme-menu caixa-theme-menu"
+                    id="adminThemeMenu"
+                    aria-hidden="true"
+                >
+
+                    <div class="admin-theme-menu-header">
+
+                        <span>
+                            
+                        </span>
+
+                        <small>
+                            
+                        </small>
+
+                    </div>
+
+
+                    <!-- AUTOMÁTICO -->
+
+                    <button
+                        type="button"
+                        class="admin-theme-option caixa-theme-option"
+                        data-theme-option="auto"
+                    >
+
+                        <span class="admin-theme-option-icon caixa-theme-option-icon">
+                            ◐
+                        </span>
+
+                        <span class="admin-theme-option-content caixa-theme-option-text">
+
+                            <strong>
+                                Automático
+                            </strong>
+
+                            <small>
+                                
+                            </small>
+
+                        </span>
+
+                        <span class="admin-theme-check caixa-theme-option-check">
+                            ✓
+                        </span>
+
+                    </button>
+
+
+                    <!-- CLARO -->
+
+                    <button
+                        type="button"
+                        class="admin-theme-option caixa-theme-option"
+                        data-theme-option="light"
+                    >
+
+                        <span class="admin-theme-option-icon caixa-theme-option-icon">
+                            ☀
+                        </span>
+
+                        <span class="admin-theme-option-content caixa-theme-option-text">
+
+                            <strong>
+                                Claro
+                            </strong>
+
+                            <small>
+                                
+                            </small>
+
+                        </span>
+
+                        <span class="admin-theme-check caixa-theme-option-check">
+                            ✓
+                        </span>
+
+                    </button>
+
+
+                    <!-- ESCURO -->
+
+                    <button
+                        type="button"
+                        class="admin-theme-option caixa-theme-option"
+                        data-theme-option="dark"
+                    >
+
+                        <span class="admin-theme-option-icon caixa-theme-option-icon">
+                            ☾
+                        </span>
+
+                        <span class="admin-theme-option-content caixa-theme-option-text">
+
+                            <strong>
+                                Escuro
+                            </strong>
+
+                            <small>
+                                
+                            </small>
+
+                        </span>
+
+                        <span class="admin-theme-check caixa-theme-option-check">
+                            ✓
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 MENU
+            ================================================== -->
+
+            <button
+                type="button"
+                class="admin-header-button admin-menu-button"
+                id="adminMenuButton"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         OVERLAY
+    ====================================================== -->
+
+    <div
+        class="admin-menu-overlay"
+        id="adminMenuOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="admin-sidebar"
+        id="adminSidebar"
+        aria-hidden="true"
+    >
+
+        <div class="admin-sidebar-header">
+
+            <div>
+
+                <span class="admin-sidebar-eyebrow">
+                    ADONAI VANGADIO
+                </span>
+
+                <h2>
+                    Administração
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="admin-close-button"
+                id="adminCloseMenu"
+                aria-label="Fechar menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <div class="admin-sidebar-content">
+
+
+            <!-- VISÃO GERAL -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Visão geral
+                </span>
+
+
+                <a
+                    href="index.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ⌂
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- OPERAÇÃO -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Operação
+                </span>
+
+
+                <a
+                    href="pedidos.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ◇
+                    </span>
+
+                    <span>
+                        Pedidos
+                    </span>
+
+                    <small
+                        class="admin-side-count"
+                        id="sidebarOrderCount"
+                    >
+                        0
+                    </small>
+
+                </a>
+
+
+                <a
+                    href="cozinha.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ♨
+                    </span>
+
+                    <span>
+                        Cozinha
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="mesas.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ▣
+                    </span>
+
+                    <span>
+                        Mesas
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="caixa.html"
+                    class="admin-side-link active"
+                >
+
+                    <span class="admin-side-icon">
+                        ▤
+                    </span>
+
+                    <span>
+                        Caixa
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- GESTÃO -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Gestão
+                </span>
+
+
+                <a
+                    href="estoque.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        Estoque
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="relatorios.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ◫
+                    </span>
+
+                    <span>
+                        Relatórios
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- SISTEMA -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Sistema
+                </span>
+
+
+                <a
+                    href="../../index.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ↗
+                    </span>
+
+                    <span>
+                        Ver site público
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="admin-side-link admin-side-button"
+                    id="adminThemeMenuButton"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+
+                    <span class="admin-side-icon">
+                        ◐
+                    </span>
+
+                    <span>
+                        Aparência
+                    </span>
+
+                    <small id="adminThemeLabel">
+                        Automático
+                    </small>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- CONTA -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Conta
+                </span>
+
+
+                <button
+                    type="button"
+                    class="admin-side-link admin-side-button admin-logout"
+                    id="adminLogoutButton"
+                >
+
+                    <span class="admin-side-icon">
+                        ⇥
+                    </span>
+
+                    <span>
+                        Terminar sessão
+                    </span>
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="admin-sidebar-footer">
+
+            <span>
+                AVR ADMIN
+            </span>
+
+            <small>
+                Sabores que ficam na memória.
+            </small>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
+    <main class="admin-main admin-cash-main">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="cash-hero">
+
+            <div class="cash-hero-copy">
+
+                <span class="admin-eyebrow">
+                    GESTÃO FINANCEIRA
+                </span>
+
+                <h1>
+                    Caixa
+                </h1>
+
+                <p>
+                    Acompanhe entradas, saídas e o movimento
+                    financeiro do restaurante.
+                </p>
+
+            </div>
+
+
+            <div class="cash-hero-actions">
+
+                <div class="cash-date-card">
+
+                    <span>
+                        HOJE
+                    </span>
+
+                    <strong id="cashCurrentDate">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="cash-action-button"
+                    id="cashAddButton"
+                >
+
+                    <span>
+                        +
+                    </span>
+
+                    Novo movimento
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESUMO FINANCEIRO
+        ================================================== -->
+
+        <section class="cash-kpi-grid">
+
+
+            <article class="cash-kpi-card cash-kpi-main">
+
+                <div class="cash-kpi-top">
+
+                    <span>
+                        Saldo do caixa
+                    </span>
+
+                    <span class="cash-kpi-icon">
+                        Kz
+                    </span>
+
+                </div>
+
+                <strong id="cashBalance">
+                    0 Kz
+                </strong>
+
+                <small>
+                    movimento acumulado
+                </small>
+
+            </article>
+
+
+            <article class="cash-kpi-card cash-income">
+
+                <div class="cash-kpi-top">
+
+                    <span>
+                        Entradas
+                    </span>
+
+                    <span class="cash-kpi-icon">
+                        ↑
+                    </span>
+
+                </div>
+
+                <strong id="cashIncome">
+                    0 Kz
+                </strong>
+
+                <small>
+                    receitas registadas
+                </small>
+
+            </article>
+
+
+            <article class="cash-kpi-card cash-expense">
+
+                <div class="cash-kpi-top">
+
+                    <span>
+                        Saídas
+                    </span>
+
+                    <span class="cash-kpi-icon">
+                        ↓
+                    </span>
+
+                </div>
+
+                <strong id="cashExpenses">
+                    0 Kz
+                </strong>
+
+                <small>
+                    despesas registadas
+                </small>
+
+            </article>
+
+
+            <article class="cash-kpi-card">
+
+                <div class="cash-kpi-top">
+
+                    <span>
+                        Pedidos pagos
+                    </span>
+
+                    <span class="cash-kpi-icon">
+                        ✓
+                    </span>
+
+                </div>
+
+                <strong id="cashPaidOrders">
+                    0
+                </strong>
+
+                <small>
+                    pedidos contabilizados
+                </small>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             MOVIMENTO + MÉTODOS
+        ================================================== -->
+
+        <section class="cash-dashboard-grid">
+
+
+            <article class="admin-panel cash-movement-panel">
+
+                <div class="admin-panel-header">
+
+                    <div>
+
+                        <span class="admin-eyebrow">
+                            MOVIMENTO
+                        </span>
+
+                        <h2>
+                            Movimento financeiro
+                        </h2>
+
+                    </div>
+
+
+                    <span
+                        class="cash-status-badge"
+                        id="cashStatus"
+                    >
+                        Caixa ativo
+                    </span>
+
+                </div>
+
+
+                <div class="cash-flow-chart">
+
+                    <div class="cash-chart-y">
+
+                        <span>100k</span>
+                        <span>75k</span>
+                        <span>50k</span>
+                        <span>25k</span>
+                        <span>0</span>
+
+                    </div>
+
+
+                    <div
+                        class="cash-chart-area"
+                        id="cashChart"
+                    ></div>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="admin-panel cash-methods-panel">
+
+                <div class="admin-panel-header">
+
+                    <div>
+
+                        <span class="admin-eyebrow">
+                            PAGAMENTOS
+                        </span>
+
+                        <h2>
+                            Métodos utilizados
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="cash-method-list">
+
+                    <div class="cash-method-item">
+
+                        <div class="cash-method-icon">
+                            Kz
+                        </div>
+
+                        <div class="cash-method-info">
+
+                            <strong>
+                                Dinheiro
+                            </strong>
+
+                            <small id="methodCash">
+                                0 Kz
+                            </small>
+
+                        </div>
+
+                        <span
+                            id="methodCashPercent"
+                            class="cash-method-percent"
+                        >
+                            0%
+                        </span>
+
+                    </div>
+
+
+                    <div class="cash-method-item">
+
+                        <div class="cash-method-icon">
+                            ▣
+                        </div>
+
+                        <div class="cash-method-info">
+
+                            <strong>
+                                Multicaixa
+                            </strong>
+
+                            <small id="methodCard">
+                                0 Kz
+                            </small>
+
+                        </div>
+
+                        <span
+                            id="methodCardPercent"
+                            class="cash-method-percent"
+                        >
+                            0%
+                        </span>
+
+                    </div>
+
+
+                    <div class="cash-method-item">
+
+                        <div class="cash-method-icon">
+                            ↗
+                        </div>
+
+                        <div class="cash-method-info">
+
+                            <strong>
+                                Transferência
+                            </strong>
+
+                            <small id="methodTransfer">
+                                0 Kz
+                            </small>
+
+                        </div>
+
+                        <span
+                            id="methodTransferPercent"
+                            class="cash-method-percent"
+                        >
+                            0%
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FILTROS
+        ================================================== -->
+
+        <section class="admin-panel cash-filter-panel">
+
+            <div class="cash-filter-heading">
+
+                <div>
+
+                    <span class="admin-eyebrow">
+                        HISTÓRICO
+                    </span>
+
+                    <h2>
+                        Movimentos do caixa
+                    </h2>
+
+                </div>
+
+
+                <span
+                    id="cashMovementCount"
+                    class="cash-filter-count"
+                >
+                    0 movimentos
+                </span>
+
+            </div>
+
+
+            <div class="cash-filters">
+
+                <button
+                    type="button"
+                    class="cash-filter-button active"
+                    data-cash-filter="all"
+                >
+                    Todos
+                </button>
+
+                <button
+                    type="button"
+                    class="cash-filter-button"
+                    data-cash-filter="income"
+                >
+                    Entradas
+                </button>
+
+                <button
+                    type="button"
+                    class="cash-filter-button"
+                    data-cash-filter="expense"
+                >
+                    Saídas
+                </button>
+
+                <button
+                    type="button"
+                    class="cash-filter-button"
+                    data-cash-filter="orders"
+                >
+                    Pedidos
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             TABELA
+        ================================================== -->
+
+        <section class="admin-panel cash-table-panel">
+
+            <div class="cash-table-wrapper">
+
+                <table class="cash-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Movimento</th>
+                            <th>Tipo</th>
+                            <th>Data</th>
+                            <th>Método</th>
+                            <th>Valor</th>
+                            <th>Estado</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="cashTransactionsTable">
+
+                        <tr>
+
+                            <td
+                                colspan="6"
+                                class="cash-table-empty"
+                            >
+
+                                <span>
+                                    ◇
+                                </span>
+
+                                <strong>
+                                    Nenhum movimento registado
+                                </strong>
+
+                                <small>
+                                    Os movimentos financeiros aparecerão
+                                    aqui automaticamente.
+                                </small>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FECHO DO CAIXA
+        ================================================== -->
+
+        <section class="cash-closing-card">
+
+            <div class="cash-closing-copy">
+
+                <span class="admin-eyebrow">
+                    FECHO DO DIA
+                </span>
+
+                <h2>
+                    Conferência do caixa
+                </h2>
+
+                <p id="cashClosingText">
+                    O caixa está pronto para receber movimentos.
+                    No final do expediente poderá conferir o total.
+                </p>
+
+            </div>
+
+
+            <div class="cash-closing-value">
+
+                <span>
+                    Saldo atual
+                </span>
+
+                <strong id="cashClosingBalance">
+                    0 Kz
+                </strong>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="cash-closing-button"
+                id="cashClosingButton"
+            >
+                Conferir caixa
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         NAVEGAÇÃO MOBILE
+    ====================================================== -->
+
+    <nav
+        class="admin-bottom-navigation"
+        aria-label="Navegação administrativa"
+    >
+
+        <a
+            href="index.html"
+            class="admin-bottom-item"
+        >
+
+            <span>⌂</span>
+
+            <small>
+                Início
+            </small>
+
+        </a>
+
+
+        <a
+            href="pedidos.html"
+            class="admin-bottom-item"
+        >
+
+            <span class="admin-bottom-order">
+
+                ◇
+
+                <b id="bottomOrderCount">
+                    0
+                </b>
+
+            </span>
+
+            <small>
+                Pedidos
+            </small>
+
+        </a>
+
+
+        <a
+            href="cozinha.html"
+            class="admin-bottom-item"
+        >
+
+            <span>♨</span>
+
+            <small>
+                Cozinha
+            </small>
+
+        </a>
+
+
+        <a
+            href="mesas.html"
+            class="admin-bottom-item"
+        >
+
+            <span>▣</span>
+
+            <small>
+                Mesas
+            </small>
+
+        </a>
+
+
+        <button
+            type="button"
+            class="admin-bottom-item"
+            id="adminBottomMore"
+        >
+
+            <span>
+                •••
+            </span>
+
+            <small>
+                Mais
+            </small>
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="admin-footer">
+
+        <div>
+
+            <strong>
+                AVR ADMIN
+            </strong>
+
+            <span>
+                Sistema de gestão do restaurante
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                Última atualização
+            </span>
+
+            <strong id="adminLastUpdate">
+                agora
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                © 2026 AVR
+            </span>
+
+        </div>
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="../../js/tema.js"></script>
+
+<script src="../../js/admin/caixa.js"></script>
+
+
+</body>
+
+</html>
