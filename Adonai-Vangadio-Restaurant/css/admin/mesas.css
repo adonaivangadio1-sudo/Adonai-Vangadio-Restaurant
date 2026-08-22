@@ -1,0 +1,911 @@
+/* =========================================================
+   AVR ADMIN — MESAS
+========================================================= */
+
+.admin-tables-page {
+    --tables-red: #a71930;
+    --tables-red-dark: #861126;
+    --tables-bg: #f5f5f3;
+    --tables-surface: #ffffff;
+    --tables-surface-soft: #fafafa;
+    --tables-text: #171717;
+    --tables-muted: #747474;
+    --tables-border: rgba(23, 23, 23, 0.09);
+    --tables-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.tables-hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 34px;
+}
+
+.tables-hero-copy h1 {
+    margin: 7px 0 8px;
+    color: var(--tables-text);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1;
+}
+
+.tables-hero-copy p {
+    max-width: 620px;
+    margin: 0;
+    color: var(--tables-muted);
+    line-height: 1.7;
+}
+
+.tables-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tables-date-card {
+    min-width: 150px;
+    padding: 13px 17px;
+    border: 1px solid var(--tables-border);
+    border-radius: 14px;
+    background: var(--tables-surface);
+    box-shadow: var(--tables-shadow);
+}
+
+.tables-date-card span {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--tables-red);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+
+.tables-date-card strong {
+    color: var(--tables-text);
+    font-size: 14px;
+}
+
+.tables-action-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 47px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 13px;
+    background: var(--tables-red);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.tables-action-button:hover {
+    background: var(--tables-red-dark);
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   KPI
+========================================================= */
+
+.tables-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.tables-kpi-card {
+    min-height: 145px;
+    padding: 21px;
+    border: 1px solid var(--tables-border);
+    border-radius: 18px;
+    background: var(--tables-surface);
+    box-shadow: var(--tables-shadow);
+}
+
+.tables-kpi-card.tables-kpi-main {
+    border-color: rgba(167, 25, 48, .2);
+}
+
+.tables-kpi-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--tables-muted);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.tables-kpi-icon {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border-radius: 10px;
+    background: rgba(167, 25, 48, .1);
+    color: var(--tables-red);
+    font-weight: 800;
+}
+
+.tables-kpi-card > strong {
+    display: block;
+    margin: 18px 0 5px;
+    color: var(--tables-text);
+    font-size: 30px;
+    line-height: 1;
+}
+
+.tables-kpi-card > small {
+    color: var(--tables-muted);
+}
+
+
+/* =========================================================
+   PAINÉIS
+========================================================= */
+
+.tables-floor-panel,
+.tables-management-grid,
+.tables-detail-panel {
+    margin-bottom: 20px;
+}
+
+.tables-panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 24px;
+}
+
+.tables-panel-header.compact {
+    margin-bottom: 18px;
+}
+
+.tables-panel-header h2 {
+    margin: 6px 0 5px;
+    color: var(--tables-text);
+    font-size: 21px;
+}
+
+.tables-panel-header p {
+    margin: 0;
+    color: var(--tables-muted);
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   LEGENDA
+========================================================= */
+
+.tables-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px 18px;
+    color: var(--tables-muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tables-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.table-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.table-legend-dot.free {
+    background: #b7b7b7;
+}
+
+.table-legend-dot.occupied {
+    background: var(--tables-red);
+}
+
+.table-legend-dot.reserved {
+    background: #c98b20;
+}
+
+.table-legend-dot.service {
+    background: #4777a8;
+}
+
+
+/* =========================================================
+   GRELHA DE MESAS
+========================================================= */
+
+.tables-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.table-card {
+    position: relative;
+    min-height: 158px;
+    padding: 18px;
+    overflow: hidden;
+    border: 1px solid var(--tables-border);
+    border-radius: 17px;
+    background: var(--tables-surface-soft);
+    color: var(--tables-text);
+    text-align: left;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.table-card:hover {
+    border-color: rgba(167, 25, 48, .35);
+    transform: translateY(-2px);
+}
+
+.table-card.selected {
+    border-color: var(--tables-red);
+    box-shadow: 0 0 0 2px rgba(167, 25, 48, .12);
+}
+
+.table-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table-number {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.table-status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.table-card-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 19px;
+    color: var(--tables-muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.table-card-capacity {
+    display: block;
+    margin-top: 9px;
+    color: var(--tables-muted);
+    font-size: 12px;
+}
+
+.table-card.free .table-status-dot {
+    background: #a9a9a9;
+}
+
+.table-card.occupied {
+    border-color: rgba(167, 25, 48, .22);
+}
+
+.table-card.occupied .table-status-dot {
+    background: var(--tables-red);
+}
+
+.table-card.reserved .table-status-dot {
+    background: #c98b20;
+}
+
+.table-card.service .table-status-dot {
+    background: #4777a8;
+}
+
+
+/* =========================================================
+   CONTROLO
+========================================================= */
+
+.tables-management-grid {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 20px;
+}
+
+.tables-filter-list {
+    display: grid;
+    gap: 7px;
+}
+
+.tables-filter-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 47px;
+    padding: 0 13px;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    background: transparent;
+    color: var(--tables-muted);
+    font: inherit;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+}
+
+.tables-filter-button span {
+    width: 24px;
+    color: var(--tables-red);
+    text-align: center;
+}
+
+.tables-filter-button b {
+    margin-left: auto;
+    color: var(--tables-muted);
+    font-size: 12px;
+}
+
+.tables-filter-button:hover,
+.tables-filter-button.active {
+    border-color: rgba(167, 25, 48, .12);
+    background: rgba(167, 25, 48, .07);
+    color: var(--tables-text);
+}
+
+.tables-summary-content {
+    display: grid;
+    gap: 24px;
+}
+
+.tables-progress-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 9px;
+    color: var(--tables-muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tables-progress-top strong {
+    color: var(--tables-red);
+}
+
+.tables-progress-track {
+    height: 9px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(127, 127, 127, .14);
+}
+
+.tables-progress-track span {
+    display: block;
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--tables-red);
+    transition: width .35s ease;
+}
+
+.tables-summary-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.tables-summary-stats div {
+    padding: 13px;
+    border: 1px solid var(--tables-border);
+    border-radius: 12px;
+}
+
+.tables-summary-stats span {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--tables-muted);
+    font-size: 11px;
+}
+
+.tables-summary-stats strong {
+    color: var(--tables-text);
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   DETALHES
+========================================================= */
+
+.tables-detail-panel {
+    min-height: 175px;
+}
+
+.tables-detail-empty {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-height: 130px;
+}
+
+.tables-detail-icon {
+    display: grid;
+    width: 58px;
+    height: 58px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 16px;
+    background: rgba(167, 25, 48, .1);
+    color: var(--tables-red);
+    font-size: 25px;
+}
+
+.tables-detail-empty h2 {
+    margin: 7px 0;
+    color: var(--tables-text);
+    font-size: 20px;
+}
+
+.tables-detail-empty p {
+    margin: 0;
+    color: var(--tables-muted);
+}
+
+
+/* =========================================================
+   RODAPÉ VISUAL
+========================================================= */
+
+.tables-footer-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 35px;
+    padding: 28px;
+    border-radius: 20px;
+    background: var(--tables-text);
+    color: #fff;
+}
+
+.tables-footer-card h2 {
+    margin: 7px 0;
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+}
+
+.tables-footer-card p {
+    max-width: 620px;
+    margin: 0;
+    color: rgba(255,255,255,.68);
+    line-height: 1.6;
+}
+
+.tables-footer-mark {
+    color: var(--tables-red);
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"] .admin-tables-page,
+body.dark-mode.admin-tables-page {
+    --tables-bg: #0a0a0a;
+    --tables-surface: #151515;
+    --tables-surface-soft: #111111;
+    --tables-text: #f5f5f5;
+    --tables-muted: #b7b7b7;
+    --tables-border: rgba(255,255,255,.1);
+    --tables-shadow: 0 15px 45px rgba(0,0,0,.3);
+}
+
+html[data-theme="dark"] .tables-footer-card,
+body.dark-mode.admin-tables-page .tables-footer-card {
+    background: #1b1b1b;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .tables-kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tables-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .tables-hero {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tables-hero-actions {
+        width: 100%;
+    }
+
+    .tables-date-card {
+        flex: 1;
+    }
+
+    .tables-management-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tables-panel-header {
+        flex-direction: column;
+    }
+
+    .tables-legend {
+        justify-content: flex-start;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .tables-kpi-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tables-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .table-card {
+        min-height: 140px;
+    }
+
+    .tables-summary-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .tables-footer-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 430px) {
+
+    .tables-kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tables-hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .tables-date-card {
+        width: 100%;
+    }
+
+    .tables-action-button {
+        justify-content: center;
+    }
+
+}
+
+/* =====================================================
+   AVR ADMIN — AJUSTE FINAL MESAS
+   APARÊNCIA + VISIBILIDADE + BOTÃO ATUALIZAR
+===================================================== */
+
+
+/* =====================================================
+   MENU DE APARÊNCIA
+===================================================== */
+
+.admin-tables-page .admin-theme-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.admin-tables-page .admin-theme-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 205px;
+
+    padding: 7px;
+
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    border-radius: 14px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.14);
+
+    z-index: 99999;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-7px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+}
+
+
+/* ABERTO PELO JAVASCRIPT */
+
+.admin-tables-page .admin-theme-menu[aria-hidden="false"],
+.admin-tables-page .admin-theme-wrapper
+.admin-header-button[aria-expanded="true"]
++ .admin-theme-menu {
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   OPÇÕES
+===================================================== */
+
+.admin-tables-page .admin-theme-option {
+
+    width: 100%;
+
+    min-height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px 10px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #1b1b1b;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease;
+}
+
+
+.admin-tables-page .admin-theme-option:hover {
+    background: rgba(167, 25, 48, 0.08);
+}
+
+
+.admin-tables-page .admin-theme-option-icon {
+
+    width: 24px;
+    min-width: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #a71930;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+.admin-tables-page .admin-theme-option-content {
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.admin-tables-page
+.admin-theme-option-content strong {
+
+    color: inherit;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.admin-tables-page .admin-theme-check {
+
+    color: #a71930;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    opacity: 0;
+}
+
+
+.admin-tables-page
+.admin-theme-option.active
+.admin-theme-check,
+
+.admin-tables-page
+.admin-theme-option[aria-selected="true"]
+.admin-theme-check {
+
+    opacity: 1;
+}
+
+
+/* =====================================================
+   MODO ESCURO
+===================================================== */
+
+[data-theme="dark"]
+.admin-tables-page .admin-theme-menu {
+
+    background: #111111;
+
+    border-color:
+        rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.50);
+}
+
+
+[data-theme="dark"]
+.admin-tables-page .admin-theme-option {
+
+    color: #f5f5f5;
+}
+
+
+[data-theme="dark"]
+.admin-tables-page
+.admin-theme-option:hover {
+
+    background:
+        rgba(167, 25, 48, 0.18);
+}
+
+
+/* =====================================================
+   FALLBACK PARA SISTEMAS QUE USAM .dark
+===================================================== */
+
+.dark
+.admin-tables-page .admin-theme-menu {
+
+    background: #111111;
+
+    border-color:
+        rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.50);
+}
+
+
+.dark
+.admin-tables-page .admin-theme-option {
+
+    color: #f5f5f5;
+}
+
+
+/* =====================================================
+   BOTÃO ATUALIZAR
+===================================================== */
+
+.admin-tables-page
+#tablesRefreshButton {
+
+    position: relative;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.admin-tables-page
+#tablesRefreshButton:hover {
+
+    transform: translateY(-1px);
+}
+
+
+.admin-tables-page
+#tablesRefreshButton.is-loading {
+
+    pointer-events: none;
+
+    opacity: 0.7;
+}
+
+
+.admin-tables-page
+#tablesRefreshButton.is-loading span:first-child {
+
+    display: inline-flex;
+
+    animation:
+        tablesRefreshRotation 0.7s linear infinite;
+}
+
+
+@keyframes tablesRefreshRotation {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .admin-tables-page
+    .admin-theme-menu {
+
+        position: fixed;
+
+        top: 68px;
+        right: 14px;
+
+        width: 205px;
+
+        z-index: 100000;
+    }
+
+}

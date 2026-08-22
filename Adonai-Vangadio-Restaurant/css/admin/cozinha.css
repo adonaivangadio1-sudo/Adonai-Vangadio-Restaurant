@@ -1,0 +1,904 @@
+/* =========================================================
+   AVR ADMIN — COZINHA
+   ========================================================= */
+
+.admin-kitchen-page {
+    --kitchen-accent: #a71930;
+    --kitchen-accent-soft: rgba(167, 25, 48, 0.10);
+    --kitchen-success: #21865b;
+    --kitchen-warning: #c78319;
+    --kitchen-danger: #b52b36;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.kitchen-hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 28px;
+}
+
+.kitchen-hero-copy {
+    max-width: 760px;
+}
+
+.kitchen-hero-copy h1 {
+    margin: 5px 0 8px;
+}
+
+.kitchen-hero-copy p {
+    margin: 0;
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+.kitchen-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.kitchen-status-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 54px;
+    padding: 9px 15px;
+    border: 1px solid rgba(127, 127, 127, 0.20);
+    border-radius: 14px;
+    background: var(--admin-surface, #fff);
+}
+
+.kitchen-status-card > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.kitchen-status-card span:not(.kitchen-status-dot) {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    opacity: .58;
+}
+
+.kitchen-status-card strong {
+    font-size: 13px;
+}
+
+.kitchen-status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--kitchen-success);
+    box-shadow: 0 0 0 5px rgba(33, 134, 91, .10);
+}
+
+.kitchen-refresh-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 54px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 14px;
+    background: var(--kitchen-accent);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+.kitchen-refresh-button:hover {
+    transform: translateY(-1px);
+}
+
+.kitchen-refresh-button:active {
+    transform: translateY(0);
+}
+
+.kitchen-refresh-button span {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   KPI
+   ========================================================= */
+
+.kitchen-kpi-grid {
+    display: grid;
+    grid-template-columns: 1.25fr repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.kitchen-kpi-card {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid rgba(127, 127, 127, 0.18);
+    border-radius: 18px;
+    background: var(--admin-surface, #fff);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .035);
+}
+
+.kitchen-kpi-main {
+    border-color: rgba(167, 25, 48, .25);
+    box-shadow: 0 12px 32px rgba(167, 25, 48, .07);
+}
+
+.kitchen-kpi-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 17px;
+}
+
+.kitchen-kpi-top > span:first-child {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.kitchen-kpi-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: var(--kitchen-accent-soft);
+    color: var(--kitchen-accent);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.kitchen-kpi-card strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--admin-text, #181818);
+    font-size: 27px;
+    line-height: 1;
+}
+
+.kitchen-kpi-card small {
+    font-size: 12px;
+    opacity: .58;
+}
+
+
+/* =========================================================
+   PAINÉIS
+   ========================================================= */
+
+.kitchen-control-panel {
+    margin-bottom: 22px;
+}
+
+.kitchen-panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px 24px 0;
+}
+
+.kitchen-panel-header.compact {
+    padding-bottom: 0;
+}
+
+.kitchen-panel-header h2 {
+    margin: 5px 0 6px;
+}
+
+.kitchen-panel-header p {
+    margin: 0;
+    max-width: 650px;
+    line-height: 1.6;
+    opacity: .62;
+}
+
+.kitchen-view-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 7px;
+}
+
+.kitchen-filter-button {
+    min-height: 38px;
+    padding: 0 13px;
+    border: 1px solid rgba(127, 127, 127, .20);
+    border-radius: 10px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.kitchen-filter-button:hover {
+    border-color: rgba(167, 25, 48, .35);
+    color: var(--kitchen-accent);
+}
+
+.kitchen-filter-button.active {
+    border-color: var(--kitchen-accent);
+    background: var(--kitchen-accent);
+    color: #fff;
+}
+
+
+/* =========================================================
+   GRELHA DE PEDIDOS
+   ========================================================= */
+
+.kitchen-orders-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding: 24px;
+}
+
+.kitchen-order-card {
+    position: relative;
+    padding: 18px;
+    border: 1px solid rgba(127, 127, 127, .18);
+    border-radius: 16px;
+    background: var(--admin-surface, #fff);
+    cursor: pointer;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.kitchen-order-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(167, 25, 48, .30);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .06);
+}
+
+.kitchen-order-card.selected {
+    border-color: var(--kitchen-accent);
+    box-shadow: 0 0 0 3px var(--kitchen-accent-soft);
+}
+
+.kitchen-order-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.kitchen-order-number {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.kitchen-order-number span {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    opacity: .50;
+}
+
+.kitchen-order-number strong {
+    font-size: 18px;
+}
+
+.kitchen-order-state {
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: var(--kitchen-accent-soft);
+    color: var(--kitchen-accent);
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.kitchen-order-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    opacity: .64;
+}
+
+.kitchen-order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-top: 13px;
+    border-top: 1px solid rgba(127, 127, 127, .13);
+}
+
+.kitchen-order-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.kitchen-order-item strong {
+    font-weight: 700;
+}
+
+.kitchen-order-item span {
+    opacity: .62;
+}
+
+.kitchen-order-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 13px;
+    border-top: 1px solid rgba(127, 127, 127, .13);
+}
+
+.kitchen-order-time {
+    font-size: 11px;
+    opacity: .60;
+}
+
+.kitchen-order-action {
+    border: 0;
+    border-radius: 9px;
+    padding: 8px 11px;
+    background: var(--kitchen-accent);
+    color: #fff;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   ESTADO VAZIO
+   ========================================================= */
+
+.kitchen-empty-state {
+    padding: 55px 24px 60px;
+    text-align: center;
+}
+
+.kitchen-empty-state > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 14px;
+    border-radius: 17px;
+    background: var(--kitchen-accent-soft);
+    color: var(--kitchen-accent);
+    font-size: 24px;
+}
+
+.kitchen-empty-state strong,
+.kitchen-empty-state small {
+    display: block;
+}
+
+.kitchen-empty-state strong {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.kitchen-empty-state small {
+    opacity: .58;
+}
+
+
+/* =========================================================
+   GESTÃO
+   ========================================================= */
+
+.kitchen-management-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 22px;
+}
+
+.kitchen-priority-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 16px 24px 24px;
+}
+
+.kitchen-priority-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(127, 127, 127, .13);
+}
+
+.kitchen-priority-item:last-child {
+    border-bottom: 0;
+}
+
+.kitchen-priority-main {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+}
+
+.kitchen-priority-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    border-radius: 10px;
+    background: var(--kitchen-accent-soft);
+    color: var(--kitchen-accent);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.kitchen-priority-main div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.kitchen-priority-main strong {
+    font-size: 13px;
+}
+
+.kitchen-priority-main small {
+    opacity: .58;
+}
+
+.kitchen-priority-time {
+    font-size: 11px;
+    font-weight: 700;
+    opacity: .65;
+    white-space: nowrap;
+}
+
+.kitchen-performance-content {
+    padding: 20px 24px 24px;
+}
+
+.kitchen-performance-progress {
+    margin-bottom: 22px;
+}
+
+.kitchen-performance-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 9px;
+}
+
+.kitchen-performance-top span {
+    font-size: 12px;
+    opacity: .68;
+}
+
+.kitchen-performance-top strong {
+    color: var(--kitchen-accent);
+}
+
+.kitchen-performance-track {
+    height: 8px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(127, 127, 127, .16);
+}
+
+.kitchen-performance-track span {
+    display: block;
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--kitchen-accent);
+    transition: width .35s ease;
+}
+
+.kitchen-performance-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.kitchen-performance-stats > div {
+    padding: 13px;
+    border: 1px solid rgba(127, 127, 127, .15);
+    border-radius: 12px;
+}
+
+.kitchen-performance-stats span,
+.kitchen-performance-stats strong {
+    display: block;
+}
+
+.kitchen-performance-stats span {
+    margin-bottom: 5px;
+    font-size: 10px;
+    opacity: .56;
+}
+
+.kitchen-performance-stats strong {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   DETALHE
+   ========================================================= */
+
+.kitchen-detail-panel {
+    margin-bottom: 22px;
+}
+
+.kitchen-detail-empty {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 32px 24px;
+}
+
+.kitchen-detail-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    border-radius: 17px;
+    background: var(--kitchen-accent-soft);
+    color: var(--kitchen-accent);
+    font-size: 22px;
+}
+
+.kitchen-detail-empty h2 {
+    margin: 5px 0 6px;
+}
+
+.kitchen-detail-empty p {
+    margin: 0;
+    opacity: .60;
+}
+
+
+/* =========================================================
+   RODAPÉ DA PÁGINA
+   ========================================================= */
+
+.kitchen-footer-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 35px;
+    padding: 26px;
+    border: 1px solid rgba(167, 25, 48, .20);
+    border-radius: 20px;
+    background: var(--kitchen-accent-soft);
+}
+
+.kitchen-footer-card h2 {
+    margin: 5px 0 7px;
+}
+
+.kitchen-footer-card p {
+    margin: 0;
+    max-width: 650px;
+    line-height: 1.6;
+    opacity: .68;
+}
+
+.kitchen-footer-mark {
+    color: var(--kitchen-accent);
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+
+
+/* =========================================================
+   TEMA ESCURO
+   ========================================================= */
+
+html[data-theme="dark"] .admin-kitchen-page,
+body.dark-mode .admin-kitchen-page {
+    --kitchen-accent-soft: rgba(220, 48, 73, .14);
+}
+
+html[data-theme="dark"] .kitchen-kpi-card,
+html[data-theme="dark"] .kitchen-status-card,
+html[data-theme="dark"] .kitchen-order-card,
+body.dark-mode .kitchen-kpi-card,
+body.dark-mode .kitchen-status-card,
+body.dark-mode .kitchen-order-card {
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .kitchen-kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kitchen-orders-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .kitchen-hero,
+    .kitchen-panel-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .kitchen-hero-actions {
+        width: 100%;
+    }
+
+    .kitchen-status-card {
+        flex: 1;
+    }
+
+    .kitchen-refresh-button {
+        flex: 0 0 auto;
+    }
+
+    .kitchen-view-controls {
+        justify-content: flex-start;
+    }
+
+    .kitchen-management-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 620px) {
+
+    .kitchen-kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kitchen-orders-grid {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+
+    .kitchen-panel-header {
+        padding: 20px 18px 0;
+    }
+
+    .kitchen-performance-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .kitchen-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .kitchen-status-card,
+    .kitchen-refresh-button {
+        width: 100%;
+    }
+
+    .kitchen-detail-empty {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .kitchen-footer-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+/* =========================================================
+   COZINHA — MENU DE APARÊNCIA
+   ========================================================= */
+
+.admin-theme-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#adminThemeButton {
+    position: relative;
+    z-index: 1002;
+}
+
+.admin-theme-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 190px;
+    padding: 8px;
+    border: 1px solid rgba(127, 127, 127, 0.18);
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px) scale(0.98);
+    transform-origin: top right;
+    transition:
+        opacity 0.18s ease,
+        visibility 0.18s ease,
+        transform 0.18s ease;
+    z-index: 1001;
+}
+
+.admin-theme-menu.is-open,
+.admin-theme-menu[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+.admin-theme-option {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 9px 10px;
+    border: 0;
+    border-radius: 11px;
+    background: transparent;
+    color: #171717;
+    cursor: pointer;
+    text-align: left;
+    transition:
+        background 0.18s ease,
+        color 0.18s ease;
+}
+
+.admin-theme-option:hover {
+    background: rgba(167, 25, 48, 0.08);
+}
+
+.admin-theme-option-icon {
+    width: 24px;
+    flex: 0 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a71930;
+    font-size: 17px;
+}
+
+.admin-theme-option-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.admin-theme-option-content strong {
+    display: block;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.admin-theme-check {
+    width: 20px;
+    flex: 0 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a71930;
+    font-size: 14px;
+    font-weight: 800;
+    opacity: 0;
+    transform: scale(0.7);
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
+}
+
+.admin-theme-option.is-active .admin-theme-check,
+.admin-theme-option.active .admin-theme-check {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   MODO ESCURO
+   ========================================================= */
+
+html.dark .admin-theme-menu,
+body.dark .admin-theme-menu,
+html[data-theme="dark"] .admin-theme-menu,
+body[data-theme="dark"] .admin-theme-menu {
+    background: #111111;
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.48);
+}
+
+html.dark .admin-theme-option,
+body.dark .admin-theme-option,
+html[data-theme="dark"] .admin-theme-option,
+body[data-theme="dark"] .admin-theme-option {
+    color: #f5f5f5;
+}
+
+html.dark .admin-theme-option:hover,
+body.dark .admin-theme-option:hover,
+html[data-theme="dark"] .admin-theme-option:hover,
+body[data-theme="dark"] .admin-theme-option:hover {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+html.dark .admin-theme-option-icon,
+body.dark .admin-theme-option-icon,
+html[data-theme="dark"] .admin-theme-option-icon,
+body[data-theme="dark"] .admin-theme-option-icon,
+html.dark .admin-theme-check,
+body.dark .admin-theme-check,
+html[data-theme="dark"] .admin-theme-check,
+body[data-theme="dark"] .admin-theme-check {
+    color: #a71930;
+}
+
+
+/* =========================================================
+   TEMA CLARO — VISIBILIDADE
+   ========================================================= */
+
+html:not(.dark) .admin-theme-menu,
+body:not(.dark) .admin-theme-menu {
+    color: #171717;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .admin-theme-menu {
+        right: -4px;
+        width: 180px;
+    }
+
+}
