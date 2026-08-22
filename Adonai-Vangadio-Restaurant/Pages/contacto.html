@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Entre em contacto com o Adonai Vangadi Restaurant."
+    >
+
+    <meta
+        name="theme-color"
+        content="#111111"
+    >
+
+    <title>Contacto — AVR</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="../css/global.css">
+
+    <link rel="stylesheet" href="../css/themes.css">
+
+    <link rel="stylesheet" href="../css/components.css">
+
+    <link rel="stylesheet" href="../css/public.css">
+
+    <link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <!-- ==================================================
+         HEADER PRINCIPAL
+    =================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+
+            <!-- BRAND -->
+
+            <a
+                href="../index.html"
+                class="brand"
+                aria-label="AVR - Página inicial"
+            >
+
+                <span
+                    class="brand-symbol"
+                    aria-hidden="true"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <path
+                            d="M5 11.5C5 8.462 7.686 6 11 6H13C16.314 6 19 8.462 19 11.5"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M4 12H20"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M6 12.5V14.5C6 16.433 7.567 18 9.5 18H14.5C16.433 18 18 16.433 18 14.5V12.5"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                        />
+
+                        <path
+                            d="M3 19H21"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                    </svg>
+
+                </span>
+
+
+                <span class="brand-name">
+                    AVR
+                </span>
+
+            </a>
+
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <nav
+                class="desktop-navigation"
+                aria-label="Navegação principal"
+            >
+
+                <a
+                    href="../index.html"
+                    class="nav-link"
+                >
+                    Início
+                </a>
+
+                <a
+                    href="menu.html"
+                    class="nav-link"
+                >
+                    Cardápio
+                </a>
+
+                <a
+                    href="sobre.html"
+                    class="nav-link"
+                >
+                    Sobre
+                </a>
+
+                <a
+                    href="galeria.html"
+                    class="nav-link"
+                >
+                    Galeria
+                </a>
+
+            </nav>
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="header-actions">
+
+                <!-- THEME BUTTON -->
+
+                <button
+                    class="icon-button"
+                    id="themeButton"
+                    type="button"
+                    aria-label="Alterar aparência"
+                    aria-expanded="false"
+                >
+
+                    <svg
+                        class="theme-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                        />
+
+                        <path
+                            d="M12 2V4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M12 20V22"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M4.93 4.93L6.34 6.34"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M17.66 17.66L19.07 19.07"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M2 12H4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M20 12H22"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                    </svg>
+
+                </button>
+
+
+                <!-- MENU BUTTON -->
+
+                <button
+                    class="menu-button"
+                    id="menuButton"
+                    type="button"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================================
+         THEME POPOVER
+    =================================================== -->
+
+    <div
+        class="theme-popover"
+        id="themePopover"
+    >
+
+        <div class="popover-title">
+            Aparência
+        </div>
+
+        <button
+            class="theme-option"
+            data-theme-choice="light"
+            type="button"
+        >
+            <span>☀</span>
+            <span>Claro</span>
+        </button>
+
+        <button
+            class="theme-option"
+            data-theme-choice="system"
+            type="button"
+        >
+            <span>◐</span>
+            <span>Automático</span>
+        </button>
+
+        <button
+            class="theme-option"
+            data-theme-choice="dark"
+            type="button"
+        >
+            <span>☾</span>
+            <span>Escuro</span>
+        </button>
+
+    </div>
+
+
+    <!-- ==================================================
+         SIDE MENU
+    =================================================== -->
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+    ></div>
+
+
+    <aside
+        class="side-menu"
+        id="sideMenu"
+        aria-hidden="true"
+    >
+
+        <div class="side-menu-header">
+
+            <div>
+
+                <span class="menu-eyebrow">
+                    ADONAI VANGADI
+                </span>
+
+                <h2>
+                    Restaurant
+                </h2>
+
+            </div>
+
+            <button
+                class="close-button"
+                id="closeMenuButton"
+                type="button"
+                aria-label="Fechar menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="side-menu-content">
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Navegação
+                </span>
+
+                <a
+                    href="../index.html"
+                    class="side-link"
+                >
+                    <span>⌂</span>
+                    <span>Início</span>
+                </a>
+
+                <a
+                    href="menu.html"
+                    class="side-link"
+                >
+                    <span>◉</span>
+                    <span>Cardápio</span>
+                </a>
+
+                <a
+                    href="sobre.html"
+                    class="side-link"
+                >
+                    <span>◌</span>
+                    <span>Sobre Nós</span>
+                </a>
+
+                <a
+                    href="galeria.html"
+                    class="side-link"
+                >
+                    <span>▧</span>
+                    <span>Galeria</span>
+                </a>
+
+            </div>
+
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Restaurante
+                </span>
+
+                <a
+                    href="localizacao.html"
+                    class="side-link"
+                >
+                    <span>⌖</span>
+                    <span>Localização</span>
+                </a>
+
+                <a
+                    href="contacto.html"
+                    class="side-link active"
+                >
+                    <span>⌕</span>
+                    <span>Contacto</span>
+                </a>
+
+                <a
+                    href="reservas.html"
+                    class="side-link"
+                >
+                    <span>□</span>
+                    <span>Reservar uma mesa</span>
+                </a>
+
+            </div>
+
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Preferências
+                </span>
+
+                <button
+                    class="side-link side-button"
+                    id="menuThemeButton"
+                    type="button"
+                >
+
+                    <span>◐</span>
+
+                    <span>
+                        Aparência
+                    </span>
+
+                    <small id="currentThemeLabel">
+                        Automático
+                    </small>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="side-menu-footer">
+
+            <span>
+                AVR
+            </span>
+
+            <small>
+                Sabores que ficam na memória.
+            </small>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==================================================
+         MAIN
+    =================================================== -->
+
+    <main class="public-subpage contact-page">
+
+
+        <!-- HERO -->
+
+        <section class="subpage-hero">
+
+            <span class="eyebrow">
+                FALE CONNOSCO
+            </span>
+
+            <h1>
+                Estamos aqui
+                <span>para si.</span>
+            </h1>
+
+            <p>
+                Tem uma dúvida, deseja fazer uma reserva
+                ou simplesmente quer falar connosco?
+                Será um prazer receber a sua mensagem.
+            </p>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section class="contact-grid">
+
+
+            <div class="contact-information">
+
+                <span class="eyebrow">
+                    CONTACTOS
+                </span>
+
+                <h2>
+                    Entre em contacto
+                </h2>
+
+
+                <div class="contact-items">
+
+
+                    <div class="contact-item">
+
+                        <span class="contact-icon">
+                            ☎
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Telefone
+                            </small>
+
+                            <strong>
+                                +244 9XX XXX XXX
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <span class="contact-icon">
+                            ✉
+                        </span>
+
+                        <div>
+
+                            <small>
+                                E-mail
+                            </small>
+
+                            <strong>
+                                contacto@adonairestaurant.com
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <span class="contact-icon">
+                            ⌖
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Localização
+                            </small>
+
+                            <strong>
+                                Luanda, Angola
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <span class="contact-icon">
+                            ◷
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Horário
+                            </small>
+
+                            <strong>
+                                Segunda — Domingo
+                            </strong>
+
+                            <span>
+                                11:00 — 23:00
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form class="contact-form">
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="nome">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="O seu nome"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="telefone">
+                            Telefone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefone"
+                            placeholder="+244"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="seuemail@email.com"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="assunto">
+                        Assunto
+                    </label>
+
+                    <select id="assunto">
+
+                        <option>
+                            Selecione uma opção
+                        </option>
+
+                        <option>
+                            Reserva
+                        </option>
+
+                        <option>
+                            Evento
+                        </option>
+
+                        <option>
+                            Informação
+                        </option>
+
+                        <option>
+                            Outro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="mensagem">
+                        Mensagem
+                    </label>
+
+                    <textarea
+                        id="mensagem"
+                        rows="6"
+                        placeholder="Escreva a sua mensagem..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="button button-primary"
+                >
+                    Enviar mensagem
+                    <span>→</span>
+                </button>
+
+            </form>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==================================================
+         BOTTOM NAVIGATION
+    =================================================== -->
+
+    <nav
+        class="bottom-navigation"
+        aria-label="Ações rápidas"
+    >
+
+        <a
+            href="../index.html"
+            class="bottom-nav-item"
+        >
+            <span>⌂</span>
+            <small>Início</small>
+        </a>
+
+        <a
+            href="menu.html"
+            class="bottom-nav-item"
+        >
+            <span>◉</span>
+            <small>Cardápio</small>
+        </a>
+
+        <a
+            href="pedidos.html"
+            class="bottom-nav-item"
+        >
+
+            <span class="order-icon">
+                ◇
+                <b id="orderCount">0</b>
+            </span>
+
+            <small>
+                Pedido
+            </small>
+
+        </a>
+
+        <a
+            href="reservas.html"
+            class="bottom-nav-item reservation-nav"
+        >
+            <span>□</span>
+            <small>Reservar</small>
+        </a>
+
+        <button
+            class="bottom-nav-item"
+            id="bottomMoreButton"
+            type="button"
+        >
+            <span>•••</span>
+            <small>Mais</small>
+        </button>
+
+    </nav>
+
+
+</div>
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script src="../js/tema.js"></script>
+
+<script src="../js/menu.js"></script>
+
+<script src="../js/app.js"></script>
+
+</body>
+
+</html>

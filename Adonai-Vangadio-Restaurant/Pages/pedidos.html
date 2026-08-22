@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Meu Pedido — Adonai Vangadi Restaurant."
+    >
+
+    <meta
+        name="theme-color"
+        content="#111111"
+    >
+
+    <title>Meu Pedido — AVR</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS GLOBAL -->
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <!-- CSS PEDIDOS -->
+
+    <link rel="stylesheet" href="../css/pedidos.css">
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                href="../index.html"
+                class="brand"
+                aria-label="AVR - Página inicial"
+            >
+
+                <span
+                    class="brand-symbol"
+                    aria-hidden="true"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <path
+                            d="M5 11.5C5 8.462 7.686 6 11 6H13C16.314 6 19 8.462 19 11.5"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M4 12H20"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M6 12.5V14.5C6 16.433 7.567 18 9.5 18H14.5C16.433 18 18 16.433 18 14.5V12.5"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                        />
+
+                        <path
+                            d="M3 19H21"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                    </svg>
+
+                </span>
+
+                <span class="brand-name">
+                    AVR
+                </span>
+
+            </a>
+
+
+            <nav
+                class="desktop-navigation"
+                aria-label="Navegação principal"
+            >
+
+                <a
+                    href="../index.html"
+                    class="nav-link"
+                >
+                    Início
+                </a>
+
+                <a
+                    href="menu.html"
+                    class="nav-link"
+                >
+                    Cardápio
+                </a>
+
+                <a
+                    href="sobre.html"
+                    class="nav-link"
+                >
+                    Sobre
+                </a>
+
+                <a
+                    href="galeria.html"
+                    class="nav-link"
+                >
+                    Galeria
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="icon-button"
+                    id="themeButton"
+                    type="button"
+                    aria-label="Alterar aparência"
+                >
+
+                    <svg
+                        class="theme-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                        />
+
+                        <path d="M12 2V4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path d="M12 20V22"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path d="M4.93 4.93L6.34 6.34"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path d="M17.66 17.66L19.07 19.07"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path d="M2 12H4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path d="M20 12H22"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                    </svg>
+
+                </button>
+
+
+                <button
+                    class="menu-button"
+                    id="menuButton"
+                    type="button"
+                    aria-label="Abrir menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================================
+         THEME
+    ================================================== -->
+
+    <div
+        class="theme-popover"
+        id="themePopover"
+    >
+
+        <div class="popover-title">
+            Aparência
+        </div>
+
+        <button
+            class="theme-option"
+            data-theme-choice="light"
+            type="button"
+        >
+            <span>☀</span>
+            <span>Claro</span>
+        </button>
+
+        <button
+            class="theme-option"
+            data-theme-choice="system"
+            type="button"
+        >
+            <span>◐</span>
+            <span>Automático</span>
+        </button>
+
+        <button
+            class="theme-option"
+            data-theme-choice="dark"
+            type="button"
+        >
+            <span>☾</span>
+            <span>Escuro</span>
+        </button>
+
+    </div>
+
+
+    <!-- ==================================================
+         SIDE MENU
+    ================================================== -->
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+    ></div>
+
+
+    <aside
+        class="side-menu"
+        id="sideMenu"
+        aria-hidden="true"
+    >
+
+        <div class="side-menu-header">
+
+            <div>
+
+                <span class="menu-eyebrow">
+                    ADONAI VANGADIO
+                </span>
+
+                <h2>
+                    Restaurant
+                </h2>
+
+            </div>
+
+            <button
+                class="close-button"
+                id="closeMenuButton"
+                type="button"
+                aria-label="Fechar menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="side-menu-content">
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Navegação
+                </span>
+
+                <a href="../index.html" class="side-link">
+                    <span>⌂</span>
+                    <span>Início</span>
+                </a>
+
+                <a href="menu.html" class="side-link">
+                    <span>◉</span>
+                    <span>Cardápio</span>
+                </a>
+
+                <a href="sobre.html" class="side-link">
+                    <span>◌</span>
+                    <span>Sobre Nós</span>
+                </a>
+
+                <a href="galeria.html" class="side-link">
+                    <span>▧</span>
+                    <span>Galeria</span>
+                </a>
+
+            </div>
+
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Restaurante
+                </span>
+
+                <a href="localizacao.html" class="side-link">
+                    <span>⌖</span>
+                    <span>Localização</span>
+                </a>
+
+                <a href="contacto.html" class="side-link">
+                    <span>⌕</span>
+                    <span>Contacto</span>
+                </a>
+
+                <a href="reservas.html" class="side-link">
+                    <span>□</span>
+                    <span>Reservar uma mesa</span>
+                </a>
+
+            </div>
+
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Preferências
+                </span>
+
+                <button
+                    class="side-link side-button"
+                    id="menuThemeButton"
+                    type="button"
+                >
+
+                    <span>◐</span>
+
+                    <span>
+                        Aparência
+                    </span>
+
+                    <small id="currentThemeLabel">
+                        Automático
+                    </small>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="side-menu-footer">
+
+            <span>
+                AVR
+            </span>
+
+            <small>
+                Sabores que ficam na memória.
+            </small>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+
+    <main>
+
+        <section class="order-page-hero">
+
+            <span class="eyebrow">
+                AVR · MEU PEDIDO
+            </span>
+
+            <h1>
+                Seu pedido.
+            </h1>
+
+            <p>
+                Confira os pratos escolhidos, indique a
+                localização da entrega e veja o valor final.
+            </p>
+
+        </section>
+
+
+        <section class="order-layout">
+
+
+            <!-- ==================================================
+                 ITENS
+            ================================================== -->
+
+            <div class="order-items-area">
+
+                <div class="order-area-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            SELEÇÃO
+                        </span>
+
+                        <h2>
+                            Itens do pedido
+                        </h2>
+
+                    </div>
+
+                    <span id="orderItemsCount">
+                        0 itens
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="order-items"
+                    id="orderItems"
+                ></div>
+
+
+                <div
+                    class="order-empty"
+                    id="orderEmpty"
+                    hidden
+                >
+
+                    <div class="empty-icon">
+                        ◇
+                    </div>
+
+                    <h3>
+                        Seu pedido está vazio.
+                    </h3>
+
+                    <p>
+                        Escolha alguns dos nossos pratos
+                        para começar a sua experiência AVR.
+                    </p>
+
+                    <a
+                        href="menu.html"
+                        class="button button-primary"
+                    >
+                        Explorar cardápio
+                    </a>
+
+                </div>
+
+
+                <div class="order-notes">
+
+                    <label for="orderNotes">
+                        Observações do pedido
+                    </label>
+
+                    <textarea
+                        id="orderNotes"
+                        rows="4"
+                        placeholder="Ex.: sem cebola, molho à parte..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 RESUMO
+            ================================================== -->
+
+            <aside class="order-summary">
+
+                <span class="eyebrow">
+                    RESUMO
+                </span>
+
+                <h2>
+                    Seu pedido
+                </h2>
+
+
+                <div class="summary-line">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="orderSubtotal">
+                        0 Kz
+                    </strong>
+
+                </div>
+
+
+                <!-- LOCALIZAÇÃO -->
+
+                <div class="delivery-field">
+
+                    <label for="deliveryLocation">
+                        Localização de entrega
+                    </label>
+
+                    <select
+                        id="deliveryLocation"
+                        class="delivery-select"
+                    >
+
+                        <option value="">
+                            Escolher localização em Luanda
+                        </option>
+
+                        <option value="talatona" data-fee="2500">
+                            Talatona — 2.500 Kz
+                        </option>
+
+                        <option value="benfica" data-fee="3000">
+                            Benfica — 3.000 Kz
+                        </option>
+
+                        <option value="kilamba" data-fee="3000">
+                            Kilamba — 3.000 Kz
+                        </option>
+
+                        <option value="camama" data-fee="2500">
+                            Camama — 2.500 Kz
+                        </option>
+
+                        <option value="morro-bento" data-fee="2000">
+                            Morro Bento — 2.000 Kz
+                        </option>
+
+                        <option value="maianga" data-fee="1500">
+                            Maianga — 1.500 Kz
+                        </option>
+
+                        <option value="alvalade" data-fee="1500">
+                            Alvalade — 1.500 Kz
+                        </option>
+
+                        <option value="maculusso" data-fee="1500">
+                            Maculusso — 1.500 Kz
+                        </option>
+
+                        <option value="mutamba" data-fee="1500">
+                            Mutamba — 1.500 Kz
+                        </option>
+
+                        <option value="ingombota" data-fee="1500">
+                            Ingombota — 1.500 Kz
+                        </option>
+
+                        <option value="samba" data-fee="2000">
+                            Samba — 2.000 Kz
+                        </option>
+
+                        <option value="musseque" data-fee="2500">
+                            Outros pontos de Luanda — 2.500 Kz
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TAXA -->
+
+                <div class="summary-line">
+
+                    <span>
+                        Taxa de serviço
+                    </span>
+
+                    <strong id="orderService">
+                        0 Kz
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="deliveryPriceInfo"
+                    class="delivery-price-card"
+                    hidden
+                >
+
+                    <div class="delivery-price-info">
+
+                        <span>
+                            Entrega
+                        </span>
+
+                        <strong id="deliveryLocationLabel">
+                            —
+                        </strong>
+
+                    </div>
+
+                    <strong
+                        id="deliveryPrice"
+                        class="delivery-price"
+                    >
+                        0 Kz
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="orderTotal">
+                        0 Kz
+                    </strong>
+
+                </div>
+
+
+                <button
+                    class="button button-primary order-checkout-button"
+                    id="continueOrderButton"
+                    type="button"
+                    disabled
+                >
+                    Continuar
+                </button>
+
+
+                <a
+                    href="menu.html"
+                    class="continue-shopping"
+                >
+                    ← Continuar escolhendo
+                </a>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================================================
+         BOTTOM NAV
+    ================================================== -->
+
+    <nav
+        class="bottom-navigation"
+        aria-label="Ações rápidas"
+    >
+
+        <a href="../index.html" class="bottom-nav-item">
+            <span>⌂</span>
+            <small>Início</small>
+        </a>
+
+        <a href="menu.html" class="bottom-nav-item">
+            <span>◉</span>
+            <small>Cardápio</small>
+        </a>
+
+        <a
+            href="pedidos.html"
+            class="bottom-nav-item active"
+        >
+
+            <span class="order-icon">
+                ◇
+                <b id="orderCount">0</b>
+            </span>
+
+            <small>
+                Pedido
+            </small>
+
+        </a>
+
+        <a
+            href="reservas.html"
+            class="bottom-nav-item reservation-nav"
+        >
+            <span>□</span>
+            <small>Reservar</small>
+        </a>
+
+        <button
+            class="bottom-nav-item"
+            id="bottomMoreButton"
+            type="button"
+        >
+            <span>•••</span>
+            <small>Mais</small>
+        </button>
+
+    </nav>
+
+</div>
+
+
+<!-- JAVASCRIPT GLOBAL -->
+
+<script src="../js/tema.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/armazenamento.js"></script>
+<script src="../js/app.js"></script>
+
+<!-- JAVASCRIPT PEDIDOS -->
+
+<script src="../js/pedidos.js"></script>
+
+</body>
+
+</html>

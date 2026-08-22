@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Galeria do Adonai Vangadi Restaurant."
+    >
+
+    <meta
+        name="theme-color"
+        content="#111111"
+    >
+
+    <title>Galeria — AVR</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="../css/global.css">
+
+    <link rel="stylesheet" href="../css/themes.css">
+
+    <link rel="stylesheet" href="../css/components.css">
+
+    <link rel="stylesheet" href="../css/public.css">
+
+    <link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <!-- ==================================================
+         HEADER PRINCIPAL
+    =================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+
+            <a
+                href="../index.html"
+                class="brand"
+                aria-label="AVR - Página inicial"
+            >
+
+                <span
+                    class="brand-symbol"
+                    aria-hidden="true"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <path
+                            d="M5 11.5C5 8.462 7.686 6 11 6H13C16.314 6 19 8.462 19 11.5"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M4 12H20"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M6 12.5V14.5C6 16.433 7.567 18 9.5 18H14.5C16.433 18 18 16.433 18 14.5V12.5"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                        />
+
+                        <path
+                            d="M3 19H21"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                    </svg>
+
+                </span>
+
+                <span class="brand-name">
+                    AVR
+                </span>
+
+            </a>
+
+
+            <nav
+                class="desktop-navigation"
+                aria-label="Navegação principal"
+            >
+
+                <a
+                    href="../index.html"
+                    class="nav-link"
+                >
+                    Início
+                </a>
+
+                <a
+                    href="menu.html"
+                    class="nav-link"
+                >
+                    Cardápio
+                </a>
+
+                <a
+                    href="sobre.html"
+                    class="nav-link"
+                >
+                    Sobre
+                </a>
+
+                <a
+                    href="galeria.html"
+                    class="nav-link active"
+                >
+                    Galeria
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="icon-button"
+                    id="themeButton"
+                    type="button"
+                    aria-label="Alterar aparência"
+                    aria-expanded="false"
+                >
+
+                    <svg
+                        class="theme-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                        />
+
+                        <path
+                            d="M12 2V4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M12 20V22"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M4.93 4.93L6.34 6.34"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M17.66 17.66L19.07 19.07"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M2 12H4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M20 12H22"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                    </svg>
+
+                </button>
+
+
+                <button
+                    class="menu-button"
+                    id="menuButton"
+                    type="button"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================================
+         THEME POPOVER
+    =================================================== -->
+
+    <div
+        class="theme-popover"
+        id="themePopover"
+    >
+
+        <div class="popover-title">
+            Aparência
+        </div>
+
+        <button
+            class="theme-option"
+            data-theme-choice="light"
+            type="button"
+        >
+            <span>☀</span>
+            <span>Claro</span>
+        </button>
+
+        <button
+            class="theme-option"
+            data-theme-choice="system"
+            type="button"
+        >
+            <span>◐</span>
+            <span>Automático</span>
+        </button>
+
+        <button
+            class="theme-option"
+            data-theme-choice="dark"
+            type="button"
+        >
+            <span>☾</span>
+            <span>Escuro</span>
+        </button>
+
+    </div>
+
+
+    <!-- ==================================================
+         SIDE MENU
+    =================================================== -->
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+    ></div>
+
+
+    <aside
+        class="side-menu"
+        id="sideMenu"
+        aria-hidden="true"
+    >
+
+        <div class="side-menu-header">
+
+            <div>
+
+                <span class="menu-eyebrow">
+                    ADONAI VANGADI
+                </span>
+
+                <h2>
+                    Restaurant
+                </h2>
+
+            </div>
+
+            <button
+                class="close-button"
+                id="closeMenuButton"
+                type="button"
+                aria-label="Fechar menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="side-menu-content">
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Navegação
+                </span>
+
+                <a
+                    href="../index.html"
+                    class="side-link"
+                >
+                    <span>⌂</span>
+                    <span>Início</span>
+                </a>
+
+                <a
+                    href="menu.html"
+                    class="side-link"
+                >
+                    <span>◉</span>
+                    <span>Cardápio</span>
+                </a>
+
+                <a
+                    href="sobre.html"
+                    class="side-link"
+                >
+                    <span>◌</span>
+                    <span>Sobre Nós</span>
+                </a>
+
+                <a
+                    href="galeria.html"
+                    class="side-link active"
+                >
+                    <span>▧</span>
+                    <span>Galeria</span>
+                </a>
+
+            </div>
+
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Restaurante
+                </span>
+
+                <a
+                    href="localizacao.html"
+                    class="side-link"
+                >
+                    <span>⌖</span>
+                    <span>Localização</span>
+                </a>
+
+                <a
+                    href="contacto.html"
+                    class="side-link"
+                >
+                    <span>⌕</span>
+                    <span>Contacto</span>
+                </a>
+
+                <a
+                    href="reservas.html"
+                    class="side-link"
+                >
+                    <span>□</span>
+                    <span>Reservar uma mesa</span>
+                </a>
+
+            </div>
+
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Preferências
+                </span>
+
+                <button
+                    class="side-link side-button"
+                    id="menuThemeButton"
+                    type="button"
+                >
+
+                    <span>◐</span>
+
+                    <span>
+                        Aparência
+                    </span>
+
+                    <small id="currentThemeLabel">
+                        Automático
+                    </small>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="side-menu-footer">
+
+            <span>
+                AVR
+            </span>
+
+            <small>
+                Sabores que ficam na memória.
+            </small>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==================================================
+         MAIN
+    =================================================== -->
+
+    <main class="public-subpage gallery-page">
+
+
+        <section class="subpage-hero">
+
+            <span class="eyebrow">
+                GALERIA AVR
+            </span>
+
+            <h1>
+                Um pouco do
+                <span>nosso mundo.</span>
+            </h1>
+
+            <p>
+                Sabores, detalhes, pessoas e momentos
+                que fazem parte da experiência AVR.
+            </p>
+
+        </section>
+
+
+<!-- ==================================================
+     GALERIA AVR — GALERIA INTELIGENTE
+================================================== -->
+
+<section class="gallery-section">
+
+    <!-- FILTROS HORIZONTAIS -->
+
+    <div
+        class="gallery-filters"
+        role="tablist"
+        aria-label="Categorias da galeria"
+    >
+
+        <button
+            class="gallery-filter active"
+            type="button"
+            data-filter="todos"
+            role="tab"
+            aria-selected="true"
+        >
+            Todos
+        </button>
+
+        <button
+            class="gallery-filter"
+            type="button"
+            data-filter="pratos"
+            role="tab"
+            aria-selected="false"
+        >
+            Pratos
+        </button>
+
+        <button
+            class="gallery-filter"
+            type="button"
+            data-filter="sabores"
+            role="tab"
+            aria-selected="false"
+        >
+            Sabores
+        </button>
+
+        <button
+            class="gallery-filter"
+            type="button"
+            data-filter="experiencia"
+            role="tab"
+            aria-selected="false"
+        >
+            Experiência
+        </button>
+
+        <button
+            class="gallery-filter"
+            type="button"
+            data-filter="ambiente"
+            role="tab"
+            aria-selected="false"
+        >
+            Ambiente
+        </button>
+
+        <button
+            class="gallery-filter"
+            type="button"
+            data-filter="detalhes"
+            role="tab"
+            aria-selected="false"
+        >
+            Detalhes
+        </button>
+
+    </div>
+
+
+    <!-- ==================================================
+         GRELHA DE IMAGENS
+    =================================================== -->
+
+    <div
+        class="gallery-grid"
+        id="galleryGrid"
+    >
+
+
+        <!-- ==============================================
+             PRATOS
+        =============================================== -->
+
+        <article
+            class="gallery-card gallery-large"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato-1.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato-1.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato-2.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato-2.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato-3.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato-3.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card gallery-tall"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato-4.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato-4.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato-5.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato-5.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato-6.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato-6.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato-7.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato-7.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato-8.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato-8.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato-9.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato-9.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato-10.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato-10.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato-11.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato-11.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato-12.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato-12.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato-13.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato-13.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="pratos"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/prato-14.png"
+                aria-label="Abrir imagem do prato"
+            >
+
+                <img
+                    src="../assets/images/gallery/prato-14.png"
+                    alt="Prato AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <!-- ==============================================
+             SABORES
+        =============================================== -->
+
+        <article
+            class="gallery-card gallery-large"
+            data-category="sabores"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/sabores.png"
+                aria-label="Abrir imagem Saborea"
+            >
+
+                <img
+                    src="../assets/images/gallery/sabores.png"
+                    alt="Sabores AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="sabores"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/sabores-2.png"
+                aria-label="Abrir imagem dos sabores"
+            >
+
+                <img
+                    src="../assets/images/gallery/sabores-2.png"
+                    alt="Sabores AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="sabores"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/sabores-3.png"
+                aria-label="Abrir imagem dos sabores"
+            >
+
+                <img
+                    src="../assets/images/gallery/sabores-3.png"
+                    alt="Sabores AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <!-- ==============================================
+             EXPERIÊNCIA
+        =============================================== -->
+
+        <article
+            class="gallery-card gallery-large"
+            data-category="experiencia"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/experiencia.png"
+                aria-label="Abrir imagem da experiência"
+            >
+
+                <img
+                    src="../assets/images/gallery/experiencia.png"
+                    alt="Experiência AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="experiencia"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/experiencia-2.png"
+                aria-label="Abrir imagem da experiência"
+            >
+
+                <img
+                    src="../assets/images/gallery/experiencia-2.png"
+                    alt="Experiência AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <!-- ==============================================
+             AMBIENTE
+        =============================================== -->
+
+        <article
+            class="gallery-card gallery-large"
+            data-category="ambiente"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/ambiente.png"
+                aria-label="Abrir imagem do ambiente"
+            >
+
+                <img
+                    src="../assets/images/gallery/ambiente.png"
+                    alt="Ambiente AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="ambiente"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/ambiente-2.png"
+                aria-label="Abrir imagem do ambiente"
+            >
+
+                <img
+                    src="../assets/images/gallery/ambiente-2.png"
+                    alt="Ambiente AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <!-- ==============================================
+             DETALHES
+        =============================================== -->
+
+        <article
+            class="gallery-card"
+            data-category="detalhes"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/detalhes.png"
+                aria-label="Abrir detalhe do restaurante"
+            >
+
+                <img
+                    src="../assets/images/gallery/detalhes.png"
+                    alt="Detalhes AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card gallery-tall"
+            data-category="detalhes"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/detalhes-2.png"
+                aria-label="Abrir detalhe do restaurante"
+            >
+
+                <img
+                    src="../assets/images/gallery/detalhes-2.png"
+                    alt="Detalhes AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+        <article
+            class="gallery-card"
+            data-category="detalhes"
+        >
+
+            <button
+                class="gallery-image-button"
+                type="button"
+                data-image="../assets/images/gallery/detalhes-3.png"
+                aria-label="Abrir detalhe do restaurante"
+            >
+
+                <img
+                    src="../assets/images/gallery/detalhes-3.png"
+                    alt="Detalhes AVR"
+                    loading="lazy"
+                >
+
+            </button>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+    <!-- ==================================================
+         BOTTOM NAVIGATION
+    =================================================== -->
+
+    <nav
+        class="bottom-navigation"
+        aria-label="Ações rápidas"
+    >
+
+        <a
+            href="../index.html"
+            class="bottom-nav-item"
+        >
+            <span>⌂</span>
+            <small>Início</small>
+        </a>
+
+        <a
+            href="menu.html"
+            class="bottom-nav-item"
+        >
+            <span>◉</span>
+            <small>Cardápio</small>
+        </a>
+
+        <a
+            href="pedidos.html"
+            class="bottom-nav-item"
+        >
+
+            <span class="order-icon">
+                ◇
+                <b id="orderCount">0</b>
+            </span>
+
+            <small>
+                Pedido
+            </small>
+
+        </a>
+
+        <a
+            href="reservas.html"
+            class="bottom-nav-item reservation-nav"
+        >
+            <span>□</span>
+            <small>Reservar</small>
+        </a>
+
+        <button
+            class="bottom-nav-item"
+            id="bottomMoreButton"
+            type="button"
+        >
+            <span>•••</span>
+            <small>Mais</small>
+        </button>
+
+    </nav>
+
+
+</div>
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script src="../js/tema.js"></script>
+
+<script src="../js/menu.js"></script>
+
+<script src="../js/app.js"></script>
+
+<script src="../js/galeria.js"></script>
+
+</body>
+
+</html>
