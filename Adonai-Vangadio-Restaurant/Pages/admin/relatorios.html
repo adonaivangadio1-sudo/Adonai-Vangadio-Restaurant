@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#a71930"
+    >
+
+    <title>
+        Relatórios — AVR Admin
+    </title>
+
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         CSS PRINCIPAL
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin/relatorios.css"
+    >
+
+</head>
+
+
+<body class="admin-page admin-reports-page">
+
+
+<div class="admin-app">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="admin-header">
+
+        <div class="admin-header-left">
+
+            <a
+                href="index.html"
+                class="admin-brand"
+                aria-label="Voltar ao dashboard"
+            >
+
+                <span class="admin-brand-main">
+                    AVR
+                </span>
+
+                <span class="admin-brand-divider">
+                    /
+                </span>
+
+                <span class="admin-brand-section">
+                    ADMIN
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="admin-header-center">
+
+            <div class="admin-restaurant-status">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    Restaurante aberto
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-header-right">
+
+
+            <!-- =================================================
+                 SELETOR DE APARÊNCIA
+            ================================================== -->
+
+            <div class="admin-theme-wrapper">
+
+                <button
+                    type="button"
+                    class="admin-header-button"
+                    id="adminThemeButton"
+                    aria-label="Alterar aparência"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    title="Alterar aparência"
+                >
+                    ◐
+                </button>
+
+
+                <div
+                    class="admin-theme-menu"
+                    id="adminThemeMenu"
+                    aria-hidden="true"
+                >
+
+                    <div class="admin-theme-menu-header">
+
+                        <span>
+                            Aparência
+                        </span>
+
+                        <small>
+                            Escolha o tema
+                        </small>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="admin-theme-option"
+                        data-theme-option="auto"
+                    >
+
+                        <span class="admin-theme-option-icon">
+                            ◐
+                        </span>
+
+                        <span class="admin-theme-option-content">
+
+                            <strong>
+                                Automático
+                            </strong>
+
+                            <small>
+                                Segue a aparência do dispositivo
+                            </small>
+
+                        </span>
+
+                        <span class="admin-theme-check">
+                            ✓
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="admin-theme-option"
+                        data-theme-option="light"
+                    >
+
+                        <span class="admin-theme-option-icon">
+                            ☀
+                        </span>
+
+                        <span class="admin-theme-option-content">
+
+                            <strong>
+                                Claro
+                            </strong>
+
+                            <small>
+                                Interface clara
+                            </small>
+
+                        </span>
+
+                        <span class="admin-theme-check">
+                            ✓
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="admin-theme-option"
+                        data-theme-option="dark"
+                    >
+
+                        <span class="admin-theme-option-icon">
+                            ☾
+                        </span>
+
+                        <span class="admin-theme-option-content">
+
+                            <strong>
+                                Escuro
+                            </strong>
+
+                            <small>
+                                Interface escura
+                            </small>
+
+                        </span>
+
+                        <span class="admin-theme-check">
+                            ✓
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MENU PRINCIPAL
+            ================================================== -->
+
+            <button
+                type="button"
+                class="admin-header-button admin-menu-button"
+                id="adminMenuButton"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         OVERLAY
+    ====================================================== -->
+
+    <div
+        class="admin-menu-overlay"
+        id="adminMenuOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="admin-sidebar"
+        id="adminSidebar"
+        aria-hidden="true"
+    >
+
+        <div class="admin-sidebar-header">
+
+            <div>
+
+                <span class="admin-sidebar-eyebrow">
+                    ADONAI VANGADIO
+                </span>
+
+                <h2>
+                    Administração
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="admin-close-button"
+                id="adminCloseMenu"
+                aria-label="Fechar menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <div class="admin-sidebar-content">
+
+
+            <!-- =================================================
+                 VISÃO GERAL
+            ================================================== -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Visão geral
+                </span>
+
+
+                <a
+                    href="index.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ⌂
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 OPERAÇÃO
+            ================================================== -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Operação
+                </span>
+
+
+                <a
+                    href="pedidos.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ◇
+                    </span>
+
+                    <span>
+                        Pedidos
+                    </span>
+
+                    <small
+                        class="admin-side-count"
+                        id="sidebarOrderCount"
+                    >
+                        0
+                    </small>
+
+                </a>
+
+
+                <a
+                    href="cozinha.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ♨
+                    </span>
+
+                    <span>
+                        Cozinha
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="mesas.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ▣
+                    </span>
+
+                    <span>
+                        Mesas
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="caixa.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ▤
+                    </span>
+
+                    <span>
+                        Caixa
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 GESTÃO
+            ================================================== -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Gestão
+                </span>
+
+
+                <a
+                    href="estoque.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        Estoque
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="relatorios.html"
+                    class="admin-side-link active"
+                >
+
+                    <span class="admin-side-icon">
+                        ◫
+                    </span>
+
+                    <span>
+                        Relatórios
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SISTEMA
+            ================================================== -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Sistema
+                </span>
+
+
+                <a
+                    href="../../index.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ↗
+                    </span>
+
+                    <span>
+                        Ver site público
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="admin-side-link admin-side-button"
+                    id="adminThemeMenuButton"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+
+                    <span class="admin-side-icon">
+                        ◐
+                    </span>
+
+                    <span>
+                        Aparência
+                    </span>
+
+                    <small id="adminThemeLabel">
+                        Automático
+                    </small>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CONTA
+            ================================================== -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Conta
+                </span>
+
+
+                <button
+                    type="button"
+                    class="admin-side-link admin-side-button admin-logout"
+                    id="adminLogoutButton"
+                >
+
+                    <span class="admin-side-icon">
+                        ⇥
+                    </span>
+
+                    <span>
+                        Terminar sessão
+                    </span>
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOOTER DA SIDEBAR
+        ================================================== -->
+
+        <div class="admin-sidebar-footer">
+
+            <span>
+                AVR ADMIN
+            </span>
+
+            <small>
+                Sabores que ficam na memória.
+            </small>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main class="admin-main admin-reports-main">
+
+
+        <!-- =================================================
+             CABEÇALHO DOS RELATÓRIOS
+        ================================================== -->
+
+        <section class="reports-hero">
+
+            <div class="reports-hero-copy">
+
+                <span class="admin-eyebrow">
+                    ANÁLISE DO RESTAURANTE
+                </span>
+
+                <h1>
+                    Relatórios
+                </h1>
+
+                <p>
+                    Acompanhe vendas, faturação e desempenho
+                    da operação do restaurante.
+                </p>
+
+            </div>
+
+
+            <div class="reports-hero-actions">
+
+                <button
+                    type="button"
+                    class="reports-export-button"
+                    id="reportsExportButton"
+                >
+
+                    <span>
+                        ↓
+                    </span>
+
+                    Exportar relatório
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FILTROS
+        ================================================== -->
+
+        <section class="reports-filter-panel">
+
+            <div class="reports-filter-heading">
+
+                <div>
+
+                    <span class="reports-filter-label">
+                        PERÍODO
+                    </span>
+
+                    <strong id="reportsPeriodTitle">
+                        Hoje
+                    </strong>
+
+                </div>
+
+
+                <span
+                    class="reports-filter-status"
+                    id="reportsDataStatus"
+                >
+                    Dados atualizados
+                </span>
+
+            </div>
+
+
+            <div class="reports-periods">
+
+                <button
+                    type="button"
+                    class="reports-period-button active"
+                    data-period="today"
+                >
+                    Hoje
+                </button>
+
+                <button
+                    type="button"
+                    class="reports-period-button"
+                    data-period="week"
+                >
+                    Esta semana
+                </button>
+
+                <button
+                    type="button"
+                    class="reports-period-button"
+                    data-period="month"
+                >
+                    Este mês
+                </button>
+
+                <button
+                    type="button"
+                    class="reports-period-button"
+                    data-period="year"
+                >
+                    Este ano
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INDICADORES
+        ================================================== -->
+
+        <section class="reports-kpi-grid">
+
+
+            <article class="reports-kpi-card reports-kpi-main">
+
+                <div class="reports-kpi-top">
+
+                    <span>
+                        Faturação
+                    </span>
+
+                    <span class="reports-kpi-icon">
+                        Kz
+                    </span>
+
+                </div>
+
+                <strong id="reportRevenue">
+                    0 Kz
+                </strong>
+
+                <small id="reportRevenueDescription">
+                    Movimento do período
+                </small>
+
+            </article>
+
+
+
+            <article class="reports-kpi-card">
+
+                <div class="reports-kpi-top">
+
+                    <span>
+                        Pedidos
+                    </span>
+
+                    <span class="reports-kpi-icon">
+                        ◇
+                    </span>
+
+                </div>
+
+                <strong id="reportOrders">
+                    0
+                </strong>
+
+                <small>
+                    pedidos registados
+                </small>
+
+            </article>
+
+
+
+            <article class="reports-kpi-card">
+
+                <div class="reports-kpi-top">
+
+                    <span>
+                        Ticket médio
+                    </span>
+
+                    <span class="reports-kpi-icon">
+                        ↗
+                    </span>
+
+                </div>
+
+                <strong id="reportAverage">
+                    0 Kz
+                </strong>
+
+                <small>
+                    valor médio por pedido
+                </small>
+
+            </article>
+
+
+
+            <article class="reports-kpi-card">
+
+                <div class="reports-kpi-top">
+
+                    <span>
+                        Pedidos concluídos
+                    </span>
+
+                    <span class="reports-kpi-icon">
+                        ✓
+                    </span>
+
+                </div>
+
+                <strong id="reportCompleted">
+                    0
+                </strong>
+
+                <small>
+                    pedidos entregues
+                </small>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             GRÁFICO PRINCIPAL
+        ================================================== -->
+
+        <section class="reports-panel reports-sales-panel">
+
+            <div class="reports-panel-header">
+
+                <div>
+
+                    <span class="admin-eyebrow">
+                        DESEMPENHO
+                    </span>
+
+                    <h2>
+                        Evolução da faturação
+                    </h2>
+
+                    <p id="reportChartDescription">
+                        Movimento financeiro ao longo do dia.
+                    </p>
+
+                </div>
+
+
+                <div class="reports-chart-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="reportChartTotal">
+                        0 Kz
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="reports-chart-wrapper">
+
+                <div class="reports-chart-y">
+
+                    <span>
+                        100k
+                    </span>
+
+                    <span>
+                        75k
+                    </span>
+
+                    <span>
+                        50k
+                    </span>
+
+                    <span>
+                        25k
+                    </span>
+
+                    <span>
+                        0
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="reports-chart"
+                    id="reportsChart"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DISTRIBUIÇÃO
+        ================================================== -->
+
+        <section class="reports-two-column">
+
+
+            <article class="reports-panel">
+
+                <div class="reports-panel-header compact">
+
+                    <div>
+
+                        <span class="admin-eyebrow">
+                            OPERAÇÃO
+                        </span>
+
+                        <h2>
+                            Estado dos pedidos
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="reports-status-list"
+                    id="reportsStatusList"
+                ></div>
+
+            </article>
+
+
+
+            <article class="reports-panel">
+
+                <div class="reports-panel-header compact">
+
+                    <div>
+
+                        <span class="admin-eyebrow">
+                            FINANCEIRO
+                        </span>
+
+                        <h2>
+                            Resumo
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="reports-financial-list">
+
+                    <div>
+
+                        <span>
+                            Faturação bruta
+                        </span>
+
+                        <strong id="financialGross">
+                            0 Kz
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Pedidos
+                        </span>
+
+                        <strong id="financialOrders">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Ticket médio
+                        </span>
+
+                        <strong id="financialAverage">
+                            0 Kz
+                        </strong>
+
+                    </div>
+
+
+                    <div class="highlight">
+
+                        <span>
+                            Melhor período
+                        </span>
+
+                        <strong id="financialBestPeriod">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             PEDIDOS RECENTES
+        ================================================== -->
+
+        <section class="reports-panel reports-orders-panel">
+
+            <div class="reports-panel-header">
+
+                <div>
+
+                    <span class="admin-eyebrow">
+                        MOVIMENTO
+                    </span>
+
+                    <h2>
+                        Atividade do período
+                    </h2>
+
+                </div>
+
+
+                <a
+                    href="pedidos.html"
+                    class="admin-text-link"
+                >
+                    Ver pedidos
+                    <span>
+                        →
+                    </span>
+                </a>
+
+            </div>
+
+
+            <div class="reports-table-wrapper">
+
+                <table class="reports-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Pedido
+                            </th>
+
+                            <th>
+                                Data
+                            </th>
+
+                            <th>
+                                Itens
+                            </th>
+
+                            <th>
+                                Valor
+                            </th>
+
+                            <th>
+                                Estado
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="reportsOrdersTable">
+
+                        <tr>
+
+                            <td
+                                colspan="5"
+                                class="reports-table-empty"
+                            >
+                                Nenhum pedido registado
+                                neste período.
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESUMO FINAL
+        ================================================== -->
+
+        <section class="reports-summary-card">
+
+            <div>
+
+                <span class="admin-eyebrow">
+                    RESUMO DO RELATÓRIO
+                </span>
+
+                <h2 id="reportsSummaryTitle">
+                    Sem movimentação registada
+                </h2>
+
+                <p id="reportsSummaryText">
+                    Quando existirem pedidos, os principais
+                    indicadores do período aparecerão aqui.
+                </p>
+
+            </div>
+
+
+            <div class="reports-summary-mark">
+                AVR
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         NAVEGAÇÃO MOBILE
+    ====================================================== -->
+
+    <nav
+        class="admin-bottom-navigation"
+        aria-label="Navegação administrativa"
+    >
+
+        <a
+            href="index.html"
+            class="admin-bottom-item"
+        >
+
+            <span>
+                ⌂
+            </span>
+
+            <small>
+                Início
+            </small>
+
+        </a>
+
+
+        <a
+            href="pedidos.html"
+            class="admin-bottom-item"
+        >
+
+            <span class="admin-bottom-order">
+
+                ◇
+
+                <b id="bottomOrderCount">
+                    0
+                </b>
+
+            </span>
+
+            <small>
+                Pedidos
+            </small>
+
+        </a>
+
+
+        <a
+            href="cozinha.html"
+            class="admin-bottom-item"
+        >
+
+            <span>
+                ♨
+            </span>
+
+            <small>
+                Cozinha
+            </small>
+
+        </a>
+
+
+        <a
+            href="mesas.html"
+            class="admin-bottom-item"
+        >
+
+            <span>
+                ▣
+            </span>
+
+            <small>
+                Mesas
+            </small>
+
+        </a>
+
+
+        <button
+            type="button"
+            class="admin-bottom-item"
+            id="adminBottomMore"
+        >
+
+            <span>
+                •••
+            </span>
+
+            <small>
+                Mais
+            </small>
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="admin-footer">
+
+        <div>
+
+            <strong>
+                AVR ADMIN
+            </strong>
+
+            <span>
+                Sistema de gestão do restaurante
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                Última atualização
+            </span>
+
+            <strong id="adminLastUpdate">
+                agora
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                © 2026 AVR
+            </span>
+
+        </div>
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="../../js/tema.js"></script>
+
+<script src="../../js/admin/relatorios.js"></script>
+
+
+</body>
+
+</html>

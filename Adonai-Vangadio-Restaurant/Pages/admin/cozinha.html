@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#a71930"
+    >
+
+    <title>
+        Cozinha — AVR Admin
+    </title>
+
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin/cozinha.css"
+    >
+
+</head>
+
+
+<body class="admin-page admin-kitchen-page">
+
+
+<div class="admin-app">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="admin-header">
+
+        <div class="admin-header-left">
+
+            <a
+                href="index.html"
+                class="admin-brand"
+                aria-label="Voltar ao dashboard"
+            >
+
+                <span class="admin-brand-main">
+                    AVR
+                </span>
+
+                <span class="admin-brand-divider">
+                    /
+                </span>
+
+                <span class="admin-brand-section">
+                    ADMIN
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="admin-header-center">
+
+            <div class="admin-restaurant-status">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    Restaurante aberto
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-header-right">
+
+
+            <!-- =================================================
+                 APARÊNCIA
+            ================================================== -->
+
+            <div class="admin-theme-wrapper">
+
+                <button
+                    type="button"
+                    class="admin-header-button"
+                    id="adminThemeButton"
+                    aria-label="Alterar aparência"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    title="Alterar aparência"
+                >
+                    ◐
+                </button>
+
+
+                <div
+                    class="admin-theme-menu"
+                    id="adminThemeMenu"
+                    aria-hidden="true"
+                >
+
+                    <button
+                        type="button"
+                        class="admin-theme-option"
+                        data-theme-option="auto"
+                    >
+
+                        <span class="admin-theme-option-icon">
+                            ◐
+                        </span>
+
+                        <span class="admin-theme-option-content">
+
+                            <strong>
+                                Automático
+                            </strong>
+
+                        </span>
+
+                        <span class="admin-theme-check">
+                            ✓
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="admin-theme-option"
+                        data-theme-option="light"
+                    >
+
+                        <span class="admin-theme-option-icon">
+                            ☀
+                        </span>
+
+                        <span class="admin-theme-option-content">
+
+                            <strong>
+                                Claro
+                            </strong>
+
+                        </span>
+
+                        <span class="admin-theme-check">
+                            ✓
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="admin-theme-option"
+                        data-theme-option="dark"
+                    >
+
+                        <span class="admin-theme-option-icon">
+                            ☾
+                        </span>
+
+                        <span class="admin-theme-option-content">
+
+                            <strong>
+                                Escuro
+                            </strong>
+
+                        </span>
+
+                        <span class="admin-theme-check">
+                            ✓
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 MENU
+            ================================================== -->
+
+            <button
+                type="button"
+                class="admin-header-button admin-menu-button"
+                id="adminMenuButton"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         OVERLAY
+    ====================================================== -->
+
+    <div
+        class="admin-menu-overlay"
+        id="adminMenuOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="admin-sidebar"
+        id="adminSidebar"
+        aria-hidden="true"
+    >
+
+        <div class="admin-sidebar-header">
+
+            <div>
+
+                <span class="admin-sidebar-eyebrow">
+                    ADONAI VANGADIO
+                </span>
+
+                <h2>
+                    Administração
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="admin-close-button"
+                id="adminCloseMenu"
+                aria-label="Fechar menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <div class="admin-sidebar-content">
+
+
+            <!-- VISÃO GERAL -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Visão geral
+                </span>
+
+
+                <a
+                    href="index.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ⌂
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- OPERAÇÃO -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Operação
+                </span>
+
+
+                <a
+                    href="pedidos.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ◇
+                    </span>
+
+                    <span>
+                        Pedidos
+                    </span>
+
+                    <small
+                        class="admin-side-count"
+                        id="sidebarOrderCount"
+                    >
+                        0
+                    </small>
+
+                </a>
+
+
+                <a
+                    href="cozinha.html"
+                    class="admin-side-link active"
+                >
+
+                    <span class="admin-side-icon">
+                        ♨
+                    </span>
+
+                    <span>
+                        Cozinha
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="mesas.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ▣
+                    </span>
+
+                    <span>
+                        Mesas
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="caixa.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ▤
+                    </span>
+
+                    <span>
+                        Caixa
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- GESTÃO -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Gestão
+                </span>
+
+
+                <a
+                    href="estoque.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        Estoque
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="relatorios.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ◫
+                    </span>
+
+                    <span>
+                        Relatórios
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- SISTEMA -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Sistema
+                </span>
+
+
+                <a
+                    href="../../index.html"
+                    class="admin-side-link"
+                >
+
+                    <span class="admin-side-icon">
+                        ↗
+                    </span>
+
+                    <span>
+                        Ver site público
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="admin-side-link admin-side-button"
+                    id="adminThemeMenuButton"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+
+                    <span class="admin-side-icon">
+                        ◐
+                    </span>
+
+                    <span>
+                        Aparência
+                    </span>
+
+                    <small id="adminThemeLabel">
+                        Automático
+                    </small>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- CONTA -->
+
+            <div class="admin-menu-section">
+
+                <span class="admin-menu-title">
+                    Conta
+                </span>
+
+
+                <button
+                    type="button"
+                    class="admin-side-link admin-side-button admin-logout"
+                    id="adminLogoutButton"
+                >
+
+                    <span class="admin-side-icon">
+                        ⇥
+                    </span>
+
+                    <span>
+                        Terminar sessão
+                    </span>
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="admin-sidebar-footer">
+
+            <span>
+                AVR ADMIN
+            </span>
+
+            <small>
+                Sabores que ficam na memória.
+            </small>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
+    <main class="admin-main admin-kitchen-main">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="kitchen-hero">
+
+            <div class="kitchen-hero-copy">
+
+                <span class="admin-eyebrow">
+                    OPERAÇÃO DA COZINHA
+                </span>
+
+                <h1>
+                    Cozinha
+                </h1>
+
+                <p>
+                    Organize os pedidos em preparação e acompanhe
+                    cada etapa até à entrega.
+                </p>
+
+            </div>
+
+
+            <div class="kitchen-hero-actions">
+
+                <div class="kitchen-status-card">
+
+                    <span class="kitchen-status-dot"></span>
+
+                    <div>
+
+                        <span>
+                            ESTADO
+                        </span>
+
+                        <strong id="kitchenStatus">
+                            Cozinha ativa
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="kitchen-refresh-button"
+                    id="kitchenRefreshButton"
+                >
+
+                    <span>
+                        ↻
+                    </span>
+
+                    Atualizar
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INDICADORES
+        ================================================== -->
+
+        <section class="kitchen-kpi-grid">
+
+
+            <article class="kitchen-kpi-card kitchen-kpi-main">
+
+                <div class="kitchen-kpi-top">
+
+                    <span>
+                        Pedidos em cozinha
+                    </span>
+
+                    <span class="kitchen-kpi-icon">
+                        ♨
+                    </span>
+
+                </div>
+
+                <strong id="kitchenTotalOrders">
+                    0
+                </strong>
+
+                <small>
+                    pedidos ativos
+                </small>
+
+            </article>
+
+
+            <article class="kitchen-kpi-card">
+
+                <div class="kitchen-kpi-top">
+
+                    <span>
+                        A preparar
+                    </span>
+
+                    <span class="kitchen-kpi-icon">
+                        ◇
+                    </span>
+
+                </div>
+
+                <strong id="kitchenPreparing">
+                    0
+                </strong>
+
+                <small>
+                    pedidos em preparação
+                </small>
+
+            </article>
+
+
+            <article class="kitchen-kpi-card">
+
+                <div class="kitchen-kpi-top">
+
+                    <span>
+                        Prontos
+                    </span>
+
+                    <span class="kitchen-kpi-icon">
+                        ✓
+                    </span>
+
+                </div>
+
+                <strong id="kitchenReady">
+                    0
+                </strong>
+
+                <small>
+                    aguardando entrega
+                </small>
+
+            </article>
+
+
+            <article class="kitchen-kpi-card">
+
+                <div class="kitchen-kpi-top">
+
+                    <span>
+                        Tempo médio
+                    </span>
+
+                    <span class="kitchen-kpi-icon">
+                        ◷
+                    </span>
+
+                </div>
+
+                <strong id="kitchenAverageTime">
+                    0 min
+                </strong>
+
+                <small>
+                    tempo de preparação
+                </small>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTROLO DA COZINHA
+        ================================================== -->
+
+        <section class="admin-panel kitchen-control-panel">
+
+            <div class="kitchen-panel-header">
+
+                <div>
+
+                    <span class="admin-eyebrow">
+                        FILA DE PRODUÇÃO
+                    </span>
+
+                    <h2>
+                        Pedidos da cozinha
+                    </h2>
+
+                    <p>
+                        Acompanhe os pedidos por ordem de prioridade
+                        e estado de preparação.
+                    </p>
+
+                </div>
+
+
+                <div class="kitchen-view-controls">
+
+                    <button
+                        type="button"
+                        class="kitchen-filter-button active"
+                        data-kitchen-filter="all"
+                    >
+                        Todos
+                    </button>
+
+                    <button
+                        type="button"
+                        class="kitchen-filter-button"
+                        data-kitchen-filter="pending"
+                    >
+                        A preparar
+                    </button>
+
+                    <button
+                        type="button"
+                        class="kitchen-filter-button"
+                        data-kitchen-filter="preparing"
+                    >
+                        Em produção
+                    </button>
+
+                    <button
+                        type="button"
+                        class="kitchen-filter-button"
+                        data-kitchen-filter="ready"
+                    >
+                        Prontos
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="kitchen-orders-grid"
+                id="kitchenOrdersGrid"
+            ></div>
+
+
+            <div
+                class="kitchen-empty-state"
+                id="kitchenEmptyState"
+                hidden
+            >
+
+                <span>
+                    ♨
+                </span>
+
+                <strong>
+                    Nenhum pedido na cozinha
+                </strong>
+
+                <small>
+                    Quando houver pedidos para preparação,
+                    eles aparecerão aqui.
+                </small>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESUMO DA OPERAÇÃO
+        ================================================== -->
+
+        <section class="kitchen-management-grid">
+
+
+            <!-- PRIORIDADE -->
+
+            <article class="admin-panel kitchen-priority-panel">
+
+                <div class="kitchen-panel-header compact">
+
+                    <div>
+
+                        <span class="admin-eyebrow">
+                            PRIORIDADE
+                        </span>
+
+                        <h2>
+                            Próximos pedidos
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="kitchen-priority-list"
+                    id="kitchenPriorityList"
+                ></div>
+
+            </article>
+
+
+
+            <!-- DESEMPENHO -->
+
+            <article class="admin-panel kitchen-performance-panel">
+
+                <div class="kitchen-panel-header compact">
+
+                    <div>
+
+                        <span class="admin-eyebrow">
+                            DESEMPENHO
+                        </span>
+
+                        <h2>
+                            Estado da operação
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="kitchen-performance-content">
+
+                    <div class="kitchen-performance-progress">
+
+                        <div class="kitchen-performance-top">
+
+                            <span>
+                                Pedidos concluídos
+                            </span>
+
+                            <strong id="kitchenCompletionPercent">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="kitchen-performance-track">
+
+                            <span
+                                id="kitchenCompletionBar"
+                            ></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="kitchen-performance-stats">
+
+                        <div>
+
+                            <span>
+                                Concluídos
+                            </span>
+
+                            <strong id="kitchenCompleted">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Em atraso
+                            </span>
+
+                            <strong id="kitchenDelayed">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Tempo médio
+                            </span>
+
+                            <strong id="kitchenPerformanceTime">
+                                0 min
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             DETALHE DO PEDIDO
+        ================================================== -->
+
+        <section
+            class="admin-panel kitchen-detail-panel"
+            id="kitchenDetailPanel"
+        >
+
+            <div class="kitchen-detail-empty">
+
+                <span class="kitchen-detail-icon">
+                    ◇
+                </span>
+
+                <div>
+
+                    <span class="admin-eyebrow">
+                        DETALHES DO PEDIDO
+                    </span>
+
+                    <h2>
+                        Nenhum pedido selecionado
+                    </h2>
+
+                    <p>
+                        Selecione um pedido da cozinha para consultar
+                        os itens e atualizar o seu estado.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESUMO FINAL
+        ================================================== -->
+
+        <section class="kitchen-footer-card">
+
+            <div>
+
+                <span class="admin-eyebrow">
+                    OPERAÇÃO DA COZINHA
+                </span>
+
+                <h2 id="kitchenSummaryTitle">
+                    Cozinha pronta para trabalhar
+                </h2>
+
+                <p id="kitchenSummaryText">
+                    Não existem pedidos pendentes neste momento.
+                </p>
+
+            </div>
+
+
+            <div class="kitchen-footer-mark">
+                AVR
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         NAVEGAÇÃO MOBILE
+    ====================================================== -->
+
+    <nav
+        class="admin-bottom-navigation"
+        aria-label="Navegação administrativa"
+    >
+
+        <a
+            href="index.html"
+            class="admin-bottom-item"
+        >
+
+            <span>
+                ⌂
+            </span>
+
+            <small>
+                Início
+            </small>
+
+        </a>
+
+
+        <a
+            href="pedidos.html"
+            class="admin-bottom-item"
+        >
+
+            <span class="admin-bottom-order">
+
+                ◇
+
+                <b id="bottomOrderCount">
+                    0
+                </b>
+
+            </span>
+
+            <small>
+                Pedidos
+            </small>
+
+        </a>
+
+
+        <a
+            href="cozinha.html"
+            class="admin-bottom-item active"
+        >
+
+            <span>
+                ♨
+            </span>
+
+            <small>
+                Cozinha
+            </small>
+
+        </a>
+
+
+        <a
+            href="mesas.html"
+            class="admin-bottom-item"
+        >
+
+            <span>
+                ▣
+            </span>
+
+            <small>
+                Mesas
+            </small>
+
+        </a>
+
+
+        <button
+            type="button"
+            class="admin-bottom-item"
+            id="adminBottomMore"
+        >
+
+            <span>
+                •••
+            </span>
+
+            <small>
+                Mais
+            </small>
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="admin-footer">
+
+        <div>
+
+            <strong>
+                AVR ADMIN
+            </strong>
+
+            <span>
+                Sistema de gestão do restaurante
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                Última atualização
+            </span>
+
+            <strong id="adminLastUpdate">
+                agora
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                © 2026 AVR
+            </span>
+
+        </div>
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script src="../../js/tema.js"></script>
+
+<script src="../../js/admin/cozinha.js"></script>
+
+
+</body>
+
+</html>

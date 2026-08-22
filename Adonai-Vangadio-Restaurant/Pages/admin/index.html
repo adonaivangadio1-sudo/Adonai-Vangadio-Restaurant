@@ -1,0 +1,2807 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#a71930"
+    >
+
+    <title>
+        Admin — AVR Restaurant
+    </title>
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         CSS PRINCIPAL DO PROJETO
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+
+
+    <!-- =====================================================
+         AJUSTES EXCLUSIVOS DO INDEX
+         Apenas para o novo seletor de tema e datas
+    ====================================================== -->
+
+    <style>
+
+        /* =================================================
+           MENU DE APARÊNCIA
+        ================================================== */
+
+        .admin-theme-wrapper {
+
+            position: relative;
+
+        }
+
+
+        .admin-theme-menu {
+
+            position: absolute;
+
+            top: calc(100% + 10px);
+
+            right: 0;
+
+            z-index: 1500;
+
+            width: 185px;
+
+            padding: 7px;
+
+            border:
+                1px solid
+                var(--color-border, #e5e5e5);
+
+            border-radius: 16px;
+
+            background:
+                var(--color-surface, #ffffff);
+
+            box-shadow:
+                0 18px 45px
+                rgba(0, 0, 0, 0.14);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform:
+                translateY(-6px)
+                scale(.97);
+
+            transform-origin:
+                top right;
+
+            transition:
+                opacity .2s ease,
+                visibility .2s ease,
+                transform .2s ease;
+
+        }
+
+
+        .admin-theme-menu.open {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform:
+                translateY(0)
+                scale(1);
+
+        }
+
+
+        .admin-theme-menu-title {
+
+            display: block;
+
+            padding:
+                8px 10px 7px;
+
+            color:
+                var(--color-text-muted, #888);
+
+            font-size: .55rem;
+
+            font-weight: 800;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .admin-theme-option {
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding:
+                10px 11px;
+
+            border: 0;
+
+            border-radius: 11px;
+
+            background: transparent;
+
+            color:
+                var(--color-text, #202020);
+
+            cursor: pointer;
+
+            font: inherit;
+
+            font-size: .68rem;
+
+            font-weight: 700;
+
+            text-align: left;
+
+            transition:
+                background .18s ease,
+                color .18s ease;
+
+        }
+
+
+        .admin-theme-option:hover {
+
+            background:
+                rgba(167, 25, 48, .09);
+
+            color:
+                var(--color-accent, #a71930);
+
+        }
+
+
+        .admin-theme-option.active {
+
+            background:
+                var(--color-accent, #a71930);
+
+            color: #fff;
+
+        }
+
+
+        .admin-theme-option-icon {
+
+            width: 27px;
+
+            height: 27px;
+
+            display: grid;
+
+            place-items: center;
+
+            flex: 0 0 auto;
+
+            border-radius: 50%;
+
+            background:
+                rgba(167, 25, 48, .09);
+
+            font-size: .78rem;
+
+        }
+
+
+        .admin-theme-option.active
+        .admin-theme-option-icon {
+
+            background:
+                rgba(255,255,255,.16);
+
+        }
+
+
+        .admin-theme-option-check {
+
+            margin-left: auto;
+
+            font-size: .75rem;
+
+            opacity: 0;
+
+        }
+
+
+        .admin-theme-option.active
+        .admin-theme-option-check {
+
+            opacity: 1;
+
+        }
+
+
+        /* =================================================
+           APARÊNCIA NO MENU LATERAL
+        ================================================== */
+
+        .admin-sidebar-theme-wrapper {
+
+            position: relative;
+
+        }
+
+
+        .admin-sidebar-theme-menu {
+
+            margin:
+                5px 0 4px 38px;
+
+            display: none;
+
+            padding: 5px;
+
+            border-radius: 12px;
+
+            background:
+                rgba(167, 25, 48, .055);
+
+        }
+
+
+        .admin-sidebar-theme-menu.open {
+
+            display: block;
+
+        }
+
+
+        .admin-sidebar-theme-option {
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                8px 9px;
+
+            border: 0;
+
+            border-radius: 9px;
+
+            background: transparent;
+
+            color:
+                var(--color-text, #222);
+
+            cursor: pointer;
+
+            font: inherit;
+
+            font-size: .61rem;
+
+            font-weight: 700;
+
+            text-align: left;
+
+        }
+
+
+        .admin-sidebar-theme-option:hover {
+
+            background:
+                rgba(167, 25, 48, .10);
+
+            color:
+                var(--color-accent, #a71930);
+
+        }
+
+
+        .admin-sidebar-theme-option.active {
+
+            background:
+                var(--color-accent, #a71930);
+
+            color: #fff;
+
+        }
+
+
+        /* =================================================
+           SELETOR HORIZONTAL DE DATAS
+        ================================================== */
+
+        .admin-date-scroller {
+
+            width: 100%;
+
+            overflow-x: auto;
+
+            overflow-y: hidden;
+
+            scroll-behavior: smooth;
+
+            scrollbar-width: thin;
+
+            scrollbar-color:
+                var(--color-accent, #a71930)
+                transparent;
+
+            padding:
+                3px 2px 10px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .admin-date-scroller::-webkit-scrollbar {
+
+            height: 5px;
+
+        }
+
+
+        .admin-date-scroller::-webkit-scrollbar-track {
+
+            background: transparent;
+
+        }
+
+
+        .admin-date-scroller::-webkit-scrollbar-thumb {
+
+            background:
+                var(--color-accent, #a71930);
+
+            border-radius: 999px;
+
+        }
+
+
+        .admin-date-track {
+
+            display: flex;
+
+            align-items: stretch;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            min-width: max-content;
+
+            padding:
+                3px calc(50% - 90px);
+
+        }
+
+
+        .admin-date-item {
+
+            width: 118px;
+
+            min-width: 118px;
+
+            min-height: 72px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 4px;
+
+            padding:
+                10px 12px;
+
+            border:
+                1px solid
+                var(--color-border, #e5e5e5);
+
+            border-radius: 15px;
+
+            background:
+                var(--color-surface, #fff);
+
+            color:
+                var(--color-text, #222);
+
+            cursor: pointer;
+
+            font: inherit;
+
+            transition:
+                transform .2s ease,
+                background .2s ease,
+                border-color .2s ease,
+                color .2s ease,
+                box-shadow .2s ease;
+
+        }
+
+
+        .admin-date-item:hover {
+
+            transform:
+                translateY(-2px);
+
+            border-color:
+                rgba(167, 25, 48, .35);
+
+        }
+
+
+        .admin-date-item-weekday {
+
+            color:
+                var(--color-text-muted, #888);
+
+            font-size: .52rem;
+
+            font-weight: 800;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .admin-date-item-date {
+
+            font-family:
+                var(--font-display, "Playfair Display", serif);
+
+            font-size: .95rem;
+
+            font-weight: 600;
+
+        }
+
+
+        .admin-date-item-month {
+
+            color:
+                var(--color-text-muted, #888);
+
+            font-size: .5rem;
+
+            font-weight: 600;
+
+        }
+
+
+        .admin-date-item.today {
+
+            background:
+                var(--color-accent, #a71930);
+
+            border-color:
+                var(--color-accent, #a71930);
+
+            color: #fff;
+
+            box-shadow:
+                0 10px 25px
+                rgba(167, 25, 48, .22);
+
+            transform:
+                scale(1.035);
+
+        }
+
+
+        .admin-date-item.today
+        .admin-date-item-weekday,
+
+        .admin-date-item.today
+        .admin-date-item-month {
+
+            color:
+                rgba(255,255,255,.72);
+
+        }
+
+
+        .admin-date-item.today
+        .admin-date-item-date {
+
+            color: #fff;
+
+        }
+
+
+        .admin-date-item.selected:not(.today) {
+
+            border-color:
+                var(--color-accent, #a71930);
+
+            background:
+                rgba(167,25,48,.08);
+
+            color:
+                var(--color-accent, #a71930);
+
+        }
+
+
+        /* =================================================
+           DARK MODE
+        ================================================== */
+
+        [data-theme="dark"] .admin-theme-menu,
+        .dark-theme .admin-theme-menu,
+        body.dark .admin-theme-menu {
+
+            background: #171717;
+
+            border-color:
+                rgba(255,255,255,.10);
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,.45);
+
+        }
+
+
+        [data-theme="dark"] .admin-sidebar-theme-menu,
+        .dark-theme .admin-sidebar-theme-menu,
+        body.dark .admin-sidebar-theme-menu {
+
+            background:
+                rgba(167,25,48,.13);
+
+        }
+
+
+        [data-theme="dark"] .admin-date-item,
+        .dark-theme .admin-date-item,
+        body.dark .admin-date-item {
+
+            background: #171717;
+
+            border-color:
+                rgba(255,255,255,.10);
+
+            color: #f5f5f5;
+
+        }
+
+
+        [data-theme="dark"] .admin-date-item-weekday,
+        [data-theme="dark"] .admin-date-item-month,
+        .dark-theme .admin-date-item-weekday,
+        .dark-theme .admin-date-item-month,
+        body.dark .admin-date-item-weekday,
+        body.dark .admin-date-item-month {
+
+            color: #a7a7a7;
+
+        }
+
+
+        [data-theme="dark"] .admin-date-item.selected:not(.today),
+        .dark-theme .admin-date-item.selected:not(.today),
+        body.dark .admin-date-item.selected:not(.today) {
+
+            background:
+                rgba(167,25,48,.18);
+
+            color: #fff;
+
+        }
+
+
+        [data-theme="dark"] .admin-theme-option,
+        [data-theme="dark"] .admin-sidebar-theme-option,
+        .dark-theme .admin-theme-option,
+        .dark-theme .admin-sidebar-theme-option,
+        body.dark .admin-theme-option,
+        body.dark .admin-sidebar-theme-option {
+
+            color: #f1f1f1;
+
+        }
+
+
+        /* =================================================
+           MOBILE
+        ================================================== */
+
+        @media (max-width: 700px) {
+
+            .admin-theme-menu {
+
+                position: fixed;
+
+                top: 76px;
+
+                right: 14px;
+
+                width: 190px;
+
+            }
+
+
+            .admin-date-track {
+
+                justify-content: flex-start;
+
+                padding-left: 18px;
+
+                padding-right: 18px;
+
+            }
+
+
+            .admin-date-item {
+
+                width: 105px;
+
+                min-width: 105px;
+
+                min-height: 68px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="admin-page">
+
+
+    <!-- =====================================================
+         APP
+    ====================================================== -->
+
+    <div class="admin-app">
+
+
+        <!-- =================================================
+             HEADER FIXO
+        ================================================== -->
+
+        <header class="admin-header">
+
+            <div class="admin-header-left">
+
+                <a
+                    href="../../index.html"
+                    class="admin-brand"
+                    aria-label="Voltar ao site AVR"
+                >
+
+                    <span class="admin-brand-main">
+                        AVR
+                    </span>
+
+                    <span class="admin-brand-divider">
+                        /
+                    </span>
+
+                    <span class="admin-brand-section">
+                        ADMIN
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="admin-header-center">
+
+                <div class="admin-restaurant-status">
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        Restaurante aberto
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-header-right">
+
+
+                <!-- =========================================
+                     BOTÃO + MENU DE APARÊNCIA
+                ========================================== -->
+
+                <div class="admin-theme-wrapper">
+
+                    <button
+                        type="button"
+                        class="admin-header-button"
+                        id="adminThemeMenuToggle"
+                        aria-label="Abrir opções de aparência"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        title="Aparência"
+                    >
+                        ◐
+                    </button>
+
+
+                    <div
+                        class="admin-theme-menu"
+                        id="adminThemeMenu"
+                        role="menu"
+                        aria-hidden="true"
+                    >
+
+                        <span class="admin-theme-menu-title">
+                            Aparência
+                        </span>
+
+
+                        <button
+                            type="button"
+                            class="admin-theme-option"
+                            data-theme-choice="light"
+                            role="menuitem"
+                        >
+
+                            <span class="admin-theme-option-icon">
+                                ☀
+                            </span>
+
+                            <span>
+                                Claro
+                            </span>
+
+                            <span class="admin-theme-option-check">
+                                ✓
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-theme-option"
+                            data-theme-choice="dark"
+                            role="menuitem"
+                        >
+
+                            <span class="admin-theme-option-icon">
+                                ☾
+                            </span>
+
+                            <span>
+                                Escuro
+                            </span>
+
+                            <span class="admin-theme-option-check">
+                                ✓
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-theme-option"
+                            data-theme-choice="auto"
+                            role="menuitem"
+                        >
+
+                            <span class="admin-theme-option-icon">
+                                ◐
+                            </span>
+
+                            <span>
+                                Automático
+                            </span>
+
+                            <span class="admin-theme-option-check">
+                                ✓
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    class="admin-header-button admin-menu-button"
+                    id="adminMenuButton"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             MENU OVERLAY
+        ================================================== -->
+
+        <div
+            class="admin-menu-overlay"
+            id="adminMenuOverlay"
+        ></div>
+
+
+
+        <!-- =================================================
+             MENU LATERAL
+        ================================================== -->
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+            aria-hidden="true"
+        >
+
+            <div class="admin-sidebar-header">
+
+                <div>
+
+                    <span class="admin-sidebar-eyebrow">
+                        ADONAI VANGADIO
+                    </span>
+
+                    <h2>
+                        Administração
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="admin-close-button"
+                    id="adminCloseMenu"
+                    aria-label="Fechar menu"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <div class="admin-sidebar-content">
+
+
+                <!-- =========================================
+                     VISÃO GERAL
+                ========================================== -->
+
+                <div class="admin-menu-section">
+
+                    <span class="admin-menu-title">
+                        Visão geral
+                    </span>
+
+
+                    <a
+                        href="index.html"
+                        class="admin-side-link active"
+                    >
+
+                        <span class="admin-side-icon">
+                            ⌂
+                        </span>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     OPERAÇÃO
+                ========================================== -->
+
+                <div class="admin-menu-section">
+
+                    <span class="admin-menu-title">
+                        Operação
+                    </span>
+
+
+                    <a
+                        href="pedidos.html"
+                        class="admin-side-link"
+                    >
+
+                        <span class="admin-side-icon">
+                            ◇
+                        </span>
+
+                        <span>
+                            Pedidos
+                        </span>
+
+                        <small
+                            class="admin-side-count"
+                            id="sidebarOrderCount"
+                        >
+                            0
+                        </small>
+
+                    </a>
+
+
+                    <a
+                        href="cozinha.html"
+                        class="admin-side-link"
+                    >
+
+                        <span class="admin-side-icon">
+                            ♨
+                        </span>
+
+                        <span>
+                            Cozinha
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="mesas.html"
+                        class="admin-side-link"
+                    >
+
+                        <span class="admin-side-icon">
+                            ▣
+                        </span>
+
+                        <span>
+                            Mesas
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="caixa.html"
+                        class="admin-side-link"
+                    >
+
+                        <span class="admin-side-icon">
+                            ▤
+                        </span>
+
+                        <span>
+                            Caixa
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     GESTÃO
+                ========================================== -->
+
+                <div class="admin-menu-section">
+
+                    <span class="admin-menu-title">
+                        Gestão
+                    </span>
+
+
+                    <a
+                        href="estoque.html"
+                        class="admin-side-link"
+                    >
+
+                        <span class="admin-side-icon">
+                            ▦
+                        </span>
+
+                        <span>
+                            Estoque
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="relatorios.html"
+                        class="admin-side-link"
+                    >
+
+                        <span class="admin-side-icon">
+                            ◫
+                        </span>
+
+                        <span>
+                            Relatórios
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     SISTEMA
+                ========================================== -->
+
+                <div class="admin-menu-section">
+
+                    <span class="admin-menu-title">
+                        Sistema
+                    </span>
+
+
+                    <a
+                        href="../../index.html"
+                        class="admin-side-link"
+                    >
+
+                        <span class="admin-side-icon">
+                            ↗
+                        </span>
+
+                        <span>
+                            Ver site público
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- =====================================
+                         APARÊNCIA
+                    ====================================== -->
+
+                    <div class="admin-sidebar-theme-wrapper">
+
+                        <button
+                            type="button"
+                            class="admin-side-link admin-side-button"
+                            id="adminThemeMenuToggleSidebar"
+                            aria-expanded="false"
+                            aria-haspopup="true"
+                        >
+
+                            <span class="admin-side-icon">
+                                ◐
+                            </span>
+
+                            <span>
+                                Aparência
+                            </span>
+
+                            <small id="adminThemeLabel">
+                                Automático
+                            </small>
+
+                        </button>
+
+
+                        <div
+                            class="admin-sidebar-theme-menu"
+                            id="adminSidebarThemeMenu"
+                        >
+
+                            <button
+                                type="button"
+                                class="admin-sidebar-theme-option"
+                                data-theme-choice="light"
+                            >
+
+                                <span>
+                                    ☀
+                                </span>
+
+                                <span>
+                                    Claro
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="admin-sidebar-theme-option"
+                                data-theme-choice="dark"
+                            >
+
+                                <span>
+                                    ☾
+                                </span>
+
+                                <span>
+                                    Escuro
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="admin-sidebar-theme-option"
+                                data-theme-choice="auto"
+                            >
+
+                                <span>
+                                    ◐
+                                </span>
+
+                                <span>
+                                    Automático
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     CONTA
+                ========================================== -->
+
+                <div class="admin-menu-section">
+
+                    <span class="admin-menu-title">
+                        Conta
+                    </span>
+
+
+                    <button
+                        type="button"
+                        class="admin-side-link admin-side-button admin-logout"
+                        id="adminLogoutButton"
+                    >
+
+                        <span class="admin-side-icon">
+                            ⇥
+                        </span>
+
+                        <span>
+                            Terminar sessão
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =============================================
+                 SIDEBAR FOOTER
+            ============================================== -->
+
+            <div class="admin-sidebar-footer">
+
+                <span>
+                    AVR ADMIN
+                </span>
+
+                <small>
+                    Sabores que ficam na memória.
+                </small>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             CONTEÚDO PRINCIPAL
+        ================================================== -->
+
+        <main class="admin-main">
+
+
+            <!-- =============================================
+                 HERO DO DASHBOARD
+            ============================================== -->
+
+            <section class="admin-intro">
+
+                <div>
+
+                    <span class="admin-eyebrow">
+                        PAINEL DE CONTROLO
+                    </span>
+
+                    <h1>
+                        Bom dia,
+                        <span>
+                            administrador.
+                        </span>
+                    </h1>
+
+                    <p>
+                        Tenha uma visão completa do restaurante
+                        e acompanhe a operação em tempo real.
+                    </p>
+
+                </div>
+
+
+                <div class="admin-date-card">
+
+                    <span>
+                        HOJE
+                    </span>
+
+                    <strong id="adminCurrentDate">
+                        --
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 INDICADORES
+            ============================================== -->
+
+            <section class="admin-stats-grid">
+
+
+                <!-- PEDIDOS -->
+
+                <article class="admin-stat-card">
+
+                    <div class="admin-stat-top">
+
+                        <span class="admin-stat-label">
+                            Pedidos
+                        </span>
+
+                        <span class="admin-stat-icon">
+                            ◇
+                        </span>
+
+                    </div>
+
+                    <strong
+                        class="admin-stat-value"
+                        id="statOrders"
+                    >
+                        0
+                    </strong>
+
+                    <span class="admin-stat-description">
+                        pedidos registados
+                    </span>
+
+                </article>
+
+
+
+                <!-- FATURAÇÃO -->
+
+                <article class="admin-stat-card admin-stat-featured">
+
+                    <div class="admin-stat-top">
+
+                        <span class="admin-stat-label">
+                            Faturação
+                        </span>
+
+                        <span class="admin-stat-icon">
+                            Kz
+                        </span>
+
+                    </div>
+
+                    <strong
+                        class="admin-stat-value"
+                        id="statRevenue"
+                    >
+                        0 Kz
+                    </strong>
+
+                    <span class="admin-stat-description">
+                        movimento estimado de hoje
+                    </span>
+
+                </article>
+
+
+
+                <!-- MESAS -->
+
+                <article class="admin-stat-card">
+
+                    <div class="admin-stat-top">
+
+                        <span class="admin-stat-label">
+                            Mesas
+                        </span>
+
+                        <span class="admin-stat-icon">
+                            ▣
+                        </span>
+
+                    </div>
+
+                    <strong
+                        class="admin-stat-value"
+                        id="statTables"
+                    >
+                        0/12
+                    </strong>
+
+                    <span class="admin-stat-description">
+                        mesas ocupadas
+                    </span>
+
+                </article>
+
+
+
+                <!-- COZINHA -->
+
+                <article class="admin-stat-card">
+
+                    <div class="admin-stat-top">
+
+                        <span class="admin-stat-label">
+                            Cozinha
+                        </span>
+
+                        <span class="admin-stat-icon">
+                            ♨
+                        </span>
+
+                    </div>
+
+                    <strong
+                        class="admin-stat-value"
+                        id="statKitchen"
+                    >
+                        0
+                    </strong>
+
+                    <span class="admin-stat-description">
+                        pedidos em preparação
+                    </span>
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =============================================
+                 ÁREA OPERACIONAL
+            ============================================== -->
+
+            <section class="admin-dashboard-grid">
+
+
+                <!-- =========================================
+                     PEDIDOS RECENTES
+                ========================================== -->
+
+                <article class="admin-panel admin-orders-panel">
+
+                    <div class="admin-panel-header">
+
+                        <div>
+
+                            <span class="admin-eyebrow">
+                                MOVIMENTO
+                            </span>
+
+                            <h2>
+                                Pedidos recentes
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="pedidos.html"
+                            class="admin-text-link"
+                        >
+                            Ver todos
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        class="admin-order-list"
+                        id="recentOrders"
+                    >
+
+                        <div class="admin-empty-state">
+
+                            <span class="admin-empty-icon">
+                                ◇
+                            </span>
+
+                            <h3>
+                                Nenhum pedido ainda
+                            </h3>
+
+                            <p>
+                                Os pedidos realizados no site
+                                aparecerão aqui automaticamente.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     MESAS
+                ========================================== -->
+
+                <article class="admin-panel admin-tables-panel">
+
+                    <div class="admin-panel-header">
+
+                        <div>
+
+                            <span class="admin-eyebrow">
+                                SALÃO
+                            </span>
+
+                            <h2>
+                                Estado das mesas
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="mesas.html"
+                            class="admin-text-link"
+                        >
+                            Gerir
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        class="admin-table-status"
+                        id="tableStatusGrid"
+                    >
+
+                        <!-- preenchido pelo javascript -->
+
+                    </div>
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =============================================
+                 DESEMPENHO
+            ============================================== -->
+
+            <section class="admin-panel admin-performance-panel">
+
+                <div class="admin-panel-header">
+
+                    <div>
+
+                        <span class="admin-eyebrow">
+                            DESEMPENHO
+                        </span>
+
+                        <h2 id="activityTitle">
+                            Atividade de hoje
+                        </h2>
+
+                    </div>
+
+
+                    <div
+                        class="admin-period-switcher"
+                        id="adminPeriodSwitcher"
+                    >
+
+                        <button
+                            type="button"
+                            class="active"
+                            data-period="today"
+                        >
+                            Hoje
+                        </button>
+
+                        <button
+                            type="button"
+                            data-period="week"
+                        >
+                            Semana
+                        </button>
+
+                        <button
+                            type="button"
+                            data-period="month"
+                        >
+                            Mês
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     NOVO SELETOR DE DATAS
+                ========================================== -->
+
+                <div
+                    class="admin-date-scroller"
+                    id="adminDateScroller"
+                    aria-label="Selecionar data"
+                >
+
+                    <div
+                        class="admin-date-track"
+                        id="adminDateTrack"
+                    >
+
+                        <!--
+                            Preenchido pelo JavaScript.
+
+                            Ordem lógica:
+
+                            1 mês atrás
+                            1 semana atrás
+                            HOJE
+                            1 semana à frente
+                            1 mês à frente
+                        -->
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="admin-chart">
+
+                    <div class="admin-chart-grid">
+
+                        <span>60k</span>
+                        <span>40k</span>
+                        <span>20k</span>
+                        <span>0</span>
+
+                    </div>
+
+
+                    <div
+                        class="admin-chart-bars"
+                        id="adminChartBars"
+                    >
+
+                        <div
+                            class="admin-chart-empty"
+                        >
+                            Ainda não existem dados
+                            suficientes para o gráfico.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 ACESSO RÁPIDO
+            ============================================== -->
+
+            <section class="admin-quick-section">
+
+                <div class="admin-section-heading">
+
+                    <div>
+
+                        <span class="admin-eyebrow">
+                            ACESSO RÁPIDO
+                        </span>
+
+                        <h2>
+                            Operação do restaurante
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-quick-grid">
+
+
+                    <a
+                        href="pedidos.html"
+                        class="admin-quick-card"
+                    >
+
+                        <span>
+                            ◇
+                        </span>
+
+                        <strong>
+                            Pedidos
+                        </strong>
+
+                        <small>
+                            Gerir pedidos
+                        </small>
+
+                    </a>
+
+
+                    <a
+                        href="cozinha.html"
+                        class="admin-quick-card"
+                    >
+
+                        <span>
+                            ♨
+                        </span>
+
+                        <strong>
+                            Cozinha
+                        </strong>
+
+                        <small>
+                            Acompanhar preparação
+                        </small>
+
+                    </a>
+
+
+                    <a
+                        href="mesas.html"
+                        class="admin-quick-card"
+                    >
+
+                        <span>
+                            ▣
+                        </span>
+
+                        <strong>
+                            Mesas
+                        </strong>
+
+                        <small>
+                            Ver ocupação
+                        </small>
+
+                    </a>
+
+
+                    <a
+                        href="caixa.html"
+                        class="admin-quick-card"
+                    >
+
+                        <span>
+                            ▤
+                        </span>
+
+                        <strong>
+                            Caixa
+                        </strong>
+
+                        <small>
+                            Movimento financeiro
+                        </small>
+
+                    </a>
+
+
+                    <a
+                        href="estoque.html"
+                        class="admin-quick-card"
+                    >
+
+                        <span>
+                            ▦
+                        </span>
+
+                        <strong>
+                            Estoque
+                        </strong>
+
+                        <small>
+                            Controlar produtos
+                        </small>
+
+                    </a>
+
+
+                    <a
+                        href="relatorios.html"
+                        class="admin-quick-card"
+                    >
+
+                        <span>
+                            ◫
+                        </span>
+
+                        <strong>
+                            Relatórios
+                        </strong>
+
+                        <small>
+                            Analisar desempenho
+                        </small>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =================================================
+             NAVEGAÇÃO INFERIOR MOBILE
+        ================================================== -->
+
+        <nav
+            class="admin-bottom-navigation"
+            aria-label="Navegação administrativa"
+        >
+
+            <a
+                href="index.html"
+                class="admin-bottom-item active"
+            >
+
+                <span>⌂</span>
+
+                <small>
+                    Início
+                </small>
+
+            </a>
+
+
+            <a
+                href="pedidos.html"
+                class="admin-bottom-item"
+            >
+
+                <span class="admin-bottom-order">
+                    ◇
+
+                    <b id="bottomOrderCount">
+                        0
+                    </b>
+                </span>
+
+                <small>
+                    Pedidos
+                </small>
+
+            </a>
+
+
+            <a
+                href="cozinha.html"
+                class="admin-bottom-item"
+            >
+
+                <span>
+                    ♨
+                </span>
+
+                <small>
+                    Cozinha
+                </small>
+
+            </a>
+
+
+            <a
+                href="mesas.html"
+                class="admin-bottom-item"
+            >
+
+                <span>
+                    ▣
+                </span>
+
+                <small>
+                    Mesas
+                </small>
+
+            </a>
+
+
+            <button
+                type="button"
+                class="admin-bottom-item"
+                id="adminBottomMore"
+            >
+
+                <span>
+                    •••
+                </span>
+
+                <small>
+                    Mais
+                </small>
+
+            </button>
+
+        </nav>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="admin-footer">
+
+            <div>
+
+                <strong>
+                    AVR ADMIN
+                </strong>
+
+                <span>
+                    Sistema de gestão do restaurante
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Última atualização
+                </span>
+
+                <strong id="adminLastUpdate">
+                    agora
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    © 2026 AVR
+                </span>
+
+            </div>
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT ORIGINAL
+    ====================================================== -->
+
+    <script src="../../js/tema.js"></script>
+
+    <script src="../../js/admin/index.js"></script>
+
+
+
+    <!-- =====================================================
+         MELHORIAS DO INDEX
+         Não substitui o JavaScript administrativo original.
+    ====================================================== -->
+
+    <script>
+
+        (function () {
+
+            "use strict";
+
+
+            /* =================================================
+               TEMA
+            ================================================== */
+
+            const THEME_KEY = "avr-theme";
+
+
+            const themeToggle =
+                document.getElementById(
+                    "adminThemeMenuToggle"
+                );
+
+
+            const themeMenu =
+                document.getElementById(
+                    "adminThemeMenu"
+                );
+
+
+            const sidebarThemeToggle =
+                document.getElementById(
+                    "adminThemeMenuToggleSidebar"
+                );
+
+
+            const sidebarThemeMenu =
+                document.getElementById(
+                    "adminSidebarThemeMenu"
+                );
+
+
+            const themeLabel =
+                document.getElementById(
+                    "adminThemeLabel"
+                );
+
+
+            const themeChoices =
+                document.querySelectorAll(
+                    "[data-theme-choice]"
+                );
+
+
+            const systemTheme =
+                window.matchMedia(
+                    "(prefers-color-scheme: dark)"
+                );
+
+
+            function getTheme() {
+
+                return (
+                    localStorage.getItem(
+                        THEME_KEY
+                    )
+                    || "auto"
+                );
+
+            }
+
+
+            function applyTheme(
+                theme
+            ) {
+
+                const root =
+                    document.documentElement;
+
+
+                let effectiveTheme =
+                    theme;
+
+
+                if (
+                    theme === "auto"
+                ) {
+
+                    effectiveTheme =
+                        systemTheme.matches
+                            ? "dark"
+                            : "light";
+
+                }
+
+
+                root.setAttribute(
+                    "data-theme",
+                    effectiveTheme
+                );
+
+
+                localStorage.setItem(
+                    THEME_KEY,
+                    theme
+                );
+
+
+                if (themeLabel) {
+
+                    const labels = {
+
+                        light:
+                            "Claro",
+
+                        dark:
+                            "Escuro",
+
+                        auto:
+                            "Automático"
+
+                    };
+
+
+                    themeLabel.textContent =
+                        labels[theme]
+                        || "Automático";
+
+                }
+
+
+                themeChoices.forEach(
+                    function (button) {
+
+                        button.classList.toggle(
+                            "active",
+                            button.dataset.themeChoice
+                                === theme
+                        );
+
+                    }
+                );
+
+            }
+
+
+            function openThemeMenu() {
+
+                themeMenu?.classList.add(
+                    "open"
+                );
+
+
+                themeToggle?.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+
+                themeMenu?.setAttribute(
+                    "aria-hidden",
+                    "false"
+                );
+
+            }
+
+
+            function closeThemeMenu() {
+
+                themeMenu?.classList.remove(
+                    "open"
+                );
+
+
+                themeToggle?.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+
+                themeMenu?.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+            }
+
+
+            function toggleThemeMenu() {
+
+                if (
+                    themeMenu?.classList.contains(
+                        "open"
+                    )
+                ) {
+
+                    closeThemeMenu();
+
+                } else {
+
+                    openThemeMenu();
+
+                }
+
+            }
+
+
+            themeToggle?.addEventListener(
+                "click",
+                function (event) {
+
+                    event.stopPropagation();
+
+                    toggleThemeMenu();
+
+                }
+            );
+
+
+            sidebarThemeToggle?.addEventListener(
+                "click",
+                function (event) {
+
+                    event.stopPropagation();
+
+                    sidebarThemeMenu?.classList.toggle(
+                        "open"
+                    );
+
+
+                    sidebarThemeToggle.setAttribute(
+                        "aria-expanded",
+                        sidebarThemeMenu?.classList.contains(
+                            "open"
+                        )
+                            ? "true"
+                            : "false"
+                    );
+
+                }
+            );
+
+
+            themeChoices.forEach(
+                function (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function (event) {
+
+                            event.stopPropagation();
+
+
+                            const selectedTheme =
+                                button.dataset.themeChoice;
+
+
+                            applyTheme(
+                                selectedTheme
+                            );
+
+
+                            closeThemeMenu();
+
+                            sidebarThemeMenu?.classList.remove(
+                                "open"
+                            );
+
+
+                            sidebarThemeToggle?.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+            document.addEventListener(
+                "click",
+                function (event) {
+
+                    if (
+                        !themeMenu?.contains(
+                            event.target
+                        )
+                        &&
+                        event.target !== themeToggle
+                    ) {
+
+                        closeThemeMenu();
+
+                    }
+
+
+                    if (
+                        sidebarThemeMenu
+                        &&
+                        !sidebarThemeMenu.contains(
+                            event.target
+                        )
+                        &&
+                        event.target !== sidebarThemeToggle
+                    ) {
+
+                        sidebarThemeMenu.classList.remove(
+                            "open"
+                        );
+
+                        sidebarThemeToggle?.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+                }
+            );
+
+
+            document.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (
+                        event.key === "Escape"
+                    ) {
+
+                        closeThemeMenu();
+
+                        sidebarThemeMenu?.classList.remove(
+                            "open"
+                        );
+
+                    }
+
+                }
+            );
+
+
+            systemTheme.addEventListener(
+                "change",
+                function () {
+
+                    if (
+                        getTheme() === "auto"
+                    ) {
+
+                        applyTheme(
+                            "auto"
+                        );
+
+                    }
+
+                }
+            );
+
+
+            applyTheme(
+                getTheme()
+            );
+
+
+
+            /* =================================================
+               DATAS DA ATIVIDADE
+            ================================================== */
+
+            const dateScroller =
+                document.getElementById(
+                    "adminDateScroller"
+                );
+
+
+            const dateTrack =
+                document.getElementById(
+                    "adminDateTrack"
+                );
+
+
+            const activityTitle =
+                document.getElementById(
+                    "activityTitle"
+                );
+
+
+            const periodButtons =
+                document.querySelectorAll(
+                    "#adminPeriodSwitcher button"
+                );
+
+
+            if (
+                dateTrack
+            ) {
+
+
+                const today =
+                    new Date();
+
+
+                function startOfDay(
+                    date
+                ) {
+
+                    const result =
+                        new Date(date);
+
+
+                    result.setHours(
+                        0,
+                        0,
+                        0,
+                        0
+                    );
+
+
+                    return result;
+
+                }
+
+
+                function addDays(
+                    date,
+                    days
+                ) {
+
+                    const result =
+                        new Date(date);
+
+
+                    result.setDate(
+                        result.getDate()
+                        + days
+                    );
+
+
+                    return result;
+
+                }
+
+
+                function formatDatePart(
+                    date,
+                    options
+                ) {
+
+                    return new Intl.DateTimeFormat(
+                        "pt-AO",
+                        options
+                    ).format(date);
+
+                }
+
+
+                function createDateCard(
+                    date,
+                    type
+                ) {
+
+                    const button =
+                        document.createElement(
+                            "button"
+                        );
+
+
+                    button.type =
+                        "button";
+
+
+                    button.className =
+                        "admin-date-item";
+
+
+                    button.dataset.date =
+                        date.toISOString();
+
+
+                    button.dataset.dateType =
+                        type;
+
+
+                    if (
+                        type === "today"
+                    ) {
+
+                        button.classList.add(
+                            "today"
+                        );
+
+                        button.classList.add(
+                            "selected"
+                        );
+
+                    }
+
+
+                    const weekday =
+                        formatDatePart(
+                            date,
+                            {
+                                weekday: "short"
+                            }
+                        );
+
+
+                    const day =
+                        formatDatePart(
+                            date,
+                            {
+                                day: "2-digit"
+                            }
+                        );
+
+
+                    const month =
+                        formatDatePart(
+                            date,
+                            {
+                                month: "long"
+                            }
+                        );
+
+
+                    button.innerHTML = `
+
+                        <span class="admin-date-item-weekday">
+                            ${weekday}
+                        </span>
+
+                        <span class="admin-date-item-date">
+                            ${day}
+                        </span>
+
+                        <span class="admin-date-item-month">
+                            ${month}
+                        </span>
+
+                    `;
+
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            document
+                                .querySelectorAll(
+                                    ".admin-date-item"
+                                )
+                                .forEach(
+                                    function (item) {
+
+                                        item.classList.remove(
+                                            "selected"
+                                        );
+
+                                    }
+                                );
+
+
+                            button.classList.add(
+                                "selected"
+                            );
+
+
+                            const selectedType =
+                                button.dataset.dateType;
+
+
+                            if (
+                                activityTitle
+                            ) {
+
+                                const titles = {
+
+                                    today:
+                                        "Atividade de hoje",
+
+                                    weekBack:
+                                        "Atividade da semana passada",
+
+                                    monthBack:
+                                        "Atividade do mês passado",
+
+                                    weekForward:
+                                        "Atividade da próxima semana",
+
+                                    monthForward:
+                                        "Atividade do próximo mês"
+
+                                };
+
+
+                                activityTitle.textContent =
+                                    titles[selectedType]
+                                    || "Atividade";
+
+                            }
+
+                        }
+                    );
+
+
+                    return button;
+
+                }
+
+
+                const dates = [
+
+                    {
+                        date:
+                            addDays(
+                                today,
+                                -30
+                            ),
+
+                        type:
+                            "monthBack"
+
+                    },
+
+                    {
+                        date:
+                            addDays(
+                                today,
+                                -7
+                            ),
+
+                        type:
+                            "weekBack"
+
+                    },
+
+                    {
+                        date:
+                            today,
+
+                        type:
+                            "today"
+
+                    },
+
+                    {
+                        date:
+                            addDays(
+                                today,
+                                7
+                            ),
+
+                        type:
+                            "weekForward"
+
+                    },
+
+                    {
+                        date:
+                            addDays(
+                                today,
+                                30
+                            ),
+
+                        type:
+                            "monthForward"
+
+                    }
+
+                ];
+
+
+                dates.forEach(
+                    function (item) {
+
+                        dateTrack.appendChild(
+                            createDateCard(
+                                item.date,
+                                item.type
+                            )
+                        );
+
+                    }
+                );
+
+
+                /*
+                 * Garante que o HOJE fique visualmente
+                 * no centro assim que a página abre.
+                 */
+
+                requestAnimationFrame(
+                    function () {
+
+                        const todayCard =
+                            dateTrack.querySelector(
+                                ".admin-date-item.today"
+                            );
+
+
+                        if (
+                            todayCard
+                            &&
+                            dateScroller
+                        ) {
+
+                            const scrollPosition =
+                                todayCard.offsetLeft
+                                -
+                                (
+                                    dateScroller.clientWidth
+                                    / 2
+                                )
+                                +
+                                (
+                                    todayCard.offsetWidth
+                                    / 2
+                                );
+
+
+                            dateScroller.scrollTo(
+                                {
+                                    left:
+                                        Math.max(
+                                            0,
+                                            scrollPosition
+                                        ),
+
+                                    behavior:
+                                        "instant"
+                                }
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+
+
+
+            /* =================================================
+               PERÍODOS HOJE / SEMANA / MÊS
+            ================================================== */
+
+            periodButtons.forEach(
+                function (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            periodButtons.forEach(
+                                function (item) {
+
+                                    item.classList.remove(
+                                        "active"
+                                    );
+
+                                }
+                            );
+
+
+                            button.classList.add(
+                                "active"
+                            );
+
+
+                            const period =
+                                button.dataset.period;
+
+
+                            if (
+                                activityTitle
+                            ) {
+
+                                const titles = {
+
+                                    today:
+                                        "Atividade de hoje",
+
+                                    week:
+                                        "Atividade da semana",
+
+                                    month:
+                                        "Atividade do mês"
+
+                                };
+
+
+                                activityTitle.textContent =
+                                    titles[period]
+                                    || "Atividade";
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+
+        })();
+
+    </script>
+
+
+</body>
+
+</html>
