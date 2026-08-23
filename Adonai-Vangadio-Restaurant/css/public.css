@@ -1,0 +1,4102 @@
+/* =========================================================
+   PUBLIC WEBSITE
+========================================================= */
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+
+    width: min(
+        calc(100% - 40px),
+        var(--container-width)
+    );
+
+    min-height: 720px;
+
+    margin-inline: auto;
+
+    padding-top: calc(
+        var(--header-height) + 70px
+    );
+
+    padding-bottom: 90px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(0, 1.05fr);
+
+    align-items: center;
+
+    gap: 60px;
+}
+
+
+.hero-content {
+    max-width: 600px;
+
+    animation:
+        heroContentIn 800ms
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        )
+        both;
+}
+
+
+.hero-content h1 {
+    max-width: 680px;
+
+    margin-top: 17px;
+
+    font-size: clamp(
+        3.5rem,
+        6vw,
+        6.5rem
+    );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.045em;
+}
+
+
+.hero-content h1 span {
+    display: block;
+
+    color: var(--color-accent);
+}
+
+
+.hero-content > p {
+    max-width: 510px;
+
+    margin-top: 28px;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 32px;
+}
+
+
+.hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 26px;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+
+.hero-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+
+.hero-meta i {
+    width: 7px;
+    height: 7px;
+
+    background: #31a35a;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 4px rgba(49, 163, 90, 0.12);
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+    position: relative;
+
+    min-height: 560px;
+
+    display: grid;
+    place-items: center;
+}
+
+
+.hero-image-wrapper {
+    position: relative;
+
+    width: min(100%, 570px);
+
+    aspect-ratio: 0.95;
+
+    animation:
+        heroImageIn 1000ms
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        )
+        100ms
+        both;
+}
+
+
+.hero-image {
+    position: absolute;
+
+    inset: 8% 4%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #d8b1a0 0%,
+            #ad6858 26%,
+            #6e2523 48%,
+            #251716 76%,
+            #111111 100%
+        );
+
+    border-radius:
+        50%
+        50%
+        42%
+        42%;
+
+    box-shadow:
+        var(--shadow-lg);
+
+    transform:
+        rotate(2deg);
+}
+
+
+.hero-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(255, 255, 255, 0.25),
+            transparent 35%
+        );
+
+    mix-blend-mode: screen;
+}
+
+
+.hero-food {
+    position: absolute;
+
+    width: 62%;
+    aspect-ratio: 1;
+
+    left: 19%;
+    top: 18%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #f3e3d3 0 43%,
+            #d0c4b7 44% 48%,
+            #2c2522 49% 53%,
+            #111111 54% 100%
+        );
+
+    box-shadow:
+        0 30px 50px rgba(0, 0, 0, 0.32);
+}
+
+
+.food-circle {
+    position: absolute;
+
+    width: 55%;
+    height: 55%;
+
+    top: 23%;
+    left: 22%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #e9a074,
+            #a84629 45%,
+            #59251e 100%
+        );
+
+    box-shadow:
+        inset -15px -15px 30px rgba(0, 0, 0, 0.22);
+}
+
+
+.food-detail {
+    position: absolute;
+
+    width: 12%;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background: #9e3424;
+}
+
+
+.food-detail.one {
+    top: 30%;
+    left: 32%;
+}
+
+
+.food-detail.two {
+    top: 47%;
+    left: 56%;
+}
+
+
+.food-detail.three {
+    top: 62%;
+    left: 38%;
+}
+
+
+.plate-decoration {
+    position: absolute;
+
+    inset: auto 12% 10%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.plate-decoration span {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.28);
+}
+
+
+.hero-label {
+    position: absolute;
+
+    right: 0;
+    bottom: 11%;
+
+    padding: 15px 19px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: 12px;
+
+    box-shadow: var(--shadow-md);
+
+    transform: rotate(-3deg);
+}
+
+
+.hero-label span {
+    color: var(--color-accent);
+
+    font-size: 0.58rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+
+.hero-label strong {
+    color: var(--color-heading);
+
+    font-family: var(--font-display);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+
+    width: min(
+        calc(100% - 40px),
+        var(--container-width)
+    );
+
+    margin-inline: auto;
+
+    padding-block: 90px;
+}
+
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+
+.section-heading h2 {
+    margin-top: 8px;
+
+    font-size: clamp(
+        2rem,
+        4vw,
+        3.3rem
+    );
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   HORIZONTAL DISHES
+========================================================= */
+
+.horizontal-scroll {
+
+    display: flex;
+
+    gap: 18px;
+
+    overflow-x: auto;
+
+    padding:
+        4px
+        4px
+        20px;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: thin;
+}
+
+
+.horizontal-scroll::-webkit-scrollbar {
+    height: 5px;
+}
+
+
+.dish-card {
+
+    flex:
+        0 0
+        clamp(
+            250px,
+            28vw,
+            330px
+        );
+
+    scroll-snap-align: start;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-lg);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+
+.dish-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-md);
+}
+
+/* =========================================================
+   DISH IMAGE — FOTOS REAIS
+========================================================= */
+
+.dish-image {
+
+    position: relative;
+
+    height: 235px;
+
+    overflow: hidden;
+
+    background: #eeeeee;
+}
+
+
+.dish-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.dish-card:hover .dish-image img {
+
+    transform: scale(1.05);
+
+}
+
+
+.dish-one {
+    background:
+        linear-gradient(
+            135deg,
+            #281916,
+            #a23d2d
+        );
+}
+
+
+.dish-two {
+    background:
+        linear-gradient(
+            135deg,
+            #1b2520,
+            #667049
+        );
+}
+
+
+.dish-three {
+    background:
+        linear-gradient(
+            135deg,
+            #30201a,
+            #b17b4e
+        );
+}
+
+
+.dish-four {
+    background:
+        linear-gradient(
+            135deg,
+            #271923,
+            #835263
+        );
+}
+
+
+.dish-badge {
+
+    position: absolute;
+
+    top: 13px;
+    left: 13px;
+
+    z-index: 2;
+
+    padding: 6px 9px;
+
+    color: #ffffff;
+
+    background: var(--color-accent);
+
+    border-radius: 7px;
+
+    font-size: 0.58rem;
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+}
+
+
+.favorite-button {
+
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    z-index: 3;
+
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    color: #ffffff;
+
+    background: rgba(0, 0, 0, 0.3);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 50%;
+
+    font-size: 1rem;
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+
+.favorite-button:hover {
+    color: #ffffff;
+    background: var(--color-accent);
+}
+
+
+.dish-info {
+
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 155px;
+
+    gap: 15px;
+}
+
+
+.dish-info h3 {
+    font-family: var(--font-display);
+
+    font-size: 1.2rem;
+}
+
+
+.dish-info p {
+    margin-top: 5px;
+
+    font-size: 0.74rem;
+
+    line-height: 1.6;
+}
+
+
+.dish-info strong {
+    color: var(--color-accent);
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.experience-section {
+
+    width: min(
+        calc(100% - 40px),
+        var(--container-width)
+    );
+
+    margin-inline: auto;
+
+    padding-block: 90px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.experience-image {
+
+    min-height: 500px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-xl);
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #bc7056,
+            #512421 48%,
+            #171313 100%
+        );
+
+    box-shadow: var(--shadow-lg);
+}
+
+
+.experience-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 55%;
+
+    aspect-ratio: 1;
+
+    left: 22.5%;
+    top: 18%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #eee8df 0 45%,
+            #a69c91 46% 50%,
+            #262220 51% 100%
+        );
+
+    box-shadow:
+        0 35px 60px rgba(0, 0, 0, 0.35);
+}
+
+
+.experience-overlay {
+
+    position: absolute;
+
+    right: 24px;
+    bottom: 24px;
+
+    z-index: 2;
+
+    width: 90px;
+    height: 90px;
+
+    display: grid;
+    place-items: center;
+
+    color: #ffffff;
+
+    background: var(--color-accent);
+
+    border-radius: 50%;
+
+    box-shadow: var(--shadow-md);
+}
+
+
+.experience-overlay span {
+
+    font-size: 0.65rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+
+.experience-content {
+
+    max-width: 520px;
+}
+
+
+.experience-content h2 {
+
+    margin-top: 15px;
+
+    font-size: clamp(
+        2.3rem,
+        4vw,
+        4rem
+    );
+
+    line-height: 1.05;
+}
+
+
+.experience-content h2 span {
+
+    display: block;
+
+    color: var(--color-accent);
+}
+
+
+.experience-content p {
+
+    margin-top: 25px;
+
+    font-size: 0.92rem;
+
+    line-height: 1.9;
+}
+
+
+.experience-content .text-link {
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   RESERVATION CTA
+========================================================= */
+
+.reservation-section {
+
+    width: min(
+        calc(100% - 40px),
+        var(--container-width)
+    );
+
+    margin:
+        40px
+        auto
+        150px;
+
+    padding:
+        55px
+        clamp(25px, 5vw, 70px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background:
+        linear-gradient(
+            110deg,
+            var(--color-accent-dark),
+            var(--color-accent)
+        );
+
+    border-radius: var(--radius-xl);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 25px 60px rgba(181, 31, 42, 0.18);
+}
+
+
+.reservation-section .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+.reservation-section h2 {
+
+    max-width: 550px;
+
+    margin-top: 12px;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        2rem,
+        4vw,
+        3.5rem
+    );
+
+    line-height: 1;
+}
+
+
+.reservation-section p {
+
+    margin-top: 12px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes heroContentIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes heroImageIn {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+/* =========================================================
+   AVR — FINE DINING
+========================================================= */
+
+.fine-dining-section {
+
+    width: min(1180px, 92%);
+
+    margin: 120px auto;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+.fine-dining-image {
+
+    position: relative;
+
+    height: 540px;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+}
+
+
+.fine-dining-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.7s ease;
+
+}
+
+
+.fine-dining-image:hover img {
+
+    transform: scale(1.04);
+
+}
+
+
+.fine-dining-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.70),
+            transparent 65%
+        );
+
+}
+
+
+.fine-dining-label {
+
+    position: absolute;
+
+    left: 28px;
+
+    bottom: 25px;
+
+    color: #ffffff;
+
+}
+
+
+.fine-dining-label span {
+
+    display: block;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+}
+
+
+.fine-dining-label small {
+
+    font-size: 10px;
+
+    letter-spacing: 0.20em;
+
+}
+
+
+.fine-dining-content h2 {
+
+    max-width: 520px;
+
+    margin: 0 0 22px;
+
+    font-size: clamp(38px, 5vw, 64px);
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+
+}
+
+
+.fine-dining-content h2 span {
+
+    color: var(--accent-color, #a71930);
+
+}
+
+
+.fine-dining-content p {
+
+    max-width: 480px;
+
+    margin: 0;
+
+    line-height: 1.8;
+
+    color: var(--text-secondary, #777777);
+
+}
+
+/* =========================================================
+   AVR — MAIS POPULARES
+========================================================= */
+
+.popular-section {
+
+    width: min(1180px, 92%);
+
+    margin: 120px auto;
+
+}
+
+
+.popular-section .section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 30px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.popular-section .section-heading h2 {
+
+    margin: 0;
+
+    font-size: clamp(34px, 4vw, 54px);
+
+    letter-spacing: -0.04em;
+
+}
+
+
+.popular-section .section-heading p {
+
+    margin: 10px 0 0;
+
+    color: var(--text-secondary, #777777);
+
+}
+
+
+.popular-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+
+}
+
+
+.popular-card {
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: var(--surface-color, #ffffff);
+
+    border: 1px solid var(--border-color, #e5e5e5);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.popular-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0, 0, 0, 0.08);
+
+}
+
+
+.popular-image {
+
+    position: relative;
+
+    height: 260px;
+
+    overflow: hidden;
+
+}
+
+
+.popular-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+
+}
+
+
+.popular-card:hover .popular-image img {
+
+    transform: scale(1.05);
+
+}
+
+
+.popular-badge {
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 15px;
+
+    padding: 7px 11px;
+
+    border-radius: 50px;
+
+    background: #a71930;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+.popular-content {
+
+    padding: 23px;
+
+}
+
+
+.popular-content .dish-category {
+
+    color: #a71930;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.popular-content h3 {
+
+    margin: 8px 0 22px;
+
+    font-size: 23px;
+
+}
+
+
+.popular-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.popular-footer strong {
+
+    font-size: 17px;
+
+}
+
+
+.add-order-btn {
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #a71930;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.add-order-btn:hover {
+
+    transform: scale(1.08);
+
+    background: #861226;
+
+}
+
+/* =========================================================
+   AVR — GALERIA
+========================================================= */
+
+.gallery-section {
+
+    width: min(1180px, 92%);
+
+    margin: 120px auto;
+
+}
+
+
+.gallery-section .section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 30px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.gallery-section .section-heading h2 {
+
+    max-width: 600px;
+
+    margin: 0;
+
+    font-size: clamp(34px, 4vw, 54px);
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+
+}
+
+
+.gallery-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr;
+
+    grid-template-rows:
+        260px 260px;
+
+    gap: 16px;
+
+}
+
+
+.gallery-item {
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: block;
+
+    border-radius: 20px;
+
+}
+
+
+.gallery-large {
+
+    grid-row: span 2;
+
+}
+
+
+.gallery-item img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+
+}
+
+
+.gallery-item:hover img {
+
+    transform: scale(1.06);
+
+}
+/* =========================================================
+   AVR — PÁGINA CARDÁPIO
+========================================================= */
+
+.menu-page-hero {
+
+    width: min(900px, 92%);
+
+    margin: 150px auto 80px;
+
+    text-align: center;
+
+}
+
+
+.menu-page-hero h1 {
+
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(55px, 8vw, 100px);
+
+    line-height: .95;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.menu-page-hero h1 span {
+
+    color: #a71930;
+
+}
+
+
+.menu-page-hero p {
+
+    max-width: 650px;
+
+    margin: 25px auto 0;
+
+    color: var(--text-secondary, #777);
+
+    line-height: 1.8;
+
+}
+
+
+.menu-section {
+
+    width: min(1180px, 92%);
+
+    margin: 0 auto 130px;
+
+}
+
+
+.menu-filter {
+
+    display: flex;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding-bottom: 12px;
+
+    margin-bottom: 45px;
+
+    scrollbar-width: none;
+
+}
+
+
+.menu-filter::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+
+.menu-filter-btn {
+
+    flex-shrink: 0;
+
+    border: 1px solid
+        var(--border-color, #e4e4e4);
+
+    background:
+        var(--surface-color, #fff);
+
+    color:
+        var(--text-color, #171717);
+
+    padding: 11px 18px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease;
+
+}
+
+
+.menu-filter-btn:hover {
+
+    border-color: #a71930;
+
+}
+
+
+.menu-filter-btn.active {
+
+    background: #a71930;
+
+    border-color: #a71930;
+
+    color: #fff;
+
+}
+
+
+.menu-dishes-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.menu-dish-card {
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--border-color, #e5e5e5);
+
+    background:
+        var(--surface-color, #fff);
+
+    border-radius: 24px;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.menu-dish-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,.08);
+
+}
+
+
+.menu-dish-image {
+
+    position: relative;
+
+    height: 270px;
+
+    overflow: hidden;
+
+}
+
+
+.menu-dish-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform .5s ease;
+
+}
+
+
+.menu-dish-card:hover
+.menu-dish-image img {
+
+    transform:
+        scale(1.05);
+
+}
+
+
+.menu-dish-badge {
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 15px;
+
+    padding: 7px 12px;
+
+    border-radius: 50px;
+
+    background: #a71930;
+
+    color: #fff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+}
+
+
+.menu-dish-content {
+
+    padding: 24px;
+
+}
+
+
+.menu-dish-content > span {
+
+    color: #a71930;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: .14em;
+
+}
+
+
+.menu-dish-content h2 {
+
+    margin:
+        9px 0 10px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 25px;
+
+}
+
+
+.menu-dish-content p {
+
+    margin: 0;
+
+    color:
+        var(--text-secondary, #777);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+.menu-dish-footer {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap: 15px;
+
+    margin-top: 23px;
+
+}
+
+
+.menu-dish-footer strong {
+
+    font-size: 16px;
+
+}
+
+
+.menu-dish-link {
+
+    color: #a71930;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+.menu-dish-link:hover {
+
+    text-decoration: underline;
+
+}
+
+
+.menu-cta {
+
+    width: min(1100px, 92%);
+
+    margin:
+        0 auto 130px;
+
+    padding:
+        80px 30px;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8f1529,
+            #b91f38
+        );
+
+    color: #fff;
+
+}
+
+
+.menu-cta h2 {
+
+    margin: 8px 0 15px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(35px, 5vw, 58px);
+
+}
+
+
+.menu-cta p {
+
+    margin:
+        0 auto 25px;
+
+    max-width: 500px;
+
+    color:
+        rgba(255,255,255,.78);
+
+}
+/* =========================================================
+   AVR — PEDIDOS
+========================================================= */
+
+.order-page-hero,
+.reservation-page-hero {
+
+    width: min(850px, 92%);
+
+    margin: 150px auto 70px;
+
+    text-align: center;
+
+}
+
+
+.order-page-hero h1,
+.reservation-page-hero h1 {
+
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(50px, 7vw, 85px);
+
+    line-height: 1;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.reservation-page-hero h1 span {
+
+    color: #a71930;
+
+}
+
+
+.order-page-hero p,
+.reservation-page-hero p {
+
+    max-width: 600px;
+
+    margin: 25px auto 0;
+
+    color:
+        var(--text-secondary, #777);
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   ORDER LAYOUT
+========================================================= */
+
+.order-layout {
+
+    width: min(1150px, 92%);
+
+    margin: 0 auto 130px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        360px;
+
+    gap: 45px;
+
+}
+
+
+.order-area-header {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-end;
+
+    margin-bottom: 30px;
+
+}
+
+
+.order-area-header h2 {
+
+    margin:
+        5px 0 0;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 32px;
+
+}
+
+
+.order-area-header > span {
+
+    color:
+        var(--text-secondary, #777);
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   ORDER ITEMS
+========================================================= */
+
+.order-items {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+.order-item {
+
+    display: grid;
+
+    grid-template-columns:
+        100px
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 15px;
+
+    border:
+        1px solid
+        var(--border-color, #e5e5e5);
+
+    border-radius: 18px;
+
+    background:
+        var(--surface-color, #fff);
+
+}
+
+
+.order-item-image {
+
+    width: 100px;
+
+    height: 85px;
+
+    overflow: hidden;
+
+    border-radius: 13px;
+
+}
+
+
+.order-item-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.order-item-info h3 {
+
+    margin: 0 0 5px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 20px;
+
+}
+
+
+.order-item-info p {
+
+    margin: 0;
+
+    color:
+        var(--text-secondary, #777);
+
+    font-size: 12px;
+
+}
+
+
+.order-item-price {
+
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+/* QUANTITY */
+
+.order-quantity {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 15px;
+
+}
+
+
+.quantity-button {
+
+    width: 30px;
+
+    height: 30px;
+
+    border: 1px solid
+        var(--border-color, #ddd);
+
+    background: transparent;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    color: inherit;
+
+}
+
+
+.quantity-value {
+
+    min-width: 25px;
+
+    text-align: center;
+
+    font-weight: 700;
+
+}
+
+
+.remove-item {
+
+    margin-top: 10px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #a71930;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   EMPTY ORDER
+========================================================= */
+
+.order-empty {
+
+    display: none;
+
+    padding: 80px 30px;
+
+    text-align: center;
+
+    border:
+        1px dashed
+        var(--border-color, #ddd);
+
+    border-radius: 22px;
+
+}
+
+
+.order-empty.visible {
+
+    display: block;
+
+}
+
+
+.empty-icon {
+
+    font-size: 40px;
+
+    color: #a71930;
+
+    margin-bottom: 15px;
+
+}
+
+
+.order-empty h3 {
+
+    margin: 0 0 10px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 28px;
+
+}
+
+
+.order-empty p {
+
+    max-width: 420px;
+
+    margin: 0 auto 25px;
+
+    color:
+        var(--text-secondary, #777);
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   NOTES
+========================================================= */
+
+.order-notes {
+
+    margin-top: 30px;
+
+}
+
+
+.order-notes label,
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.order-notes textarea,
+.form-group textarea,
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    border:
+        1px solid
+        var(--border-color, #ddd);
+
+    background:
+        var(--surface-color, #fff);
+
+    color:
+        var(--text-color, #171717);
+
+    border-radius: 12px;
+
+    padding: 13px 14px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+}
+
+
+.order-notes textarea:focus,
+.form-group textarea:focus,
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color: #a71930;
+
+}
+
+
+/* =========================================================
+   ORDER SUMMARY
+========================================================= */
+
+.order-summary {
+
+    align-self: start;
+
+    position: sticky;
+
+    top: 100px;
+
+    padding: 30px;
+
+    border:
+        1px solid
+        var(--border-color, #e5e5e5);
+
+    border-radius: 22px;
+
+    background:
+        var(--surface-color, #fff);
+
+}
+
+
+.order-summary h2 {
+
+    margin:
+        5px 0 30px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 30px;
+
+}
+
+
+.summary-line {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    margin-bottom: 16px;
+
+    font-size: 13px;
+
+}
+
+
+.summary-line span {
+
+    color:
+        var(--text-secondary, #777);
+
+}
+
+
+.summary-divider {
+
+    height: 1px;
+
+    margin: 25px 0;
+
+    background:
+        var(--border-color, #e5e5e5);
+
+}
+
+
+.summary-total {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.summary-total strong {
+
+    color: #a71930;
+
+    font-size: 20px;
+
+}
+
+
+.order-checkout-button {
+
+    width: 100%;
+
+}
+
+
+.continue-shopping {
+
+    display: block;
+
+    margin-top: 18px;
+
+    text-align: center;
+
+    color: inherit;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+}
+
+
+/* =========================================================
+   RESERVAS
+========================================================= */
+
+.reservation-layout {
+
+    width: min(1150px, 92%);
+
+    margin: 0 auto 130px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(320px, .75fr);
+
+    gap: 40px;
+
+}
+
+
+.reservation-form-card {
+
+    padding: 38px;
+
+    border:
+        1px solid
+        var(--border-color, #e5e5e5);
+
+    border-radius: 25px;
+
+    background:
+        var(--surface-color, #fff);
+
+}
+
+
+.reservation-step {
+
+    display: flex;
+
+    gap: 18px;
+
+    align-items: flex-start;
+
+    margin-bottom: 25px;
+
+}
+
+
+.reservation-step:not(:first-child) {
+
+    margin-top: 50px;
+
+}
+
+
+.reservation-step-number {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 38px;
+
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #a71930;
+
+    color: #fff;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+
+.reservation-step h2 {
+
+    margin:
+        4px 0 0;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 27px;
+
+}
+
+
+.reservation-fields {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.form-group input,
+.form-group select {
+
+    min-height: 50px;
+
+}
+
+
+.guest-selector {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.guest-option {
+
+    min-height: 72px;
+
+    border:
+        1px solid
+        var(--border-color, #ddd);
+
+    background:
+        transparent;
+
+    color: inherit;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+
+.guest-option small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        var(--text-secondary, #777);
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+}
+
+
+.guest-option.active {
+
+    background: #a71930;
+
+    border-color: #a71930;
+
+    color: #fff;
+
+}
+
+
+.guest-option.active small {
+
+    color:
+        rgba(255,255,255,.75);
+
+}
+
+
+.reservation-submit {
+
+    width: 100%;
+
+    margin-top: 10px;
+
+}
+
+
+.reservation-message {
+
+    margin: 18px 0 0;
+
+    text-align: center;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   RESERVATION INFO
+========================================================= */
+
+.reservation-info {
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background:
+        #171717;
+
+    color: #fff;
+
+}
+
+
+.reservation-info-image {
+
+    height: 260px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b0c15,
+            #a71930
+        );
+
+}
+
+
+.reservation-info-image span {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 60px;
+
+    opacity: .8;
+
+}
+
+
+.reservation-info-content {
+
+    padding: 35px;
+
+}
+
+
+.reservation-info-content h2 {
+
+    margin:
+        7px 0 15px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 32px;
+
+}
+
+
+.reservation-info-content p {
+
+    color:
+        rgba(255,255,255,.68);
+
+    line-height: 1.8;
+
+    font-size: 14px;
+
+}
+
+
+.reservation-hours {
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.12);
+
+}
+
+
+.reservation-hours div {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    gap: 20px;
+
+    padding: 10px 0;
+
+    font-size: 12px;
+
+}
+
+
+.reservation-hours span {
+
+    color:
+        rgba(255,255,255,.55);
+
+}
+/* =========================================================
+   AVR — PUBLIC SUBPAGES
+   FASE 3
+========================================================= */
+
+
+/* =========================================================
+   SUBPAGE HERO
+========================================================= */
+
+.public-subpage {
+    padding-top: 110px;
+    padding-bottom: 120px;
+}
+
+.subpage-hero {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 70px 24px 60px;
+    text-align: center;
+}
+
+.subpage-hero h1 {
+    margin: 14px 0 20px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.6rem, 6vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.subpage-hero h1 span {
+    color: var(--accent-color, #b51f2a);
+}
+
+.subpage-hero p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--text-muted, #777);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-grid {
+    width: min(1150px, calc(100% - 48px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.contact-information h2,
+.location-details h2,
+.about-text h2 {
+    margin: 12px 0 35px;
+    font-family: "Playfair Display", serif;
+    font-size: 2.8rem;
+    line-height: 1.1;
+}
+
+.contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.contact-icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(181, 31, 42, 0.2);
+    border-radius: 50%;
+    color: #b51f2a;
+}
+
+.contact-item small,
+.contact-item span {
+    display: block;
+    color: var(--text-muted, #777);
+}
+
+.contact-item strong {
+    display: block;
+    margin-top: 3px;
+    font-size: 0.95rem;
+}
+
+
+/* FORM */
+
+.contact-form {
+    padding: 35px;
+    border: 1px solid var(--border-color, #e8e8e8);
+    border-radius: 20px;
+    background: var(--surface-color, #fff);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 10px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #b51f2a;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.location-layout {
+    width: min(1150px, calc(100% - 48px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 60px;
+}
+
+.location-map {
+    min-height: 500px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background:
+        radial-gradient(circle at center,
+        rgba(181, 31, 42, 0.15),
+        transparent 30%),
+        linear-gradient(
+            135deg,
+            #e8e8e8,
+            #f7f7f7
+        );
+    color: #333;
+}
+
+.map-pin {
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #b51f2a;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.map-placeholder span {
+    font-weight: 700;
+}
+
+.map-placeholder small {
+    color: #777;
+}
+
+.location-detail {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.location-detail > span {
+    color: #b51f2a;
+    font-size: 1.2rem;
+}
+
+.location-detail small {
+    display: block;
+    color: var(--text-muted, #777);
+    margin-bottom: 4px;
+}
+
+.location-detail strong {
+    display: block;
+}
+
+.location-detail p {
+    margin-top: 4px;
+    color: var(--text-muted, #777);
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-section {
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.gallery-filter {
+    padding: 9px 18px;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 50px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.gallery-filter.active,
+.gallery-filter:hover {
+    background: #b51f2a;
+    border-color: #b51f2a;
+    color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 260px;
+    gap: 16px;
+}
+
+.gallery-card {
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.gallery-large {
+    grid-row: span 2;
+}
+
+.gallery-tall {
+    grid-row: span 2;
+}
+
+.gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background:
+        linear-gradient(
+            135deg,
+            #181818,
+            #383838
+        );
+    color: rgba(255,255,255,0.7);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-placeholder {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-story {
+    width: min(1150px, calc(100% - 48px));
+    margin: 0 auto 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-visual {
+    min-height: 560px;
+    border-radius: 24px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(181, 31, 42, 0.7),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #121212,
+            #2c2c2c
+        );
+    display: flex;
+    align-items: flex-end;
+    padding: 45px;
+}
+
+.about-visual-content {
+    color: white;
+}
+
+.about-visual-content span {
+    display: block;
+    margin-bottom: 12px;
+    color: #d9d9d9;
+    letter-spacing: 0.2em;
+}
+
+.about-visual-content strong {
+    font-family: "Playfair Display", serif;
+    font-size: 2.8rem;
+    line-height: 1;
+}
+
+.about-text p {
+    margin-bottom: 18px;
+    color: var(--text-muted, #777);
+    line-height: 1.8;
+}
+
+.about-values {
+    width: min(1150px, calc(100% - 48px));
+    margin: 0 auto 100px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.value-card {
+    padding: 30px;
+    border: 1px solid var(--border-color, #e5e5e5);
+    border-radius: 18px;
+}
+
+.value-card > span {
+    color: #b51f2a;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.value-card h3 {
+    margin: 25px 0 10px;
+    font-family: "Playfair Display", serif;
+    font-size: 1.6rem;
+}
+
+.value-card p {
+    color: var(--text-muted, #777);
+    line-height: 1.7;
+}
+
+.about-cta {
+    width: min(1000px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 80px 30px;
+    text-align: center;
+    border-radius: 24px;
+    background: #151515;
+    color: white;
+}
+
+.about-cta h2 {
+    max-width: 650px;
+    margin: 15px auto 30px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.about-cta .eyebrow {
+    color: #d9d9d9;
+}
+
+
+/* =========================================================
+   DISH DETAIL
+========================================================= */
+
+.dish-detail-page {
+    width: min(1150px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 35px;
+    color: var(--text-muted, #777);
+}
+
+.dish-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.dish-detail-image {
+    min-height: 600px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.dish-detail-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(
+            circle,
+            rgba(181, 31, 42, 0.5),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #191919,
+            #383838
+        );
+    color: white;
+}
+
+.dish-detail-placeholder span {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+}
+
+.dish-detail-category {
+    color: #b51f2a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.dish-detail-content h1 {
+    margin: 15px 0 20px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1;
+}
+
+.dish-detail-content h1 span {
+    display: block;
+    color: #b51f2a;
+}
+
+.dish-detail-description {
+    color: var(--text-muted, #777);
+    line-height: 1.8;
+}
+
+.dish-detail-price {
+    margin: 30px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.dish-ingredients > span {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.dish-ingredients div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.dish-ingredients b {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.dish-actions {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.quantity-control button {
+    width: 42px;
+    height: 48px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.quantity-control strong {
+    min-width: 35px;
+    text-align: center;
+}
+
+.dish-extra {
+    margin-top: 100px;
+    padding-top: 60px;
+    border-top: 1px solid var(--border-color, #ddd);
+}
+
+.dish-extra h2 {
+    margin-top: 10px;
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+}
+
+.dish-extra h2 span {
+    color: #b51f2a;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .contact-grid,
+    .location-layout,
+    .about-story,
+    .dish-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-visual {
+        min-height: 430px;
+    }
+
+    .dish-detail-image,
+    .dish-detail-placeholder {
+        min-height: 450px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .public-subpage {
+        padding-top: 90px;
+        padding-bottom: 100px;
+    }
+
+    .subpage-hero {
+        padding: 50px 20px 40px;
+    }
+
+    .contact-grid,
+    .location-layout,
+    .gallery-section,
+    .about-story,
+    .about-values,
+    .dish-detail-page {
+        width: min(100% - 30px, 1150px);
+    }
+
+    .contact-form {
+        padding: 22px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 230px;
+    }
+
+    .gallery-large,
+    .gallery-tall {
+        grid-row: span 1;
+    }
+
+    .about-visual {
+        min-height: 350px;
+        padding: 30px;
+    }
+
+    .about-visual-content strong {
+        font-size: 2.2rem;
+    }
+
+    .location-map,
+    .map-placeholder {
+        min-height: 350px;
+    }
+
+    .dish-detail-image,
+    .dish-detail-placeholder {
+        min-height: 350px;
+    }
+
+    .dish-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .quantity-control {
+        justify-content: center;
+    }
+
+}
+/* =========================================================
+   AVR — GALERIA HORIZONTAL
+   ADICIONAR NO FINAL DO public.css
+========================================================= */
+
+.gallery-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery-filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 4px 2px 14px;
+    margin-bottom: 20px;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.gallery-filters::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-filter {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   GALERIA — SCROLL HORIZONTAL
+========================================================= */
+
+.gallery-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+
+    gap: 16px;
+
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 4px 4px 24px;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.gallery-grid::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.gallery-card {
+    flex: 0 0 280px !important;
+
+    width: 280px !important;
+    min-width: 280px !important;
+
+    height: 360px;
+
+    scroll-snap-align: start;
+
+    overflow: hidden;
+
+    position: relative;
+
+    border-radius: 18px;
+}
+
+
+/* Remove tamanhos que possam obrigar os cards a
+   ficarem empilhados */
+
+.gallery-card.gallery-large,
+.gallery-card.gallery-tall {
+    flex: 0 0 280px !important;
+    width: 280px !important;
+    min-width: 280px !important;
+    height: 360px;
+}
+
+
+/* =========================================================
+   IMAGENS
+========================================================= */
+
+.gallery-card img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.45s ease,
+        opacity 0.35s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.gallery-placeholder {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.gallery-placeholder img {
+    position: absolute;
+    inset: 0;
+}
+
+
+/* =========================================================
+   LEGENDA SOBRE A FOTO
+========================================================= */
+
+.gallery-card-label {
+    position: absolute;
+
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+
+    z-index: 2;
+
+    padding: 10px 13px;
+
+    border-radius: 10px;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   QUANDO NÃO HÁ RESULTADOS
+========================================================= */
+
+.gallery-empty {
+    flex: 0 0 100%;
+
+    width: 100%;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 600px) {
+
+    .gallery-card,
+    .gallery-card.gallery-large,
+    .gallery-card.gallery-tall {
+        flex-basis: 320px !important;
+        width: 320px !important;
+        min-width: 320px !important;
+        height: 400px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1000px) {
+
+    .gallery-grid {
+        gap: 20px;
+    }
+
+    .gallery-card,
+    .gallery-card.gallery-large,
+    .gallery-card.gallery-tall {
+        flex-basis: 340px !important;
+        width: 340px !important;
+        min-width: 340px !important;
+        height: 430px;
+    }
+
+}
+
+
+
+/* =========================================================
+   AVR — CORREÇÃO FINAL DO MODO ESCURO
+   COLAR NO FINAL DO public.css
+========================================================= */
+
+
+/* =========================================================
+   CARDS — MAIS POPULARES
+========================================================= */
+
+[data-theme="dark"] .popular-card,
+.dark-theme .popular-card,
+body.dark .popular-card {
+
+    background: var(--color-surface, #171717) !important;
+
+    color: var(--color-heading, #ffffff) !important;
+
+    border-color:
+        var(--color-border, #2b2b2b) !important;
+}
+
+
+[data-theme="dark"] .popular-content,
+.dark-theme .popular-content,
+body.dark .popular-content {
+
+    background: var(--color-surface, #171717) !important;
+
+    color: var(--color-text, #ffffff) !important;
+}
+
+
+[data-theme="dark"] .popular-content h3,
+.dark-theme .popular-content h3,
+body.dark .popular-content h3 {
+
+    color: var(--color-heading, #ffffff) !important;
+}
+
+
+[data-theme="dark"] .popular-footer strong,
+.dark-theme .popular-footer strong,
+body.dark .popular-footer strong {
+
+    color: var(--color-heading, #ffffff) !important;
+}
+
+
+/* =========================================================
+   CARDÁPIO
+========================================================= */
+
+[data-theme="dark"] .menu-dish-card,
+.dark-theme .menu-dish-card,
+body.dark .menu-dish-card {
+
+    background:
+        var(--surface-color,
+        var(--color-surface, #171717)) !important;
+
+    color:
+        var(--text-color,
+        var(--color-text, #ffffff)) !important;
+
+    border-color:
+        var(--border-color,
+        var(--color-border, #2b2b2b)) !important;
+}
+
+
+[data-theme="dark"] .menu-dish-content,
+.dark-theme .menu-dish-content,
+body.dark .menu-dish-content {
+
+    background:
+        var(--surface-color,
+        var(--color-surface, #171717)) !important;
+}
+
+
+[data-theme="dark"] .menu-dish-content h2,
+.dark-theme .menu-dish-content h2,
+body.dark .menu-dish-content h2 {
+
+    color:
+        var(--text-color,
+        var(--color-heading, #ffffff)) !important;
+}
+
+
+[data-theme="dark"] .menu-dish-content p,
+.dark-theme .menu-dish-content p,
+body.dark .menu-dish-content p {
+
+    color:
+        var(--text-secondary,
+        var(--color-text-muted, #aaaaaa)) !important;
+}
+
+
+/* =========================================================
+   FILTROS DO CARDÁPIO
+========================================================= */
+
+[data-theme="dark"] .menu-filter-btn,
+.dark-theme .menu-filter-btn,
+body.dark .menu-filter-btn {
+
+    background:
+        var(--surface-color,
+        var(--color-surface, #171717)) !important;
+
+    color:
+        var(--text-color,
+        var(--color-text, #ffffff)) !important;
+
+    border-color:
+        var(--border-color,
+        var(--color-border, #2b2b2b)) !important;
+}
+
+
+/* =========================================================
+   FORMULÁRIO DE RESERVAS
+========================================================= */
+
+[data-theme="dark"] .reservation-form-card,
+.dark-theme .reservation-form-card,
+body.dark .reservation-form-card {
+
+    background:
+        var(--surface-color,
+        var(--color-surface, #171717)) !important;
+
+    color:
+        var(--text-color,
+        var(--color-text, #ffffff)) !important;
+
+    border-color:
+        var(--border-color,
+        var(--color-border, #2b2b2b)) !important;
+}
+
+
+/* CAMPOS DA RESERVA */
+
+[data-theme="dark"] .reservation-form-card input,
+[data-theme="dark"] .reservation-form-card select,
+[data-theme="dark"] .reservation-form-card textarea,
+
+.dark-theme .reservation-form-card input,
+.dark-theme .reservation-form-card select,
+.dark-theme .reservation-form-card textarea,
+
+body.dark .reservation-form-card input,
+body.dark .reservation-form-card select,
+body.dark .reservation-form-card textarea {
+
+    background:
+        var(--surface-color,
+        var(--color-surface, #171717)) !important;
+
+    color:
+        var(--text-color,
+        var(--color-text, #ffffff)) !important;
+
+    border-color:
+        var(--border-color,
+        var(--color-border, #2b2b2b)) !important;
+}
+
+
+[data-theme="dark"] .reservation-form-card input::placeholder,
+[data-theme="dark"] .reservation-form-card textarea::placeholder,
+
+.dark-theme .reservation-form-card input::placeholder,
+.dark-theme .reservation-form-card textarea::placeholder,
+
+body.dark .reservation-form-card input::placeholder,
+body.dark .reservation-form-card textarea::placeholder {
+
+    color:
+        var(--color-text-muted, #888888) !important;
+}
+
+
+/* =========================================================
+   FORMULÁRIOS GERAIS
+========================================================= */
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select,
+[data-theme="dark"] .form-group textarea,
+
+.dark-theme .form-group input,
+.dark-theme .form-group select,
+.dark-theme .form-group textarea,
+
+body.dark .form-group input,
+body.dark .form-group select,
+body.dark .form-group textarea {
+
+    background:
+        var(--surface-color,
+        var(--color-surface, #171717)) !important;
+
+    color:
+        var(--text-color,
+        var(--color-text, #ffffff)) !important;
+
+    border-color:
+        var(--border-color,
+        var(--color-border, #2b2b2b)) !important;
+}
+
+
+/* =========================================================
+   GALERIA — MANTER O VISUAL ORIGINAL
+========================================================= */
+
+[data-theme="dark"] .gallery-item,
+.dark-theme .gallery-item,
+body.dark .gallery-item {
+
+    background:
+        var(--color-surface, #171717);
+}
+
+
+/* =========================================================
+   EXPERIÊNCIA — LOGO
+========================================================= */
+
+.experience-overlay img {
+
+    width: 52px;
+    height: 52px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================================
+   EVITAR FUNDO BRANCO DOS CARDS
+========================================================= */
+
+[data-theme="dark"] .dish-card,
+.dark-theme .dish-card,
+body.dark .dish-card {
+
+    background:
+        var(--color-surface, #171717) !important;
+
+    border-color:
+        var(--color-border, #2b2b2b) !important;
+}
+
+
+[data-theme="dark"] .dish-info,
+.dark-theme .dish-info,
+body.dark .dish-info {
+
+    background:
+        var(--color-surface, #171717) !important;
+
+    color:
+        var(--color-text, #ffffff) !important;
+}
+
+
+
+
+/* =========================================================
+   AVR — EXPERIÊNCIA / LOGO PREMIUM
+   COLOCAR NO FINAL DO public.css
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. CONTAINER DA EXPERIÊNCIA
+--------------------------------------------------------- */
+
+.experience-image {
+    position: relative !important;
+    overflow: hidden !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 28px !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* ---------------------------------------------------------
+   2. REMOVER O PRATO GERADO PELO CSS ANTIGO
+--------------------------------------------------------- */
+
+.experience-image::before {
+    content: none !important;
+    display: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   3. CARTÃO RETANGULAR DO LOGO
+--------------------------------------------------------- */
+
+.avr-experience-logo {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 88% !important;
+    max-width: 560px !important;
+
+    height: auto !important;
+
+    aspect-ratio: 16 / 9 !important;
+
+    object-fit: cover !important;
+
+    margin: auto !important;
+
+    border-radius: 28px !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.35) !important;
+
+    z-index: 1 !important;
+}
+
+
+/* ---------------------------------------------------------
+   4. BOLA AVR
+   FICA POR CIMA DO LOGO
+--------------------------------------------------------- */
+
+.experience-overlay {
+    position: absolute !important;
+
+    right: 7% !important;
+    bottom: 7% !important;
+
+    width: 72px !important;
+    height: 72px !important;
+
+    min-width: 72px !important;
+    min-height: 72px !important;
+
+    max-width: 72px !important;
+    max-height: 72px !important;
+
+    padding: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: var(--color-accent, #d92d3a) !important;
+
+    border-radius: 50% !important;
+
+    border: 4px solid #111 !important;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.40) !important;
+
+    z-index: 5 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* ---------------------------------------------------------
+   5. TEXTO AVR DENTRO DA BOLA
+--------------------------------------------------------- */
+
+.experience-overlay span {
+    display: block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: 0.72rem !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: 0.12em !important;
+
+    line-height: 1 !important;
+
+    text-align: center !important;
+}
+
+
+/* ---------------------------------------------------------
+   6. TELEMÓVEL
+--------------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+    .experience-image {
+        min-height: 360px !important;
+
+        padding: 22px !important;
+
+        border-radius: 26px !important;
+    }
+
+
+    .avr-experience-logo {
+        width: 92% !important;
+
+        max-width: none !important;
+
+        border-radius: 22px !important;
+    }
+
+
+    .experience-overlay {
+        right: 6% !important;
+        bottom: 6% !important;
+
+        width: 62px !important;
+        height: 62px !important;
+
+        min-width: 62px !important;
+        min-height: 62px !important;
+
+        max-width: 62px !important;
+        max-height: 62px !important;
+
+        border-width: 3px !important;
+    }
+
+
+    .experience-overlay span {
+        font-size: 0.62rem !important;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   7. TELEMÓVEL MUITO PEQUENO
+--------------------------------------------------------- */
+
+@media (max-width: 400px) {
+
+    .experience-image {
+        min-height: 320px !important;
+
+        padding: 18px !important;
+    }
+
+
+    .avr-experience-logo {
+        width: 94% !important;
+
+        border-radius: 18px !important;
+    }
+
+
+    .experience-overlay {
+        width: 56px !important;
+        height: 56px !important;
+
+        min-width: 56px !important;
+        min-height: 56px !important;
+
+        max-width: 56px !important;
+        max-height: 56px !important;
+
+        right: 5% !important;
+        bottom: 5% !important;
+    }
+
+}
+
+
+
+
+
+
+ /* =========================================================
+    AVR — ALINHAMENTO DOS CARDS HORIZONTAIS
+    Preço + Ver prato sempre no fundo
+ ========================================================= */
+
+.dish-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.dish-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.dish-info > div:first-child {
+    flex: 1;
+}
+
+.dish-footer {
+    width: 100%;
+
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+    padding-top: 18px;
+}
+
+/* Preço */
+.dish-footer strong {
+    flex-shrink: 0;
+}
+
+/* Ver prato */
+.dish-view-link {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    margin-left: 18px;
+
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1;
+
+    color: #000000;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.dish-view-link span {
+    font-size: 0.85rem;
+    line-height: 1;
+}
+
+.dish-view-link:hover {
+    color: #000000;
+    opacity: 0.65;
+    transform: translateX(2px);
+}
