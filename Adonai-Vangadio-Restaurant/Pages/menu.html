@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Cardápio AVR — Adonai Vangadi Restaurant."
+    >
+
+    <meta
+        name="theme-color"
+        content="#111111"
+    >
+
+    <title>Cardápio — AVR</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS PRINCIPAL -->
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+
+    <!-- CSS ESPECÍFICO DO CARDÁPIO -->
+
+    <style>
+
+        /*
+        ==================================================
+        CARDÁPIO — AJUSTES
+        ==================================================
+        */
+
+        .menu-dish-link {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .menu-dish-card {
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .menu-dish-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-dish-image {
+            overflow: hidden;
+        }
+
+        .menu-dish-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .5s ease;
+        }
+
+        .menu-dish-card:hover .menu-dish-image img {
+            transform: scale(1.05);
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+
+            <a
+                href="../index.html"
+                class="brand"
+                aria-label="AVR - Página inicial"
+            >
+
+                <span
+                    class="brand-symbol"
+                    aria-hidden="true"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <path
+                            d="M5 11.5C5 8.462 7.686 6 11 6H13C16.314 6 19 8.462 19 11.5"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M4 12H20"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M6 12.5V14.5C6 16.433 7.567 18 9.5 18H14.5C16.433 18 18 16.433 18 14.5V12.5"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                        />
+
+                        <path
+                            d="M3 19H21"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                    </svg>
+
+                </span>
+
+
+                <span class="brand-name">
+                    AVR
+                </span>
+
+            </a>
+
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <nav
+                class="desktop-navigation"
+                aria-label="Navegação principal"
+            >
+
+                <a
+                    href="../index.html"
+                    class="nav-link"
+                >
+                    Início
+                </a>
+
+                <a
+                    href="menu.html"
+                    class="nav-link active"
+                >
+                    Cardápio
+                </a>
+
+                <a
+                    href="sobre.html"
+                    class="nav-link"
+                >
+                    Sobre
+                </a>
+
+                <a
+                    href="galeria.html"
+                    class="nav-link"
+                >
+                    Galeria
+                </a>
+
+            </nav>
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="header-actions">
+
+                <button
+                    class="icon-button"
+                    id="themeButton"
+                    type="button"
+                    aria-label="Alterar aparência"
+                >
+
+                    <svg
+                        class="theme-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                        />
+
+                        <path d="M12 2V4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path d="M12 20V22"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path d="M4.93 4.93L6.34 6.34"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path d="M17.66 17.66L19.07 19.07"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path d="M2 12H4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path d="M20 12H22"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                    </svg>
+
+                </button>
+
+
+                <button
+                    class="menu-button"
+                    id="menuButton"
+                    type="button"
+                    aria-label="Abrir menu"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         THEME POPOVER
+    ================================================== -->
+
+    <div
+        class="theme-popover"
+        id="themePopover"
+    >
+
+        <div class="popover-title">
+            Aparência
+        </div>
+
+        <button
+            class="theme-option"
+            data-theme-choice="light"
+            type="button"
+        >
+            <span>☀</span>
+            <span>Claro</span>
+        </button>
+
+        <button
+            class="theme-option"
+            data-theme-choice="system"
+            type="button"
+        >
+            <span>◐</span>
+            <span>Automático</span>
+        </button>
+
+        <button
+            class="theme-option"
+            data-theme-choice="dark"
+            type="button"
+        >
+            <span>☾</span>
+            <span>Escuro</span>
+        </button>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         SIDE MENU
+    ================================================== -->
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+    ></div>
+
+
+    <aside
+        class="side-menu"
+        id="sideMenu"
+        aria-hidden="true"
+    >
+
+        <div class="side-menu-header">
+
+            <div>
+
+                <span class="menu-eyebrow">
+                    ADONAI VANGADIO
+                </span>
+
+                <h2>
+                    Restaurant
+                </h2>
+
+            </div>
+
+
+            <button
+                class="close-button"
+                id="closeMenuButton"
+                type="button"
+                aria-label="Fechar menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="side-menu-content">
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Navegação
+                </span>
+
+                <a
+                    href="../index.html"
+                    class="side-link"
+                >
+                    <span>⌂</span>
+                    <span>Início</span>
+                </a>
+
+                <a
+                    href="menu.html"
+                    class="side-link active"
+                >
+                    <span>◉</span>
+                    <span>Cardápio</span>
+                </a>
+
+                <a
+                    href="sobre.html"
+                    class="side-link"
+                >
+                    <span>◌</span>
+                    <span>Sobre Nós</span>
+                </a>
+
+                <a
+                    href="galeria.html"
+                    class="side-link"
+                >
+                    <span>▧</span>
+                    <span>Galeria</span>
+                </a>
+
+            </div>
+
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Restaurante
+                </span>
+
+                <a
+                    href="localizacao.html"
+                    class="side-link"
+                >
+                    <span>⌖</span>
+                    <span>Localização</span>
+                </a>
+
+                <a
+                    href="contacto.html"
+                    class="side-link"
+                >
+                    <span>⌕</span>
+                    <span>Contacto</span>
+                </a>
+
+                <a
+                    href="reservas.html"
+                    class="side-link"
+                >
+                    <span>□</span>
+                    <span>Reservar uma mesa</span>
+                </a>
+
+            </div>
+
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Preferências
+                </span>
+
+                <button
+                    class="side-link side-button"
+                    id="menuThemeButton"
+                    type="button"
+                >
+
+                    <span>◐</span>
+
+                    <span>
+                        Aparência
+                    </span>
+
+                    <small id="currentThemeLabel">
+                        Automático
+                    </small>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="side-menu-footer">
+
+            <span>
+                AVR
+            </span>
+
+            <small>
+                Sabores que ficam na memória.
+            </small>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="menu-page-hero">
+
+            <span class="eyebrow">
+                AVR MENU
+            </span>
+
+            <h1>
+                Nosso
+                <span>cardápio.</span>
+            </h1>
+
+            <p>
+                Descubra sabores preparados com cuidado,
+                ingredientes selecionados e a identidade
+                gastronômica do AVR.
+            </p>
+
+        </section>
+
+
+
+        <!-- FILTROS -->
+
+        <section class="menu-section">
+
+            <div class="menu-filter">
+
+                <button
+                    class="menu-filter-btn active"
+                    data-category="all"
+                    type="button"
+                >
+                    Todos
+                </button>
+
+                <button
+                    class="menu-filter-btn"
+                    data-category="entradas"
+                    type="button"
+                >
+                    Entradas
+                </button>
+
+                <button
+                    class="menu-filter-btn"
+                    data-category="principais"
+                    type="button"
+                >
+                    Principais
+                </button>
+
+                <button
+                    class="menu-filter-btn"
+                    data-category="massas"
+                    type="button"
+                >
+                    Massas
+                </button>
+
+                <button
+                    class="menu-filter-btn"
+                    data-category="sobremesas"
+                    type="button"
+                >
+                    Sobremesas
+                </button>
+
+                <button
+                    class="menu-filter-btn"
+                    data-category="bebidas"
+                    type="button"
+                >
+                    Bebidas
+                </button>
+
+                <button
+                    class="menu-filter-btn"
+                    data-category="pizzas"
+                    type="button"
+                >
+                    Pizzas
+                </button>
+
+                <button
+                    class="menu-filter-btn"
+                    data-category="especiais"
+                    type="button"
+                >
+                    Especiais
+                </button>
+
+                <button
+                    class="menu-filter-btn"
+                    data-category="hamburgueres"
+                    type="button"
+                >
+                    Hambúrgueres
+                </button>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 PRATOS
+            ================================================== -->
+
+            <div class="menu-dishes-grid">
+
+
+                <!-- CACHUPA -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="cachupa"
+                    data-category="principais"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/cachupa.png"
+                            alt="Cachupa"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>PRINCIPAL</span>
+
+                        <h2>Cachupa</h2>
+
+                        <p>
+                            Cachupa preparada com ingredientes
+                            selecionados e o sabor tradicional
+                            da cozinha.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>7.500 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=cachupa"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CHURRASCO -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="churrasco"
+                    data-category="principais"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/churrasco.png"
+                            alt="Churrasco"
+                            loading="lazy"
+                        >
+
+                        <span class="menu-dish-badge">
+                            Popular
+                        </span>
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>PRINCIPAL</span>
+
+                        <h2>Churrasco</h2>
+
+                        <p>
+                            Carne grelhada, acompanhada de
+                            batata frita e complementos da casa.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>12.000 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=churrasco"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- FEIJOADA -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="feijoada"
+                    data-category="principais"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/feijoada.png"
+                            alt="Feijoada"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>PRINCIPAL</span>
+
+                        <h2>Feijoada</h2>
+
+                        <p>
+                            Arroz com feijoada, farofa, salada
+                            e farinha, servido ao estilo da casa.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>10.000 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=feijoada"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- FUMBUA -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="fumbua"
+                    data-category="principais"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/fumbua.png"
+                            alt="Fumbua"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>PRINCIPAL</span>
+
+                        <h2>Fumbua</h2>
+
+                        <p>
+                            Fumbua preparada com acompanhamento
+                            tradicional e temperos especiais da casa.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>9.000 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=fumbua"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- FUNGE COM CARNE -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="funge-carne"
+                    data-category="principais"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/funge-carne.png"
+                            alt="Funge com carne"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>PRINCIPAL</span>
+
+                        <h2>Funge com Carne</h2>
+
+                        <p>
+                            Funge de carne seca com feijão de olho
+                            de palma, preparado com sabor tradicional.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>9.500 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=funge-carne"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- FUNGE COM FUMBUA -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="funge-funbua"
+                    data-category="principais"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/funge-funbua.png"
+                            alt="Funge com fumbua"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>PRINCIPAL</span>
+
+                        <h2>Funge com Fumbua</h2>
+
+                        <p>
+                            Funge com catato, pincho e uma
+                            quikuanga servida como acompanhamento.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>9.500 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=funge-funbua"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- FUNGE MUAMBA -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="funge-muamba"
+                    data-category="principais"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/funge-muamba.png"
+                            alt="Funge Muamba"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>PRINCIPAL</span>
+
+                        <h2>Funge Muamba</h2>
+
+                        <p>
+                            Funge com kizaca e galinha rija
+                            preparada em molho de muamba.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>10.000 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=funge-muamba"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+<!-- MUFETE -->
+
+<article
+    class="menu-dish-card"
+    data-id="mufete"
+    data-category="principais"
+>
+
+    <div class="menu-dish-image">
+
+        <img
+            src="../assets/images/restaurant/mufete.png"
+            alt="Mufete"
+            loading="lazy"
+        >
+
+    </div>
+
+    <div class="menu-dish-content">
+
+        <span>PRINCIPAL</span>
+
+        <h2>Mufete</h2>
+
+        <p>
+            Mufete preparado com ingredientes selecionados
+            e o sabor tradicional da cozinha angolana.
+        </p>
+
+        <div class="menu-dish-footer">
+
+            <strong>PREÇO</strong>
+
+            <a
+                href="pratos.html?prato=mufete"
+                class="menu-dish-link"
+            >
+                Ver prato →
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+
+                <!-- FUNGE COM OVO -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="funge-ovo"
+                    data-category="principais"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/funge-ovo.png"
+                            alt="Funge com ovo"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>PRINCIPAL</span>
+
+                        <h2>Funge com Ovo</h2>
+
+                        <p>
+                            Funge com ovo e chouriço
+                            preparados em molho de tomate.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>7.500 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=funge-ovo"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- HAMBÚRGUER -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="hamburger"
+                    data-category="hamburgueres"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/hamburger.png"
+                            alt="Hambúrguer Adonai"
+                            loading="lazy"
+                        >
+
+                        <span class="menu-dish-badge">
+                            Popular
+                        </span>
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>PRINCIPAL</span>
+
+                        <h2>Hambúrguer Adonai</h2>
+
+                        <p>
+                            Hambúrguer preparado com carne,
+                            queijo, vegetais e molho especial.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>8.000 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=hamburger"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- MASSA -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="massa"
+                    data-category="massas"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/massa.png"
+                            alt="Massa da Casa"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>MASSAS</span>
+
+                        <h2>Massa da Casa</h2>
+
+                        <p>
+                            Massa preparada com todos os
+                            acompanhamentos e ingredientes da casa.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>8.000 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=massa"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- MASSA 2 -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="massa-2"
+                    data-category="massas"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/massa-2.png"
+                            alt="Massa Yakisoba"
+                            loading="lazy"
+                        >
+
+                        <span class="menu-dish-badge">
+                            Especial
+                        </span>
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>MASSAS</span>
+
+                        <h2>Massa Yakisoba</h2>
+
+                        <p>
+                            A famosa massa Yakisoba preparada
+                            com ingredientes selecionados e molho especial.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>10.000 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=massa-2"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- BOLOS -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="bolos"
+                    data-category="sobremesas"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/bolos.png"
+                            alt="Bolos variados"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>SOBREMESA</span>
+
+                        <h2>Bolos Variados</h2>
+
+                        <p>
+                            Vários pedaços de bolo disponíveis,
+                            incluindo chocolate, jinguba e
+                            cenoura com chocolate.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>3.000 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=bolos"
+                                class="menu-dish-link"
+                            >
+                                Ver sobremesa →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- BOLO PUDIM -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="bolo-pudin"
+                    data-category="sobremesas"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/bolo-pudin.png"
+                            alt="Bolo pudim"
+                            loading="lazy"
+                        >
+
+                        <span class="menu-dish-badge">
+                            Especial
+                        </span>
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>SOBREMESA</span>
+
+                        <h2>Bolo Pudim</h2>
+
+                        <p>
+                            Bolo de chocolate com pudim
+                            e mousse.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>4.000 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=bolo-pudin"
+                                class="menu-dish-link"
+                            >
+                                Ver sobremesa →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PUDIM -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="pudim"
+                    data-category="sobremesas"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/pudim.png"
+                            alt="Pudim"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>SOBREMESA</span>
+
+                        <h2>Pudim</h2>
+
+                        <p>
+                            Pudim cremoso preparado
+                            especialmente pela nossa cozinha.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>3.000 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=pudim"
+                                class="menu-dish-link"
+                            >
+                                Ver sobremesa →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CERVEJA -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="cerveja"
+                    data-category="bebidas"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/cerveja.png"
+                            alt="Cerveja"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>BEBIDA</span>
+
+                        <h2>Cerveja</h2>
+
+                        <p>
+                            Cerveja servida bem fresca,
+                            ideal para acompanhar a refeição.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>1.000 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=cerveja"
+                                class="menu-dish-link"
+                            >
+                                Ver bebida →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- WHISKY -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="whisky"
+                    data-category="bebidas"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/whisky.png"
+                            alt="Whisky"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>BEBIDA</span>
+
+                        <h2>Whisky</h2>
+
+                        <p>
+                            Copo de whisky selecionado
+                            para uma experiência especial.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>3.500 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=whisky"
+                                class="menu-dish-link"
+                            >
+                                Ver bebida →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- COCKTAIL -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="cocktail"
+                    data-category="bebidas"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/coktel.png"
+                            alt="Cocktails"
+                            loading="lazy"
+                        >
+
+                        <span class="menu-dish-badge">
+                            Especial
+                        </span>
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>BEBIDA</span>
+
+                        <h2>Cocktails</h2>
+
+                        <p>
+                            Vários cocktails preparados
+                            especialmente para cada gosto.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>3.000 – 5.000 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=cocktail"
+                                class="menu-dish-link"
+                            >
+                                Ver bebida →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PIZZA METADE -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="pizza-metade"
+                    data-category="pizzas"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/pizza-metade.png"
+                            alt="Pizza metade"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>PIZZA</span>
+
+                        <h2>Pizza Metade</h2>
+
+                        <p>
+                            Pizza preparada com ingredientes
+                            selecionados e sabor da casa.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>1.500 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=pizza-metade"
+                                class="menu-dish-link"
+                            >
+                                Ver pizza →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PIZZA INTEIRA -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="pizza-inteira"
+                    data-category="pizzas"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/pizza-inteira.png"
+                            alt="Pizza inteira"
+                            loading="lazy"
+                        >
+
+                        <span class="menu-dish-badge">
+                            Popular
+                        </span>
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>PIZZA</span>
+
+                        <h2>Pizza Inteira</h2>
+
+                        <p>
+                            Pizza inteira preparada com
+                            ingredientes selecionados e molho especial.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>9.000 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=pizza-inteira"
+                                class="menu-dish-link"
+                            >
+                                Ver pizza →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ==================================================
+                     NOVOS PRATOS
+                ================================================== -->
+
+                <!-- SANDES LOUCA -->
+                <article
+                    class="menu-dish-card"
+                    data-id="sandes-louca"
+                    data-category="especiais"
+                >
+                    <div class="menu-dish-image">
+                        <img
+                            src="../assets/images/restaurant/sandes-louca.png"
+                            alt="Sandes Louca"
+                            loading="lazy"
+                        >
+                        <span class="menu-dish-badge">
+                            Especial
+                        </span>
+                    </div>
+
+                    <div class="menu-dish-content">
+                        <span>ESPECIAL</span>
+                        <h2>Sandes Louca</h2>
+                        <p>
+                            A Sandes Louca da casa, com sabores generosos
+                            e o molho especial AVR.
+                        </p>
+
+                        <div class="menu-dish-footer">
+                            <strong>15.000 Kz</strong>
+                            <a
+                                href="pratos.html?prato=sandes-louca"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- MASSA COM CAMARÃO -->
+                <article
+                    class="menu-dish-card"
+                    data-id="massa-camarao"
+                    data-category="massas"
+                >
+                    <div class="menu-dish-image">
+                        <img
+                            src="../assets/images/restaurant/massa-camarao.png"
+                            alt="Massa com camarão"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="menu-dish-content">
+                        <span>MASSAS</span>
+                        <h2>Massa com Camarão</h2>
+                        <p>
+                            Massa preparada com camarão e o toque especial
+                            da cozinha AVR.
+                        </p>
+
+                        <div class="menu-dish-footer">
+                            <strong>7.000 Kz</strong>
+                            <a
+                                href="pratos.html?prato=massa-camarao"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- HAMBÚRGUER MAIS QUE LOUCO -->
+                <article
+                    class="menu-dish-card"
+                    data-id="hamburger-mais-que-louco"
+                    data-category="hamburgueres"
+                >
+                    <div class="menu-dish-image">
+                        <img
+                            src="../assets/images/restaurant/hamburger-mais-que-louco.png"
+                            alt="Hambúrguer Mais Que Louco"
+                            loading="lazy"
+                        >
+                        <span class="menu-dish-badge">
+                            Especial
+                        </span>
+                    </div>
+
+                    <div class="menu-dish-content">
+                        <span>HAMBÚRGUER</span>
+                        <h2>Hambúrguer Mais Que Louco</h2>
+                        <p>
+                            Hambúrguer com pão preto, carne, bacon e
+                            acompanhamentos especiais da casa.
+                        </p>
+
+                        <div class="menu-dish-footer">
+                            <strong>15.000 Kz</strong>
+                            <a
+                                href="pratos.html?prato=hamburger-mais-que-louco"
+                                class="menu-dish-link"
+                            >
+                                Ver hambúrguer →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- HAMBÚRGUER LOUCO -->
+                <article
+                    class="menu-dish-card"
+                    data-id="hamburger-louco"
+                    data-category="hamburgueres"
+                >
+                    <div class="menu-dish-image">
+                        <img
+                            src="../assets/images/restaurant/hamburger2.png"
+                            alt="Hambúrguer Louco"
+                            loading="lazy"
+                        >
+                        <span class="menu-dish-badge">
+                            Especial
+                        </span>
+                    </div>
+
+                    <div class="menu-dish-content">
+                        <span>HAMBÚRGUER</span>
+                        <h2>Hambúrguer Louco</h2>
+                        <p>
+                            Três carnes, ovo, bacon, queijo e acompanhamentos
+                            para uma experiência bem generosa.
+                        </p>
+
+                        <div class="menu-dish-footer">
+                            <strong>13.000 Kz</strong>
+                            <a
+                                href="pratos.html?prato=hamburger-louco"
+                                class="menu-dish-link"
+                            >
+                                Ver hambúrguer →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- FILÉ COM LEGUMES -->
+                <article
+                    class="menu-dish-card"
+                    data-id="file"
+                    data-category="especiais"
+                >
+                    <div class="menu-dish-image">
+                        <img
+                            src="../assets/images/restaurant/file.png"
+                            alt="Filé com legumes"
+                            loading="lazy"
+                        >
+                        <span class="menu-dish-badge">
+                            Especial
+                        </span>
+                    </div>
+
+                    <div class="menu-dish-content">
+                        <span>ESPECIAL</span>
+                        <h2>Filé com Legumes</h2>
+                        <p>
+                            Filé preparado com legumes e acompanhado
+                            de vinho branco.
+                        </p>
+
+                        <div class="menu-dish-footer">
+                            <strong>14.000 Kz</strong>
+                            <a
+                                href="pratos.html?prato=file"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- CHEESECAKE -->
+                <article
+                    class="menu-dish-card"
+                    data-id="cheesecake"
+                    data-category="sobremesas"
+                >
+                    <div class="menu-dish-image">
+                        <img
+                            src="../assets/images/restaurant/cheesecake.png"
+                            alt="Cheesecake de chocolate"
+                            loading="lazy"
+                        >
+                        <span class="menu-dish-badge">
+                            Especial
+                        </span>
+                    </div>
+
+                    <div class="menu-dish-content">
+                        <span>SOBREMESA</span>
+                        <h2>Cheesecake de Chocolate</h2>
+                        <p>
+                            Cheesecake de chocolate com sorvete e
+                            chocolate quente.
+                        </p>
+
+                        <div class="menu-dish-footer">
+                            <strong>5.000 Kz</strong>
+                            <a
+                                href="pratos.html?prato=cheesecake"
+                                class="menu-dish-link"
+                            >
+                                Ver sobremesa →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- CARNE COM PURÉ -->
+                <article
+                    class="menu-dish-card"
+                    data-id="carne-pure"
+                    data-category="especiais"
+                >
+                    <div class="menu-dish-image">
+                        <img
+                            src="../assets/images/restaurant/carne-pure.png"
+                            alt="Carne com puré"
+                            loading="lazy"
+                        >
+                        <span class="menu-dish-badge">
+                            Especial
+                        </span>
+                    </div>
+
+                    <div class="menu-dish-content">
+                        <span>ESPECIAL</span>
+                        <h2>Carne com Puré</h2>
+                        <p>
+                            Carne grelhada com puré e legumes,
+                            acompanhada de whisky.
+                        </p>
+
+                        <div class="menu-dish-footer">
+                            <strong>18.000 Kz</strong>
+                            <a
+                                href="pratos.html?prato=carne-pure"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- CARNE GRELHADA ESPECIAL -->
+                <article
+                    class="menu-dish-card"
+                    data-id="carne-batata"
+                    data-category="especiais"
+                >
+                    <div class="menu-dish-image">
+                        <img
+                            src="../assets/images/restaurant/carne-batata.png"
+                            alt="Carne grelhada especial"
+                            loading="lazy"
+                        >
+                        <span class="menu-dish-badge">
+                            Especial
+                        </span>
+                    </div>
+
+                    <div class="menu-dish-content">
+                        <span>ESPECIAL</span>
+                        <h2>Carne Grelhada Especial</h2>
+                        <p>
+                            Carne assada com molho especial e legumes,
+                            acompanhada de whisky.
+                        </p>
+
+                        <div class="menu-dish-footer">
+                            <strong>14.000 Kz</strong>
+                            <a
+                                href="pratos.html?prato=carne-batata"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- BOLO COM SORVETE -->
+                <article
+                    class="menu-dish-card"
+                    data-id="bolo-sorvete"
+                    data-category="sobremesas"
+                >
+                    <div class="menu-dish-image">
+                        <img
+                            src="../assets/images/restaurant/bolo-sorvete.png"
+                            alt="Bolo com sorvete"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="menu-dish-content">
+                        <span>SOBREMESA</span>
+                        <h2>Bolo com Sorvete</h2>
+                        <p>
+                            Mini bolo de chocolate com sorvete e morango,
+                            acompanhado de chá.
+                        </p>
+
+                        <div class="menu-dish-footer">
+                            <strong>4.000 Kz</strong>
+                            <a
+                                href="pratos.html?prato=bolo-sorvete"
+                                class="menu-dish-link"
+                            >
+                                Ver sobremesa →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- BOLO, SORVETE & CHÁ -->
+                <article
+                    class="menu-dish-card"
+                    data-id="bolo-sorvete-cha"
+                    data-category="sobremesas"
+                >
+                    <div class="menu-dish-image">
+                        <img
+                            src="../assets/images/restaurant/bolo-sorvete-cha.png"
+                            alt="Bolo com sorvete e chá"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="menu-dish-content">
+                        <span>SOBREMESA</span>
+                        <h2>Bolo, Sorvete & Chá</h2>
+                        <p>
+                            Mini bolo com sorvete de baunilha, amoras
+                            e chá.
+                        </p>
+
+                        <div class="menu-dish-footer">
+                            <strong>4.000 Kz</strong>
+                            <a
+                                href="pratos.html?prato=bolo-sorvete-cha"
+                                class="menu-dish-link"
+                            >
+                                Ver sobremesa →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- ARROZ -->
+
+                <article
+                    class="menu-dish-card"
+                    data-id="arroz"
+                    data-category="principais"
+                >
+
+                    <div class="menu-dish-image">
+
+                        <img
+                            src="../assets/images/restaurant/arroz.png"
+                            alt="Arroz"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="menu-dish-content">
+
+                        <span>PRINCIPAL</span>
+
+                        <h2>Arroz</h2>
+
+                        <p>
+                            Arroz preparado como acompanhamento
+                            para diferentes pratos da casa.
+                        </p>
+
+                        <div class="menu-dish-footer">
+
+                            <strong>3.000 Kz</strong>
+
+                            <a
+                                href="pratos.html?prato=arroz"
+                                class="menu-dish-link"
+                            >
+                                Ver prato →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CTA -->
+
+        <section class="menu-cta">
+
+            <span class="eyebrow">
+                AVR EXPERIENCE
+            </span>
+
+            <h2>
+                Encontrou o seu favorito?
+            </h2>
+
+            <p>
+                Escolha o seu prato e venha viver
+                a experiência AVR.
+            </p>
+
+            <a
+                href="reservas.html"
+                class="button button-primary"
+            >
+                Reservar uma mesa
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         BOTTOM NAVIGATION
+    ================================================== -->
+
+    <nav
+        class="bottom-navigation"
+        aria-label="Ações rápidas"
+    >
+
+        <a
+            href="../index.html"
+            class="bottom-nav-item"
+        >
+            <span>⌂</span>
+            <small>Início</small>
+        </a>
+
+
+        <a
+            href="menu.html"
+            class="bottom-nav-item active"
+        >
+            <span>◉</span>
+            <small>Cardápio</small>
+        </a>
+
+
+        <a
+            href="pedidos.html"
+            class="bottom-nav-item"
+        >
+
+            <span class="order-icon">
+
+                ◇
+
+                <b id="orderCount">
+                    0
+                </b>
+
+            </span>
+
+            <small>
+                Pedido
+            </small>
+
+        </a>
+
+
+        <a
+            href="reservas.html"
+            class="bottom-nav-item reservation-nav"
+        >
+            <span>□</span>
+            <small>Reservar</small>
+        </a>
+
+
+        <button
+            class="bottom-nav-item"
+            id="bottomMoreButton"
+            type="button"
+        >
+            <span>•••</span>
+            <small>Mais</small>
+        </button>
+
+    </nav>
+
+
+</div>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script src="../js/tema.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/app.js"></script>
+
+</body>
+
+</html>
