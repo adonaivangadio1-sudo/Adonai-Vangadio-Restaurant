@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Finalizar pedido — Adonai Vangadi Restaurant."
+    >
+
+    <meta
+        name="theme-color"
+        content="#111111"
+    >
+
+    <title>Finalizar Pedido — AVR</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS GLOBAL -->
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+
+    <!-- CSS FINALIZAÇÃO -->
+
+    <link
+        rel="stylesheet"
+        href="../css/finalizar-pedidos.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                href="../index.html"
+                class="brand"
+                aria-label="AVR - Página inicial"
+            >
+
+                <span
+                    class="brand-symbol"
+                    aria-hidden="true"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <path
+                            d="M5 11.5C5 8.462 7.686 6 11 6H13C16.314 6 19 8.462 19 11.5"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M4 12H20"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M6 12.5V14.5C6 16.433 7.567 18 9.5 18H14.5C16.433 18 18 16.433 18 14.5V12.5"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                        />
+
+                        <path
+                            d="M3 19H21"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                    </svg>
+
+                </span>
+
+                <span class="brand-name">
+                    AVR
+                </span>
+
+            </a>
+
+
+            <nav
+                class="desktop-navigation"
+                aria-label="Navegação principal"
+            >
+
+                <a href="../index.html" class="nav-link">
+                    Início
+                </a>
+
+                <a href="menu.html" class="nav-link">
+                    Cardápio
+                </a>
+
+                <a href="sobre.html" class="nav-link">
+                    Sobre
+                </a>
+
+                <a href="galeria.html" class="nav-link">
+                    Galeria
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="icon-button"
+                    id="themeButton"
+                    type="button"
+                    aria-label="Alterar aparência"
+                >
+
+                    <svg
+                        class="theme-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                        />
+
+                        <path
+                            d="M12 2V4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M12 20V22"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M4.93 4.93L6.34 6.34"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M17.66 17.66L19.07 19.07"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M2 12H4"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M20 12H22"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                        />
+
+                    </svg>
+
+                </button>
+
+
+                <button
+                    class="menu-button"
+                    id="menuButton"
+                    type="button"
+                    aria-label="Abrir menu"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================================
+         THEME
+    ================================================== -->
+
+    <div
+        class="theme-popover"
+        id="themePopover"
+    >
+
+        <div class="popover-title">
+            Aparência
+        </div>
+
+        <button
+            class="theme-option"
+            data-theme-choice="light"
+            type="button"
+        >
+            <span>☀</span>
+            <span>Claro</span>
+        </button>
+
+        <button
+            class="theme-option"
+            data-theme-choice="system"
+            type="button"
+        >
+            <span>◐</span>
+            <span>Automático</span>
+        </button>
+
+        <button
+            class="theme-option"
+            data-theme-choice="dark"
+            type="button"
+        >
+            <span>☾</span>
+            <span>Escuro</span>
+        </button>
+
+    </div>
+
+
+    <!-- ==================================================
+         SIDE MENU
+    ================================================== -->
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+    ></div>
+
+
+    <aside
+        class="side-menu"
+        id="sideMenu"
+        aria-hidden="true"
+    >
+
+        <div class="side-menu-header">
+
+            <div>
+
+                <span class="menu-eyebrow">
+                    ADONAI VANGADIO
+                </span>
+
+                <h2>
+                    Restaurant
+                </h2>
+
+            </div>
+
+            <button
+                class="close-button"
+                id="closeMenuButton"
+                type="button"
+                aria-label="Fechar menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="side-menu-content">
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Navegação
+                </span>
+
+                <a href="../index.html" class="side-link">
+                    <span>⌂</span>
+                    <span>Início</span>
+                </a>
+
+                <a href="menu.html" class="side-link">
+                    <span>◉</span>
+                    <span>Cardápio</span>
+                </a>
+
+                <a href="sobre.html" class="side-link">
+                    <span>◌</span>
+                    <span>Sobre Nós</span>
+                </a>
+
+                <a href="galeria.html" class="side-link">
+                    <span>▧</span>
+                    <span>Galeria</span>
+                </a>
+
+            </div>
+
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Restaurante
+                </span>
+
+                <a href="localizacao.html" class="side-link">
+                    <span>⌖</span>
+                    <span>Localização</span>
+                </a>
+
+                <a href="contacto.html" class="side-link">
+                    <span>⌕</span>
+                    <span>Contacto</span>
+                </a>
+
+                <a href="reservas.html" class="side-link">
+                    <span>□</span>
+                    <span>Reservar uma mesa</span>
+                </a>
+
+            </div>
+
+
+            <div class="menu-section">
+
+                <span class="menu-section-title">
+                    Preferências
+                </span>
+
+                <button
+                    class="side-link side-button"
+                    id="menuThemeButton"
+                    type="button"
+                >
+
+                    <span>◐</span>
+
+                    <span>
+                        Aparência
+                    </span>
+
+                    <small id="currentThemeLabel">
+                        Automático
+                    </small>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="side-menu-footer">
+
+            <span>
+                AVR
+            </span>
+
+            <small>
+                Sabores que ficam na memória.
+            </small>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+
+    <main class="checkout-page">
+
+        <section class="checkout-hero">
+
+            <span class="eyebrow">
+                AVR · FINALIZAÇÃO
+            </span>
+
+            <h1>
+                Finalize o seu pedido.
+            </h1>
+
+            <p>
+                Confirme os seus dados, escolha o método
+                de pagamento e conclua a sua encomenda.
+            </p>
+
+        </section>
+
+
+        <section class="checkout-layout">
+
+
+            <!-- ==================================================
+                 DADOS
+            ================================================== -->
+
+            <div class="checkout-main">
+
+
+                <section class="checkout-card">
+
+                    <div class="checkout-card-heading">
+
+                        <span>
+                            01
+                        </span>
+
+                        <div>
+
+                            <span class="eyebrow">
+                                ENTREGA
+                            </span>
+
+                            <h2>
+                                Dados para entrega
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="checkout-grid">
+
+                        <div class="checkout-field">
+
+                            <label for="customerName">
+                                Nome completo
+                            </label>
+
+                            <input
+                                type="text"
+                                id="customerName"
+                                placeholder="Digite o seu nome"
+                                autocomplete="name"
+                            >
+
+                        </div>
+
+
+                        <div class="checkout-field">
+
+                            <label for="customerPhone">
+                                Telefone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="customerPhone"
+                                placeholder="Ex.: 9XX XXX XXX"
+                                autocomplete="tel"
+                            >
+
+                        </div>
+
+
+                        <div class="checkout-field checkout-field-full">
+
+                            <label for="customerAddress">
+                                Endereço / ponto de entrega
+                            </label>
+
+                            <input
+                                type="text"
+                                id="customerAddress"
+                                placeholder="Rua, edifício, referência..."
+                                autocomplete="street-address"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="selected-delivery">
+
+                        <span>
+                            Localização selecionada
+                        </span>
+
+                        <strong id="checkoutLocation">
+                            —
+                        </strong>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     PAGAMENTO
+                ================================================== -->
+
+                <section class="checkout-card">
+
+                    <div class="checkout-card-heading">
+
+                        <span>
+                            02
+                        </span>
+
+                        <div>
+
+                            <span class="eyebrow">
+                                PAGAMENTO
+                            </span>
+
+                            <h2>
+                                Escolha como pagar
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="payment-methods">
+
+
+                        <label class="payment-method">
+
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                value="express"
+                            >
+
+                            <span class="payment-method-box">
+
+                                <span class="payment-method-icon">
+                                    M
+                                </span>
+
+                                <span>
+
+                                    <strong>
+                                        Multicaixa Express
+                                    </strong>
+
+                                    <small>
+                                        Pagamento através do número Express
+                                    </small>
+
+                                </span>
+
+                                <b>
+                                    →
+                                </b>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="payment-method">
+
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                value="iban"
+                            >
+
+                            <span class="payment-method-box">
+
+                                <span class="payment-method-icon">
+                                    IB
+                                </span>
+
+                                <span>
+
+                                    <strong>
+                                        Transferência por IBAN
+                                    </strong>
+
+                                    <small>
+                                        Faça uma transferência bancária
+                                    </small>
+
+                                </span>
+
+                                <b>
+                                    →
+                                </b>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- EXPRESS -->
+
+                    <div
+                        class="payment-details"
+                        id="expressDetails"
+                        hidden
+                    >
+
+                        <span class="payment-detail-title">
+                            MULTICAIXA EXPRESS
+                        </span>
+
+                        <p>
+                            Envie o valor total para o número
+                            abaixo através do Multicaixa Express.
+                        </p>
+
+                        <div class="payment-account">
+
+                            <span>
+                                Número Express
+                            </span>
+
+                            <strong>
+                                939 663 373
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- IBAN -->
+
+                    <div
+                        class="payment-details"
+                        id="ibanDetails"
+                        hidden
+                    >
+
+                        <span class="payment-detail-title">
+                            TRANSFERÊNCIA BANCÁRIA
+                        </span>
+
+                        <p>
+                            Faça a transferência para o IBAN
+                            abaixo e guarde o comprovativo.
+                        </p>
+
+                        <div class="payment-account">
+
+                            <span>
+                                IBAN
+                            </span>
+
+                            <strong>
+                                005100007585142910136
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- COMPROVATIVO -->
+
+                    <div
+                        class="payment-reference-field"
+                        id="paymentReferenceField"
+                        hidden
+                    >
+
+                        <label for="paymentReference">
+                            Comprovativo de pagamento
+                        </label>
+
+                        <input
+                            type="file"
+                            id="paymentReference"
+                            accept="image/*"
+                        >
+
+                        <small>
+                            Carregue uma imagem do comprovativo
+                            depois de realizar o pagamento.
+                        </small>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     CONFIRMAÇÃO
+                ================================================== -->
+
+                <section class="checkout-card checkout-confirmation">
+
+                    <div class="checkout-confirmation-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Tudo pronto?
+                        </h3>
+
+                        <p>
+                            Ao confirmar, o seu pedido será registado
+                            com os dados e o método de pagamento
+                            selecionados.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <button
+                    type="button"
+                    id="confirmPaymentButton"
+                    class="checkout-confirm-button"
+                >
+                    Confirmar pagamento e finalizar pedido
+                    <span>→</span>
+                </button>
+
+
+                <a
+                    href="pedidos.html"
+                    class="checkout-back"
+                >
+                    ← Voltar ao pedido
+                </a>
+
+            </div>
+
+
+            <!-- ==================================================
+                 RESUMO FINAL
+            ================================================== -->
+
+            <aside class="checkout-summary">
+
+                <span class="eyebrow">
+                    RESUMO FINAL
+                </span>
+
+                <h2>
+                    A sua encomenda
+                </h2>
+
+
+                <div
+                    id="checkoutItems"
+                    class="checkout-items"
+                ></div>
+
+
+                <div class="checkout-summary-line">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="checkoutSubtotal">
+                        0 Kz
+                    </strong>
+
+                </div>
+
+
+                <div class="checkout-summary-line">
+
+                    <span>
+                        Entrega
+                    </span>
+
+                    <strong id="checkoutDelivery">
+                        0 Kz
+                    </strong>
+
+                </div>
+
+
+                <div class="checkout-summary-divider"></div>
+
+
+                <div class="checkout-summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="checkoutTotal">
+                        0 Kz
+                    </strong>
+
+                </div>
+
+
+                <div class="checkout-security">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    <p>
+                        O seu pedido será preparado após
+                        a confirmação das informações.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- ==================================================
+             RECIBO
+        ================================================== -->
+
+        <section
+            id="paymentReceipt"
+            class="payment-receipt"
+            hidden
+        >
+
+            <div class="receipt-success">
+
+                <div class="receipt-success-icon">
+                    ✓
+                </div>
+
+                <span class="eyebrow">
+                    AVR · PEDIDO CONFIRMADO
+                </span>
+
+                <h2>
+                    Pagamento informado com sucesso.
+                </h2>
+
+                <p>
+                    O seu pedido foi registado.
+                    Guarde as informações abaixo.
+                </p>
+
+            </div>
+
+
+            <div class="receipt-number">
+
+                <span>
+                    Número do pedido
+                </span>
+
+                <strong id="receiptOrderNumber">
+                    AVR-000000
+                </strong>
+
+            </div>
+
+
+            <div class="receipt-details">
+
+                <div>
+                    <span>
+                        Cliente
+                    </span>
+
+                    <strong id="receiptCustomer">
+                        —
+                    </strong>
+                </div>
+
+
+                <div>
+                    <span>
+                        Pagamento
+                    </span>
+
+                    <strong id="receiptPayment">
+                        —
+                    </strong>
+                </div>
+
+
+                <div>
+                    <span>
+                        Localização
+                    </span>
+
+                    <strong id="receiptLocation">
+                        —
+                    </strong>
+                </div>
+
+
+                <div>
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="receiptTotal">
+                        0 Kz
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="receipt-message">
+
+                <strong>
+                    Obrigado por escolher o AVR.
+                </strong>
+
+                <p>
+                    A sua encomenda seguirá para preparação
+                    e entrega conforme os dados fornecidos.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="newOrderButton"
+                class="checkout-confirm-button"
+            >
+                Fazer novo pedido →
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================================================
+         BOTTOM NAV
+    ================================================== -->
+
+    <nav
+        class="bottom-navigation"
+        aria-label="Ações rápidas"
+    >
+
+        <a
+            href="../index.html"
+            class="bottom-nav-item"
+        >
+            <span>⌂</span>
+            <small>Início</small>
+        </a>
+
+        <a
+            href="menu.html"
+            class="bottom-nav-item"
+        >
+            <span>◉</span>
+            <small>Cardápio</small>
+        </a>
+
+        <a
+            href="pedidos.html"
+            class="bottom-nav-item"
+        >
+
+            <span class="order-icon">
+                ◇
+                <b id="orderCount">
+                    0
+                </b>
+            </span>
+
+            <small>
+                Pedido
+            </small>
+
+        </a>
+
+        <a
+            href="reservas.html"
+            class="bottom-nav-item reservation-nav"
+        >
+            <span>□</span>
+            <small>Reservar</small>
+        </a>
+
+        <button
+            class="bottom-nav-item"
+            id="bottomMoreButton"
+            type="button"
+        >
+            <span>•••</span>
+            <small>Mais</small>
+        </button>
+
+    </nav>
+
+
+</div>
+
+
+<!-- ==================================================
+     JAVASCRIPT GLOBAL
+================================================== -->
+
+<script src="../js/tema.js"></script>
+<script src="../js/menu.js"></script>
+<script src="../js/armazenamento.js"></script>
+<script src="../js/app.js"></script>
+
+
+<!-- ==================================================
+     JAVASCRIPT FINALIZAÇÃO
+================================================== -->
+
+<script src="../js/finalizar-pedidos.js"></script>
+
+
+</body>
+
+</html>
